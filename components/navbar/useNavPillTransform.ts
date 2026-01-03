@@ -16,6 +16,9 @@ export function useNavPillTransform(items: NavItem[]) {
   const estado = searchParams.get("estado");
 
   const activeIndex = useMemo(() => {
+    // ✅ En Home, marcá el primer item del NAV (Nosotros)
+    if (pathname === "/") return 0;
+
     const idx = items.findIndex((item) => {
       if (item.match) return item.match(pathname, estado);
 
@@ -28,7 +31,9 @@ export function useNavPillTransform(items: NavItem[]) {
 
       return true;
     });
-    return idx >= 0 ? idx : 0;
+
+    // ✅ Si no matchea nada, no marques ninguno
+    return idx >= 0 ? idx : -1;
   }, [items, pathname, estado]);
 
   const navRef = useRef<HTMLDivElement | null>(null);
@@ -37,6 +42,12 @@ export function useNavPillTransform(items: NavItem[]) {
   const [pill, setPill] = useState({ x: 0, w: 0, opacity: 0 });
 
   const measure = () => {
+    // ✅ Si no hay activo, ocultar pill y listo
+    if (activeIndex < 0) {
+      setPill((p) => (p.opacity === 0 ? p : { ...p, opacity: 0 }));
+      return;
+    }
+
     const nav = navRef.current;
     const active = itemRefs.current[activeIndex];
     if (!nav || !active) return;

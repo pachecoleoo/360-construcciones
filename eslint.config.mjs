@@ -6,6 +6,13 @@ const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
   // Override default ignores of eslint-config-next.
+
+  // 🔕 Disable inline-style warning (pill necesita styles dinámicos)
+  {
+    rules: {
+      "react/no-inline-styles": "off",
+    },
+  },
   globalIgnores([
     // Default ignores of eslint-config-next:
     ".next/**",
