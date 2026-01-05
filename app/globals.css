@@ -27,3 +27,50 @@ body {
 html {
   scroll-behavior: smooth;
 }
+html {
+  overflow-y: scroll;
+}
+
+/* Reveal del logo: de abajo hacia arriba */
+.logo-reveal {
+  display: inline-block;
+  overflow: hidden;
+  /* para que el recorte se vea lindo */
+  border-radius: 12px;
+  animation: logoClip 1.8s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+/* además del “wipe”, le metemos un fade sutil */
+.logo-reveal img {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: logoFadeUp 1.8s ease-out forwards;
+  animation-delay: 0.25s;
+}
+
+@keyframes logoClip {
+  from {
+    clip-path: inset(100% 0 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes logoFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Respeta accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .logo-reveal,
+  .logo-reveal img {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

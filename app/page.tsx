@@ -1,14 +1,13 @@
-export default function Home() {
+import HeroVideo from "@/components/home/HeroVideo";
+import AboutStats from "@/components/home/AboutStats";
+import ServicesSection from "@/components/home/ServicesSection";
+
+export default function HomePage() {
   return (
-    <main className="min-h-screen">
-      <section className="py-24 text-center">
-        <h1 className="text-4xl font-extrabold text-slate-900">
-          360 Construcciones
-        </h1>
-        <p className="mt-4 text-slate-600">
-          Arquitectura e ingeniería para proyectos de alto impacto
-        </p>
-      </section>
-    </main>
+    <>
+      <HeroVideo />
+      <AboutStats />
+      <ServicesSection></ServicesSection>
+    </>
   );
 }
