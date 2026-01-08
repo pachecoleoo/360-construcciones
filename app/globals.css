@@ -5,43 +5,29 @@
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Helvetica LT Std", Arial, Helvetica, sans-serif;
 }
+
 html {
   scroll-behavior: smooth;
-}
-html {
   overflow-y: scroll;
 }
 
-/* Reveal del logo: de abajo hacia arriba */
+/* =========================
+   LOGO REVEAL
+========================= */
+
 .logo-reveal {
   display: inline-block;
   overflow: hidden;
-  /* para que el recorte se vea lindo */
   border-radius: 12px;
   animation: logoClip 1.8s ease-out forwards;
   animation-delay: 0.2s;
 }
 
-/* además del “wipe”, le metemos un fade sutil */
 .logo-reveal img {
   opacity: 0;
   transform: translateY(10px);
@@ -65,7 +51,6 @@ html {
   }
 }
 
-/* Respeta accesibilidad */
 @media (prefers-reduced-motion: reduce) {
   .logo-reveal,
   .logo-reveal img {
@@ -73,4 +58,39 @@ html {
     opacity: 1 !important;
     transform: none !important;
   }
+}
+
+/* =========================
+   FONTS
+========================= */
+@font-face {
+  font-family: "Helvetica LT Std";
+  src: url("/fonts/HelveticaLTStd-Cond.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica LT Std";
+  src: url("/fonts/HelveticaLTStd-BIkCond.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica LT Std Extra";
+  src: url("/fonts/HelveticaLTStd-ExtraComp.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica LT Std Ultra";
+  src: url("/fonts/HelveticaLTStd-UltraComp.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
 }

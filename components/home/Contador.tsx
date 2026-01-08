@@ -2,13 +2,15 @@
 
 import { useEffect, useRef, useState } from "react";
 
-export default function Contador({
+export default function Counter({
   to,
   suffix = "",
-  duration = 1500,
+  prefix = "",
+  duration = 3000,
 }: {
   to: number;
   suffix?: string;
+  prefix?: string;
   duration?: number;
 }) {
   const [value, setValue] = useState(0);
@@ -18,20 +20,23 @@ export default function Contador({
   useEffect(() => {
     if (!ref.current) return;
 
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting && !started.current) {
-        started.current = true;
-        const start = performance.now();
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !started.current) {
+          started.current = true;
+          const start = performance.now();
 
-        const animate = (now: number) => {
-          const progress = Math.min((now - start) / duration, 1);
-          setValue(Math.floor(progress * to));
-          if (progress < 1) requestAnimationFrame(animate);
-        };
+          const animate = (now: number) => {
+            const progress = Math.min((now - start) / duration, 3);
+            setValue(Math.floor(progress * to));
+            if (progress < 1) requestAnimationFrame(animate);
+          };
 
-        requestAnimationFrame(animate);
-      }
-    });
+          requestAnimationFrame(animate);
+        }
+      },
+      { threshold: 0.6 }
+    );
 
     observer.observe(ref.current);
     return () => observer.disconnect();
@@ -40,9 +45,16 @@ export default function Contador({
   return (
     <span
       ref={ref}
-      className="text-3xl md:text-4xl font-semibold text-white drop-shadow-[0_10px_25px_rgba(255,255,255,0.12)]"
+      className="
+        text-3xl md:text-4xl
+        font-black
+        tracking-tight
+        text-white
+        tabular-nums
+      "
     >
-      +{value}
+      {prefix}
+      {value}
       {suffix}
     </span>
   );

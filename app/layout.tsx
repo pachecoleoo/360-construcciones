@@ -4,19 +4,28 @@ import "./globals.css";
 import FloatingNavbar from "@/components/FloatingNavbar";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
-const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "360 Construcciones",
   description: "Arquitectura e ingeniería para proyectos de alto impacto",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="es">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         <FloatingNavbar />
-        <main >{children}</main>
+        <main>{children}</main>
       </body>
     </html>
   );

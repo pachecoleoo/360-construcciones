@@ -1,4 +1,5 @@
 import HeroBackground from "@/components/HeroBackground";
+import Link from "next/link";
 
 export default function ProyectosEnDesarrolloPage() {
   return (
@@ -7,7 +8,7 @@ export default function ProyectosEnDesarrolloPage() {
         eyebrow="PROYECTOS"
         title="Proyectos en desarrollo"
         subtitle="Obras y desarrollos actualmente en ejecución. Seguimos cada proyecto con planificación, control técnico y compromiso."
-        imageSrc="/hero/proyectos-desarrollo.jpg"
+        imageSrc="/hero/nosotros.jpg"
       />
 
       <main className="bg-white">
