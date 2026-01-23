@@ -1,5 +1,6 @@
 import Link from "next/link";
 import HeroBackground from "@/components/HeroBackground";
+import Footer from "@/components/footer/Footer";
 
 export default function NosotrosPage() {
   return (
@@ -247,6 +248,7 @@ export default function NosotrosPage() {
             </div>
           </div>
         </section>
+        <Footer />
       </main>
     </>
   );

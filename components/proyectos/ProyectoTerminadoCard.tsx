@@ -1,0 +1,110 @@
+import Image from "next/image";
+import Link from "next/link";
+
+export type ProyectoTerminado = {
+  id: string;
+  title: string;
+  location: string;
+  year: string;
+  type: string;
+  imageSrc: string;
+  highlights: string[];
+  href: string; // <-- link al detalle
+};
+
+export default function ProyectoTerminadoCard({ p }: { p: ProyectoTerminado }) {
+  return (
+    <Link
+      href={p.href}
+      className="
+    group block
+    border border-slate-300 bg-white
+    overflow-hidden
+    transition-all duration-500
+    shadow-[0_12px_28px_rgba(0,0,0,0.12)]
+    hover:shadow-[0_20px_40px_rgba(0,0,0,0.22)]
+    focus:outline-none focus:ring-2 focus:ring-[#062a47]/30
+  "
+    >
+      {/* POSTER vertical */}
+      <article className="relative h-[480px] sm:h-[220px] lg:h-[460px]">
+        <Image
+          src={p.imageSrc}
+          alt={p.title}
+          fill
+          className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+          sizes="(max-width: 1024px) 100vw, 33vw"
+          priority={false}
+        />
+
+        {/* Overlay base (suave) */}
+        <div className="absolute inset-0 bg-black/55 transition duration-500 group-hover:bg-black/15" />
+
+        {/* Blueprint lines sutil */}
+        <div className="pointer-events-none absolute inset-0 opacity-[0.12]">
+          <div
+            className="absolute inset-0  background-image:linear-gradient(to_right,rgba(255,255,255,.35)_1px, transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,.35)_1px,transparent_1px)] 
+            [bg-size:32px_32px]"
+          />
+        </div>
+
+        {/* Badge */}
+        <div className="absolute left-6 top-6 z-10 rounded-full bg-white/90 px-4 py-1 text-[11px] font-bold tracking-widest uppercase text-[#062a47] backdrop-blur">
+          Desarrollado
+        </div>
+
+        {/* Título estilo logo (abajo, grande, no centrado) */}
+        <div
+          className="
+    absolute inset-x-0 bottom-0 z-20
+    px-6 pb-8
+    opacity-100 translate-y-0
+    transition-all duration-500
+    group-hover:opacity-0 group-hover:translate-y-3
+    pointer-events-none
+  "
+        >
+          {" "}
+          <h2
+            className="
+      text-white
+      text-4xl sm:text-5xl md:text-6xl
+      font-extrabold tracking-tight
+      leading-[0.95]
+      drop-shadow-2xl
+    "
+          >
+            {p.title}
+          </h2>
+        </div>
+
+        {/* Footer info abajo (se oculta en hover) */}
+        {/* Banner glass (SOLO en hover) */}
+        {/* Banner glass (aparece SOLO en hover – transición armónica) */}
+        <div
+          className="
+    pointer-events-none
+    absolute bottom-0 left-0 right-0 z-10
+    p-6
+    opacity-0 translate-y-6 scale-[0.98]
+    transition-all duration-700
+    ease-[cubic-bezier(0.22,1,0.36,1)]  delay-100    md:group-hover:opacity-100
+    md:group-hover:translate-y-0
+    md:group-hover:scale-100
+  "
+        >
+          <div className="bg-white/10 backdrop-blur-md border border-white/15 p-4 shadow-[0_12px_30px_rgba(0,0,0,0.25)]">
+            <div className="flex items-center justify-between gap-4">
+              <p className="text-sm text-white/85">
+                {p.location} · {p.type}
+              </p>
+              <span className="rounded-full border border-white/25 px-3 py-1 text-xs font-semibold text-white/90">
+                {p.year}
+              </span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </Link>
+  );
+}
