@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import FloatingNavbar from "@/components/FloatingNavbar";
+import FloatingLogo from "@/components/FloatingLogo";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({
@@ -25,7 +26,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <FloatingNavbar />
+
         <main>{children}</main>
+        <FloatingLogo />
       </body>
     </html>
   );
