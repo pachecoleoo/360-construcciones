@@ -5,6 +5,8 @@ import SectionOne from "@/components/home/SectionOne";
 import SectionTwo from "@/components/home/SectionTwo";
 import SectionWhoWeAre from "@/components/home/SectionWhoWeAre";
 import Footer from "@/components/footer/Footer";
+import NewsletterCTA from "@/components/NewsletterCTA";
+
 export default function HomePage() {
   return (
     <>
@@ -13,6 +15,7 @@ export default function HomePage() {
       <SectionTwo />
       <SectionOne />
       <AboutStats />
+      <NewsletterCTA />
       <Footer />
     </>
   );

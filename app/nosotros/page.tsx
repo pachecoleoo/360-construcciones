@@ -4,6 +4,16 @@ import Image from "next/image";
 import HeroBackground from "@/components/HeroBackground";
 import Footer from "@/components/footer/Footer";
 import { useReveal } from "@/components/hooks/useReveal";
+import PartnersMarquee from "@/components/PartnersMarquee";
+import NewsletterCTA from "@/components/NewsletterCTA";
+import Button from "@/components/ui/Button";
+const PARTNERS = [
+  // { name: "Marca 1", logoSrc: "/partners/marca1.png", href: "https://..." },
+  { name: "Marca 2", logoSrc: "/partners/marca2.png" },
+  { name: "Marca 3", logoSrc: "/partners/marca3.png" },
+  { name: "Marca 4", logoSrc: "/partners/marca4.png" },
+  { name: "Marca 5", logoSrc: "/partners/marca5.png" },
+];
 
 export default function NosotrosPage() {
   // Fade de cada section (suave)
@@ -20,7 +30,7 @@ export default function NosotrosPage() {
         eyebrow="Nosotros"
         title="Construimos con método, calidad y compromiso."
         subtitle="Arquitectura e ingeniería con planificación, control técnico y ejecución enfocada en detalle y eficiencia."
-        imageSrc="/images/edificio.jpg"
+        imageSrc="/images/original/frameGatica4.jpg"
         align="left"
       />
 
@@ -37,10 +47,16 @@ export default function NosotrosPage() {
             >
               <div className="grid lg:grid-cols-12 gap-12 items-center">
                 {/* TEXTO */}
-                <div className="lg:col-span-8 text-center lg:text-left">
-                  <p className="font-body text-xs tracking-[0.28em] uppercase text-[#002B49]/60">
+                <div
+                  className={`
+    lg:col-span-8 text-center lg:text-left
+    transition-all ease-out delay-200 duration-700
+    ${s1.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}
+  `}
+                >
+                  {/* <p className="font-body text-xs tracking-[0.28em] uppercase text-[#002B49]/60">
                     360 Construcciones
-                  </p>
+                  </p> */}
 
                   <h2 className="mt-4 font-heading font-black uppercase text-5xl md:text-6xl text-[#002B49] leading-[1.05]">
                     Nosotros
@@ -51,6 +67,16 @@ export default function NosotrosPage() {
                     medible. Desde la planificación hasta la entrega final,
                     cuidamos cada decisión técnica y cada detalle constructivo.
                   </p>
+                  <div className="mt-8">
+                    <Button
+                      href="/brochures/brochures.pdf"
+                      variant="dark"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Brochure
+                    </Button>
+                  </div>
                 </div>
 
                 {/* LOGO (si querés también blur leve, te lo dejo aplicado) */}
@@ -106,10 +132,10 @@ export default function NosotrosPage() {
                 style={{ transitionDuration: `${IMG_FOCUS_MS}ms` }}
               >
                 <Image
-                  src="/images/original/obreros.JPG"
+                  src="/images/original/equipo3.JPG"
                   alt="Visión"
                   fill
-                  className="object-cover saturate-0 contrast-110"
+                  className="object-cover saturate-70 contrast-110"
                 />
 
                 {/* Overlay negro para unificar */}
@@ -119,20 +145,32 @@ export default function NosotrosPage() {
               </div>
 
               {/* TEXTO */}
-              <div className="lg:col-span-9 flex items-center px-8 md:px-16 py-14 md:py-16">
+              <div
+                className={`
+    lg:col-span-9 flex items-center px-8 md:px-16 py-14 md:py-16
+    transition-all ease-out delay-300 duration-700
+    ${s2.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}
+  `}
+              >
+                {" "}
                 <div className="max-w-3xl">
-                  <p className="font-body text-xs tracking-[0.28em] uppercase text-white/60">
+                  {/* <p className="font-body text-xs tracking-[0.28em] uppercase text-white/60">
                     Declaración
-                  </p>
+                  </p> */}
 
                   <h2 className="mt-4 font-heading font-black uppercase text-5xl md:text-6xl leading-[1.05]">
                     Visión
                   </h2>
 
                   <p className="mt-8 font-body text-white/85 text-lg leading-relaxed">
-                    Ser referentes por la excelencia técnica y la transparencia.
-                    Cada obra debe reflejar calidad, durabilidad y una ejecución
-                    impecable.
+                    Queremos ser el faro de innovación en ingeniería y
+                    construcción del sur de la región. Estamos construyendo
+                    nuestro liderazgo sobre la base de la más{" "}
+                    <strong className="font-semibold  text-white ]">
+                      sólida confianza de nuestros clientes, el talento de
+                      nuestros equipos y de un resultado excepcional
+                    </strong>{" "}
+                    en cada uno de nuestros proyectos y desarrollos.
                   </p>
                 </div>
               </div>
@@ -151,20 +189,29 @@ export default function NosotrosPage() {
           >
             <div className="grid lg:grid-cols-12 min-h-[64vh] md:min-h-[70vh]">
               {/* TEXTO */}
-              <div className="lg:col-span-9 flex items-center px-8 md:px-16 py-14 md:py-16">
+              <div
+                className={`
+    lg:col-span-9 flex items-center px-8 md:px-16 py-14 md:py-16
+    transition-all ease-out delay-300 duration-700
+    ${s3.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}
+  `}
+              >
                 <div className="max-w-3xl">
-                  <p className="font-body text-xs tracking-[0.28em] uppercase text-[#002B49]/60">
+                  {/* <p className="font-body text-xs tracking-[0.28em] uppercase text-[#002B49]/60">
                     Declaración
-                  </p>
+                  </p> */}
 
                   <h2 className="mt-4 font-heading font-black uppercase text-5xl md:text-6xl text-[#002B49] leading-[1.05]">
                     Misión
                   </h2>
 
                   <p className="mt-8 font-body text-[#002B49]/85 text-lg leading-relaxed">
-                    Entregar obras eficientes, confiables y técnicamente
-                    sólidas, respetando plazos y presupuesto, garantizando
-                    claridad en cada etapa del proceso.
+                    <strong className="font-semibold  text-[#002B49]">
+                      Crear, ejecutar y gestionar soluciones innovadoras
+                    </strong>{" "}
+                    para resolver proyectos de ingeniería, construcción y
+                    montajes industriales, honrando los compromisos asumidos y
+                    las relaciones a largo plazo con nuestros clientes.
                   </p>
                 </div>
               </div>
@@ -179,10 +226,10 @@ export default function NosotrosPage() {
                 style={{ transitionDuration: `${IMG_FOCUS_MS}ms` }}
               >
                 <Image
-                  src="/images/original/grua.JPG"
+                  src="/images/original/equipo.JPG"
                   alt="Misión"
                   fill
-                  className="object-cover saturate-70 contrast-80"
+                  className="object-cover saturate-70 contrast-110"
                 />
 
                 {/* Overlay negro */}
@@ -191,7 +238,10 @@ export default function NosotrosPage() {
               </div>
             </div>
           </div>
-
+          <NewsletterCTA
+            withEmail
+            onSubmit={(email) => console.log("signup:", email)}
+          />
           <Footer />
         </section>
       </main>

@@ -10,6 +10,7 @@ export type ProyectoTerminado = {
   imageSrc: string;
   highlights: string[];
   href: string; // <-- link al detalle
+  logoSrc: string; // 👈 logo del edificio
 };
 
 export default function ProyectoTerminadoCard({ p }: { p: ProyectoTerminado }) {
@@ -27,7 +28,7 @@ export default function ProyectoTerminadoCard({ p }: { p: ProyectoTerminado }) {
   "
     >
       {/* POSTER vertical */}
-      <article className="relative h-[480px] sm:h-[220px] lg:h-[460px]">
+      <article className="relative aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5]">
         <Image
           src={p.imageSrc}
           alt={p.title}
@@ -49,9 +50,12 @@ export default function ProyectoTerminadoCard({ p }: { p: ProyectoTerminado }) {
         </div>
 
         {/* Badge */}
-        <div className="absolute left-6 top-6 z-10 rounded-full bg-white/90 px-4 py-1 text-[11px] font-bold tracking-widest uppercase text-[#062a47] backdrop-blur">
+        {/* <div
+          className="absolute  z-10 rounded-full bg-white/90  left-4 top-4 px-3 py-1 text-[10px]
+font-bold tracking-widest uppercase text-[#062a47] backdrop-blur"
+        >
           Desarrollado
-        </div>
+        </div> */}
 
         {/* Título estilo logo (abajo, grande, no centrado) */}
         <div
@@ -85,23 +89,26 @@ export default function ProyectoTerminadoCard({ p }: { p: ProyectoTerminado }) {
           className="
     pointer-events-none
     absolute bottom-0 left-0 right-0 z-10
-    p-6
-    opacity-0 translate-y-6 scale-[0.98]
+    p-2
+    opacity-0 translate-y-4 scale-[0.98]
     transition-all duration-700
     ease-[cubic-bezier(0.22,1,0.36,1)]  delay-100    md:group-hover:opacity-100
     md:group-hover:translate-y-0
     md:group-hover:scale-100
   "
         >
-          <div className="bg-white/10 backdrop-blur-md border border-white/15 p-4 shadow-[0_12px_30px_rgba(0,0,0,0.25)]">
-            <div className="flex items-center justify-between gap-4">
-              <p className="text-sm text-white/85">
-                {p.location} · {p.type}
-              </p>
-              <span className="rounded-full border border-white/25 px-3 py-1 text-xs font-semibold text-white/90">
-                {p.year}
-              </span>
-            </div>
+          <div className="flex items-end justify-center h-full pb-4">
+            <Image
+              src={p.logoSrc}
+              alt={`${p.title} logo`}
+              width={70}
+              height={40}
+              className="
+      object-contain
+      opacity-95
+      drop-shadow-xl
+    "
+            />
           </div>
         </div>
       </article>

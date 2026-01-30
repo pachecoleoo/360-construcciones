@@ -4,8 +4,12 @@ type ButtonProps = {
   href: string;
   children: React.ReactNode;
   variant?: "dark" | "light";
-  icon?: React.ReactNode; // 👈 SVG / icon custom
+  icon?: React.ReactNode;
   className?: string;
+
+  // ✅ agregá estas:
+  target?: React.HTMLAttributeAnchorTarget;
+  rel?: string;
 };
 
 export default function Button({
@@ -14,12 +18,16 @@ export default function Button({
   variant = "dark",
   icon,
   className = "",
+  target,
+  rel,
 }: ButtonProps) {
   const isDark = variant === "dark";
 
   return (
     <a
       href={href}
+      target={target}
+      rel={rel}
       className={`
         group relative inline-flex items-center gap-3
         border px-6 py-3
@@ -30,19 +38,17 @@ export default function Button({
         ${className}
       `}
     >
-      {/* Fondo animado */}
       <span
         aria-hidden="true"
         className={`
           absolute inset-0
-          translate-x-[-100%]
+          translate-x-full
           transition-transform duration-900 ease-out
           ${isDark ? "bg-[#002849]" : "bg-white"}
           group-hover:translate-x-0
         `}
       />
 
-      {/* Texto */}
       <span
         className={`
           relative z-10 transition-colors duration-300
@@ -52,13 +58,11 @@ export default function Button({
         {children}
       </span>
 
-      {/* Ícono (opcional) */}
       {icon && (
         <span
           aria-hidden="true"
           className={`
-            relative z-10
-            flex items-center
+            relative z-10 flex items-center
             transition-transform duration-300
             group-hover:translate-x-1
             ${isDark ? "group-hover:text-white" : "group-hover:text-[#081835]"}

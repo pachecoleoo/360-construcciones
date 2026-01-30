@@ -6,6 +6,7 @@ import ProjectsSection from "@/components/proyectos/ProjectsSection";
 import type { ProyectoTerminado } from "@/components/proyectos/ProyectoTerminadoCard";
 import type { ProyectoFuturo } from "@/components/proyectos/ProyectoFuturoCard";
 import Footer from "@/components/footer/Footer";
+import NewsletterCTA from "@/components/NewsletterCTA";
 
 const DESARROLLOS: ProyectoTerminado[] = [
   {
@@ -17,6 +18,7 @@ const DESARROLLOS: ProyectoTerminado[] = [
     imageSrc: "/images/renders/belgrano531.jpg",
     highlights: ["Hormigón visto", "Detalle técnico", "Entrega llave en mano"],
     href: "/proyectos/belgrano-531",
+    logoSrc: "/images/marca/Belgrano 531.png",
   },
   {
     id: "d2",
@@ -27,6 +29,7 @@ const DESARROLLOS: ProyectoTerminado[] = [
     imageSrc: "/images/renders/gatica.jpg",
     highlights: ["Eficiencia", "Calidad", "Terminaciones premium"],
     href: "/proyectos/Gatica",
+    logoSrc: "",
   },
   {
     id: "d3",
@@ -37,6 +40,7 @@ const DESARROLLOS: ProyectoTerminado[] = [
     imageSrc: "/images/renders/mendoza331.jpg",
     highlights: ["Ingeniería", "Control", "Ejecución"],
     href: "/proyectos/Mendoza",
+    logoSrc: "",
   },
   {
     id: "d4",
@@ -47,6 +51,7 @@ const DESARROLLOS: ProyectoTerminado[] = [
     imageSrc: "/images/renders/cordoba434.jpg",
     highlights: ["Ingeniería", "Control", "Ejecución"],
     href: "/proyectos/Mendoza",
+    logoSrc: "",
   },
   {
     id: "d5",
@@ -57,6 +62,7 @@ const DESARROLLOS: ProyectoTerminado[] = [
     imageSrc: "/images/renders/salta256.jpg",
     highlights: ["Ingeniería", "Control", "Ejecución"],
     href: "/proyectos/Mendoza",
+    logoSrc: "",
   },
   {
     id: "d6",
@@ -67,6 +73,7 @@ const DESARROLLOS: ProyectoTerminado[] = [
     imageSrc: "/images/renders/salta246.jpg",
     highlights: ["Ingeniería", "Control", "Ejecución"],
     href: "/proyectos/Mendoza",
+    logoSrc: "/images/marca/Belgrano 531.png",
   },
 ];
 
@@ -105,7 +112,7 @@ export default function ProyectosPage() {
         eyebrow="PROYECTOS"
         title={heroState.title}
         subtitle={heroState.subtitle}
-        imageSrc="/images/construccion2.jpg"
+        imageSrc="/images/original/frameGatica3.jpg"
       />
 
       <main className="bg-white">
@@ -115,6 +122,8 @@ export default function ProyectosPage() {
           onHeroChange={setHeroState}
         />
       </main>
+
+      <NewsletterCTA />
       <Footer />
     </>
   );

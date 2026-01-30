@@ -36,7 +36,7 @@ export default function SectionWhoWeAre() {
           observer.disconnect();
         }
       },
-      { threshold: 0.25 }
+      { threshold: 0.25 },
     );
 
     observer.observe(ref.current);
@@ -97,7 +97,7 @@ export default function SectionWhoWeAre() {
 
             {/* CTA a Nosotros */}
             <div className="mt-8">
-              <Button href="#Nosotros" variant="dark">
+              <Button href="./../nosotros" variant="dark">
                 Conocé más
               </Button>
             </div>
