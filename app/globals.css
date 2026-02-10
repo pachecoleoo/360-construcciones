@@ -1,3 +1,4 @@
+@config "../tailwind.config.cjs";
 @import "tailwindcss";
 
 :root {
@@ -63,37 +64,40 @@ html {
 /* =========================
    FONTS
 ========================= */
+
+/* Condensed — texto normal | className="font-body font-normal"
+*/
 @font-face {
   font-family: "Helvetica LT Std";
   src: url("/fonts/HelveticaLTStd-Cond.woff2") format("woff2");
-  font-weight: 500;
+  font-weight: 400;
   font-style: normal;
-  font-display: swap;
 }
-
-@font-face {
-  font-family: "Helvetica LT Std";
-  src: url("/fonts/HelveticaLTStd-BIkCond.woff2") format("woff2");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
+/* Extra Compressed — subtítulos |className="font-extra font-extrabold"
+ */
 @font-face {
   font-family: "Helvetica LT Std Extra";
   src: url("/fonts/HelveticaLTStd-ExtraComp.woff2") format("woff2");
   font-weight: 800;
   font-style: normal;
-  font-display: swap;
 }
 
+/* Ultra Compressed — hero/logo | className="font-ultra font-black tracking-tight" */
 @font-face {
   font-family: "Helvetica LT Std Ultra";
   src: url("/fonts/HelveticaLTStd-UltraComp.woff2") format("woff2");
-  font-weight: 800;
+  font-weight: 950;
   font-style: normal;
-  font-display: swap;
 }
+/* Black Condensed — títulos fuertes | className="font-heading font-black"
+ */
+@font-face {
+  font-family: "Helvetica LT Std";
+  src: url("/fonts/HelveticaLTStd-BIkCond.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -101,6 +105,71 @@ html {
   }
   to {
     opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   HERO REVEAL — 360 STYLE
+========================= */
+
+/* eyebrow */
+.hero-eyebrow {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: heroFadeUp 600ms ease-out forwards;
+  animation-delay: 80ms;
+}
+
+/* title completo */
+.hero-title {
+  opacity: 0;
+  transform: translateY(28px);
+  filter: blur(6px);
+  animation: heroBlurUp 950ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 160ms;
+}
+
+/* highlight azul (un poquito más tarde y más “sharp”) */
+.hero-highlight {
+  animation: heroHighlight 1.2s ease-out forwards;
+}
+
+/* subtitle */
+.hero-subtitle {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: heroFadeUp 700ms ease-out forwards;
+  animation-delay: 520ms;
+}
+
+/* keyframes */
+
+@keyframes heroFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroBlurUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* pequeño “pop” elegante para el azul */
+@keyframes heroHighlight {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
     transform: translateY(0);
   }
 }

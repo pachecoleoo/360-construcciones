@@ -3,14 +3,15 @@
 import HeroBackground from "@/components/HeroBackground";
 import { useMemo, useState } from "react";
 import ProjectsSection from "@/components/proyectos/ProjectsSection";
-import type { ProyectoTerminado } from "@/components/proyectos/ProyectoTerminadoCard";
-import type { ProyectoFuturo } from "@/components/proyectos/ProyectoFuturoCard";
 import Footer from "@/components/footer/Footer";
 import NewsletterCTA from "@/components/NewsletterCTA";
+import type { ProyectoUnified } from "@/components/proyectos/types";
 
-const DESARROLLOS: ProyectoTerminado[] = [
+const PROJECTS: ProyectoUnified[] = [
+  // ===== DESARROLLADOS =====
   {
     id: "d1",
+    status: "desarrollado",
     title: "531 BELGRANO",
     location: "Neuquén Capital, Belgrano 531",
     year: "2024",
@@ -22,105 +23,97 @@ const DESARROLLOS: ProyectoTerminado[] = [
   },
   {
     id: "d2",
+    status: "desarrollado",
     title: "498 GATICA",
-    location: "Neuquen",
+    location: "Neuquén",
     year: "2023",
     type: "Mixto",
     imageSrc: "/images/renders/gatica.jpg",
     highlights: ["Eficiencia", "Calidad", "Terminaciones premium"],
-    href: "/proyectos/Gatica",
-    logoSrc: "",
+    href: "/proyectos/gatica",
+    logoSrc: "", // si está vacío, el card no muestra logo
   },
   {
     id: "d3",
-    title: "MENDOZA 331",
-    location: "Neuquen, Mendoza 331",
+    status: "desarrollado",
+    title: "331 MENDOZA",
+    location: "Neuquén, Mendoza 331",
     year: "2022",
     type: "Residencial",
     imageSrc: "/images/renders/mendoza331.jpg",
     highlights: ["Ingeniería", "Control", "Ejecución"],
-    href: "/proyectos/Mendoza",
+    href: "/proyectos/mendoza",
     logoSrc: "",
   },
   {
     id: "d4",
-    title: "CORDOBA 434",
-    location: "Neuquen, Cordoba 434",
+    status: "desarrollado",
+    title: "434 CORDOBA",
+    location: "Neuquén, Córdoba 434",
     year: "2022",
     type: "Residencial",
     imageSrc: "/images/renders/cordoba434.jpg",
     highlights: ["Ingeniería", "Control", "Ejecución"],
-    href: "/proyectos/Mendoza",
+    href: "/proyectos/cordoba",
     logoSrc: "",
   },
   {
     id: "d5",
-    title: "SALTA 256",
-    location: "Neuquen, Salta 256",
+    status: "desarrollado",
+    title: "256 SALTA",
+    location: "Neuquén, Salta 256",
     year: "2022",
     type: "Residencial",
     imageSrc: "/images/renders/salta256.jpg",
     highlights: ["Ingeniería", "Control", "Ejecución"],
-    href: "/proyectos/Mendoza",
+    href: "/proyectos/salta-256",
     logoSrc: "",
   },
   {
     id: "d6",
-    title: "SALTA 246",
-    location: "Neuquen, Salta 246",
+    status: "desarrollado",
+    title: "246 SALTA",
+    location: "Neuquén, Salta 246",
     year: "2022",
     type: "Residencial",
     imageSrc: "/images/renders/salta246.jpg",
     highlights: ["Ingeniería", "Control", "Ejecución"],
-    href: "/proyectos/Mendoza",
+    href: "/proyectos/salta-246",
     logoSrc: "/images/marca/Belgrano 531.png",
   },
-];
 
-const FUTUROS: ProyectoFuturo[] = [
+  // ===== EN EJECUCIÓN =====
   {
-    id: "f1",
+    id: "e1",
+    status: "ejecucion",
     title: "Proyecto #1",
     description: "Ubicación · Tipología · Estado actual de obra.",
-    badge: "En desarrollo",
-  },
-  {
-    id: "f2",
-    title: "Proyecto #2",
-    description: "Ubicación · Tipología · Estado actual de obra.",
-    badge: "En desarrollo",
-  },
-  {
-    id: "f3",
-    title: "Proyecto #3",
-    description: "Ubicación · Tipología · Estado actual de obra.",
-    badge: "En desarrollo",
+    badge: "En ejecución",
+    // opcional: imageSrc si querés mostrar imagen también acá
+    // imageSrc: "/images/renders/proyecto1.jpg",
   },
 ];
 
 export default function ProyectosPage() {
-  // si querés que el hero cambie con la tab:
-  const [heroState, setHeroState] = useState({
-    title: "Proyectos terminados",
-    subtitle:
-      "Obras finalizadas con estándar técnico, planificación y ejecución controlada.",
+  const [heroState] = useState({
+    title: "Proyectos",
+    subtitle: "Obras desarrolladas y desarrollos en ejecución",
   });
+
+  // si después filtrás/sort, tiene sentido useMemo; si no, podés pasar PROJECTS directo
+  const projects = useMemo(() => PROJECTS, []);
 
   return (
     <>
       <HeroBackground
-        eyebrow="PROYECTOS"
+        eyebrow=""
         title={heroState.title}
         subtitle={heroState.subtitle}
         imageSrc="/images/original/frameGatica3.jpg"
       />
 
       <main className="bg-white">
-        <ProjectsSection
-          desarrollos={DESARROLLOS}
-          futuros={FUTUROS}
-          onHeroChange={setHeroState}
-        />
+        <ProjectsSection projects={projects} />
       </main>
 
       <NewsletterCTA />

@@ -27,8 +27,10 @@ export default function NosotrosPage() {
   return (
     <>
       <HeroBackground
-        eyebrow="Nosotros"
-        title="Construimos con método, calidad y compromiso."
+        eyebrow=""
+        title={`En 360 construimos  
+con metodo, calidad y compromiso`}
+        highlight={[" 360"]}
         subtitle="Arquitectura e ingeniería con planificación, control técnico y ejecución enfocada en detalle y eficiencia."
         imageSrc="/images/original/frameGatica4.jpg"
         align="left"
@@ -132,7 +134,7 @@ export default function NosotrosPage() {
                 style={{ transitionDuration: `${IMG_FOCUS_MS}ms` }}
               >
                 <Image
-                  src="/images/original/equipo3.JPG"
+                  src="/images/original/obreros.JPG"
                   alt="Visión"
                   fill
                   className="object-cover saturate-70 contrast-110"

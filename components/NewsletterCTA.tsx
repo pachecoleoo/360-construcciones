@@ -3,7 +3,11 @@
 import { useState } from "react";
 
 export default function NewsletterCTA({
-  title = "Suscribite a nuestro newsletter",
+  title = (
+    <>
+      Suscribite a nuestro <span className="text-brand-blue">newsletter</span>
+    </>
+  ),
   subtitle = "Novedades, avances de obra y lanzamientos. Sin spam.",
   buttonText = "SUSCRIBIRSE",
   onSubmit,
@@ -54,7 +58,7 @@ export default function NewsletterCTA({
           <div className="flex flex-col gap-6 md:gap-8 md:flex-row md:items-center md:justify-between">
             {/* TEXTO */}
             <div className="min-w-0">
-              <h3 className="font-heading font-black uppercase text-white text-2xl md:text-3xl leading-tight">
+              <h3 className="font-ultra  text-white text-4xl md:text-5xl leading-tight">
                 {title}
               </h3>
               <p className="mt-2 font-body text-white/70 text-sm md:text-base max-w-2xl">

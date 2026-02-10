@@ -18,7 +18,7 @@ export default function SectionTwo() {
           observer.disconnect();
         }
       },
-      { threshold: 0.35 }
+      { threshold: 0.35 },
     );
 
     observer.observe(ref.current);
@@ -62,7 +62,7 @@ export default function SectionTwo() {
         <div className=" order-1 md:order-2 text-center md:text-right max-w-3xl mt-5 md:ml-auto">
           <h2 className="font-heading font-black uppercase tracking-[0.02em] text-4xl md:text-6xl text-white leading-[1.05] ">
             Infraestructura
-            <br />y movimiento de suelo
+            <br />y movimiento
           </h2>
 
           <div className="mt-10 ">

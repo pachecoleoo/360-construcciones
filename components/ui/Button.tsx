@@ -42,7 +42,7 @@ export default function Button({
         aria-hidden="true"
         className={`
           absolute inset-0
-          translate-x-full
+          translate-x-[-100%]
           transition-transform duration-900 ease-out
           ${isDark ? "bg-[#002849]" : "bg-white"}
           group-hover:translate-x-0

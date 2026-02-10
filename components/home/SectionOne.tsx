@@ -18,7 +18,7 @@ export default function SectionOne() {
           observer.disconnect();
         }
       },
-      { threshold: 0.35 }
+      { threshold: 0.35 },
     );
 
     observer.observe(ref.current);
@@ -47,7 +47,7 @@ export default function SectionOne() {
 
           <div className="mt-10">
             <Button
-              href="#proyectos-desarrollados"
+              href="/proyectos"
               variant="dark"
               icon={
                 <svg

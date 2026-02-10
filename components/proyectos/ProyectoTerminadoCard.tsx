@@ -12,6 +12,11 @@ export type ProyectoTerminado = {
   href: string; // <-- link al detalle
   logoSrc: string; // 👈 logo del edificio
 };
+function splitLeadingNumber(title: string) {
+  const m = title.match(/^(\d+)\s+(.*)$/);
+  if (!m) return { num: "", rest: title };
+  return { num: m[1], rest: m[2] };
+}
 
 export default function ProyectoTerminadoCard({ p }: { p: ProyectoTerminado }) {
   return (
@@ -69,17 +74,32 @@ font-bold tracking-widest uppercase text-[#062a47] backdrop-blur"
   "
         >
           {" "}
-          <h2
-            className="
-      text-white
-      text-4xl sm:text-5xl md:text-6xl
-      font-extrabold tracking-tight
-      leading-[0.95]
-      drop-shadow-2xl
-    "
-          >
-            {p.title}
-          </h2>
+          {(() => {
+            const { num, rest } = splitLeadingNumber(p.title);
+
+            return (
+              <h2
+                className="
+    text-white
+    text-4xl sm:text-5xl md:text-6xl
+    tracking-normal 
+    leading-[0.95]
+drop-shadow-[0_0_26px_rgba(6,42,71,0.95)]
+  "
+              >
+                {num ? (
+                  <>
+                    <span className="font-ultra text-6xl tracking-[-0.01em] ">
+                      {num}
+                    </span>{" "}
+                    <span className="font-extra  text-6xl ">{rest}</span>
+                  </>
+                ) : (
+                  <span className="font-extra font-black">{rest}</span>
+                )}
+              </h2>
+            );
+          })()}
         </div>
 
         {/* Footer info abajo (se oculta en hover) */}

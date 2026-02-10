@@ -40,9 +40,9 @@ export default function AboutStats() {
 
       {/* ✅ Contenido arriba de todo */}
       <div className="relative z-10 mx-auto max-w-6xl text-center font-body">
-        <p className="text-[#C9D8E2] text-xs tracking-[0.35em] uppercase font-medium">
+        {/* <p className="text-[#C9D8E2] text-xs tracking-[0.35em] uppercase font-medium">
           360 Construcciones
-        </p>
+        </p> */}
 
         <h2 className="mt-5 text-white text-4xl md:text-6xl font-heading font-black uppercase tracking-[0.02em] leading-[1.05]">
           Construimos proyectos

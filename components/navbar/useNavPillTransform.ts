@@ -6,7 +6,7 @@ import { usePathname, useSearchParams } from "next/navigation";
 export type NavItem = {
   label: string;
   href: string;
-  match?: (pathname: string, estado: string | null) => boolean;
+  match?: (pathname: string, estado?: string | null) => boolean;
   variant?: "link" | "cta";
 };
 

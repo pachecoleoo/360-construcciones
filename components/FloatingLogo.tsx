@@ -24,12 +24,12 @@ animate-[fadeIn_.5s_ease]
       "
     >
       <Image
-        src="/brand/360blanco.png"
+        src="/brand/360blanco2.png"
         alt="360 Construcciones"
         width={70}
         height={70}
         className="
-          w-14 md:w-16 h-auto
+          w-14 md:w-20 h-auto
           opacity-90 hover:opacity-100
         "
         priority

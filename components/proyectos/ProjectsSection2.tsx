@@ -1,5 +1,6 @@
-import ProyectoCard from "@/components/proyectos/ProyectoCard";
-import type { ProyectoUnified } from "@/components/proyectos/types";
+import ProyectoTerminadoCard from "@/components/proyectos/ProyectoTerminadoCard";
+import ProyectoFuturoCard from "@/components/proyectos/ProyectoFuturoCard";
+import type { ProyectoUnified } from "@/app/proyectos/page"; // si no te gusta importar desde page, te digo abajo cómo mover el type
 
 export default function ProjectsSection({
   projects,
@@ -19,9 +20,13 @@ export default function ProjectsSection({
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((p) => (
-            <ProyectoCard key={p.id} p={p} />
-          ))}
+          {projects.map((p) =>
+            p.status === "desarrollado" ? (
+              <ProyectoTerminadoCard key={p.id} p={p} />
+            ) : (
+              <ProyectoFuturoCard key={p.id} p={p} />
+            ),
+          )}
         </div>
       </div>
     </section>
