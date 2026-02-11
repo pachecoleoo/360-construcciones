@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import FloatingNavbar from "@/components/FloatingNavbar";
 import FloatingLogo from "@/components/FloatingLogo";
+import { Suspense } from "react";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({
@@ -25,7 +26,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <FloatingNavbar />
+        <Suspense fallback={null}>
+          <FloatingNavbar />
+        </Suspense>
 
         <main>{children}</main>
         <FloatingLogo />

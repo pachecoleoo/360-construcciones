@@ -251,7 +251,7 @@ export default function ContactFormSection({
                       Llamar
                     </a>
                     <a
-                      href="https://wa.me/5490000000000" // <-- cambiá
+                      href="" // <-- cambiá
                       target="_blank"
                       rel="noreferrer"
                       className="rounded-2xl px-4 py-2 text-sm font-semibold text-white hover:opacity-95"

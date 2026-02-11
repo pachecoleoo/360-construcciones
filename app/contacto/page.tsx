@@ -3,6 +3,7 @@
 import Image from "next/image";
 import HeroBackground from "@/components/HeroBackground";
 import Footer from "@/components/footer/Footer";
+import { Suspense } from "react";
 import { useReveal } from "@/components/hooks/useReveal";
 import NewsletterCTA from "@/components/NewsletterCTA";
 import ContactFormSection from "@/components/contacto/ContactFormSection";
@@ -15,7 +16,9 @@ export default function NosotrosPage() {
     <>
       <HeroImagen />
       {/* <Tipografias /> */}
-      <ContactFormSection />
+      <Suspense fallback={null}>
+        <ContactFormSection />
+      </Suspense>
       <LocationSection />
       <SocialSection />
       <NewsletterCTA />
