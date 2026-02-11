@@ -4,16 +4,8 @@ import Image from "next/image";
 import HeroBackground from "@/components/HeroBackground";
 import Footer from "@/components/footer/Footer";
 import { useReveal } from "@/components/hooks/useReveal";
-import PartnersMarquee from "@/components/PartnersMarquee";
 import NewsletterCTA from "@/components/NewsletterCTA";
 import Button from "@/components/ui/Button";
-const PARTNERS = [
-  // { name: "Marca 1", logoSrc: "/partners/marca1.png", href: "https://..." },
-  { name: "Marca 2", logoSrc: "/partners/marca2.png" },
-  { name: "Marca 3", logoSrc: "/partners/marca3.png" },
-  { name: "Marca 4", logoSrc: "/partners/marca4.png" },
-  { name: "Marca 5", logoSrc: "/partners/marca5.png" },
-];
 
 export default function NosotrosPage() {
   // Fade de cada section (suave)

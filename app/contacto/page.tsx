@@ -4,7 +4,6 @@ import Image from "next/image";
 import HeroBackground from "@/components/HeroBackground";
 import Footer from "@/components/footer/Footer";
 import { useReveal } from "@/components/hooks/useReveal";
-import PartnersMarquee from "@/components/PartnersMarquee";
 import NewsletterCTA from "@/components/NewsletterCTA";
 import ContactFormSection from "@/components/contacto/ContactFormSection";
 import LocationSection from "@/components/contacto/LocationSection";
