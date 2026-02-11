@@ -44,7 +44,7 @@ export default function SectionWhoWeAre() {
   }, []);
 
   return (
-    <section className="relative bg-white py-20 md:py-24 px-6 overflow-hidden">
+    <section className="relative bg-white py-10  md:py-16 md:px-6 px-8 my-0 overflow-hidden">
       {/* Blueprint grid sutil (muy leve, para “ingeniería”) */}
       <div
         aria-hidden="true"
@@ -74,21 +74,22 @@ export default function SectionWhoWeAre() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           <div className="lg:col-span-6">
             {/* Eyebrow */}
-            <p className="font-body text-[#081835]/70 text-xs tracking-[0.28em] uppercase">
+            {/* <p className="font-body text-[#081835]/70 text-xs tracking-[0.28em] uppercase">
               360 Construcciones
-            </p>
+            </p> */}
 
             {/* Slogan / headline */}
-            <h2 className="mt-4 font-heading font-black uppercase tracking-[0.02em] text-4xl md:text-6xl text-[#002849] leading-[1.05]">
+            <h2 className="mt-4  font-heading font-black uppercase tracking-[0.02em] text-4xl md:text-6xl text-[#002849] leading-[1.05]">
               Construimos con método,
               <br />
-              entregamos con precisión
+              entregamos con
+              <br /> precisión
             </h2>
           </div>
 
           <div className="lg:col-span-6">
             {/* Quiénes somos */}
-            <p className=" mt-16 font-body text-[#081835]/80 text-base md:text-lg leading-relaxed">
+            <p className=" mt-0  md:mt-16 font-body  text-[#081835]/80 text-base md:text-lg leading-relaxed">
               Somos una empresa orientada a la arquitectura, la ingeniería y la
               ejecución de obras con gestión integral. Nos involucramos desde la
               planificación hasta la entrega final, cuidando el detalle técnico,
@@ -103,10 +104,6 @@ export default function SectionWhoWeAre() {
             </div>
           </div>
         </div>
-
-        {/* micro línea técnica
-              <div className="mt-6 h-px w-full bg-gradient-to-r from-transparent via-[#002849]/20 to-transparent" />
-            </div> */}
       </div>
     </section>
   );

@@ -1,15 +1,20 @@
 import Image from "next/image";
-import { ButtonA } from "../ui/ButtonA";
-import { ButtonB } from "../ui/ButtonB";
-import { ButtonC } from "../ui/ButtonC";
-import { BrandButtonA } from "../ui/BrandButtonA";
-import { BrandButtonB } from "../ui/BrandButtonB";
+// import { ButtonA } from "../ui/ButtonA";
+// import { ButtonB } from "../ui/ButtonB";
+// import { ButtonC } from "../ui/ButtonC";
+// import { BrandButtonA } from "../ui/BrandButtonA";
+// import { BrandButtonB } from "../ui/BrandButtonB";
 import { BrandButtonC } from "../ui/BrandButtonC";
 export default function HeroVideo() {
   return (
     <section className="relative h-screen w-full overflow-hidden">
       <video
-        className="absolute inset-0 h-full w-full object-cover"
+        className="
+    absolute inset-0 h-full w-full
+    object-cover
+    object-[center_25%]
+    md:object-center
+  "
         src="/images/buildvideo.mp4"
         autoPlay
         muted
@@ -25,7 +30,7 @@ export default function HeroVideo() {
             360 Construcciones
           </h1> */}
           {/* LOGO */}
-          <div className="mx-auto w-[420px] md:w-[420px]">
+          <div className="mx-auto w-[320px] md:w-[420px]">
             <div className="logo-reveal">
               <Image
                 src="/brand/logoBlanco.png"

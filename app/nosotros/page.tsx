@@ -119,29 +119,35 @@ con metodo, calidad y compromiso`}
               {/* IMAGEN FULL HEIGHT IZQUIERDA (blur lento) */}
               <div
                 className={`
-                  lg:col-span-3 relative
-                  transition-[filter] ease-out
-                  ${s2.visible ? "blur-0" : "blur-md"}
-                `}
+                  relative overflow-hidden group h-[40vh] sm:h-[45vh] lg:h-auto
+    lg:col-span-3 transition-[filter] ease-out
+    ${s2.visible ? "blur-0" : "blur-md"}
+  `}
                 style={{ transitionDuration: `${IMG_FOCUS_MS}ms` }}
               >
                 <Image
                   src="/images/original/obreros.JPG"
                   alt="Visión"
                   fill
-                  className="object-cover saturate-70 contrast-110"
+                  className="
+  object-cover
+  object-[center_25%]
+  md:object-center
+  will-change-transform
+  transition-transform duration-700 ease-out
+  group-hover:scale-105
+"
                 />
 
-                {/* Overlay negro para unificar */}
                 <div className="absolute inset-0 bg-black/45 mix-blend-multiply" />
-                {/* Vignette suave */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
               </div>
 
               {/* TEXTO */}
               <div
                 className={`
-    lg:col-span-9 flex items-center px-8 md:px-16 py-14 md:py-16
+   lg:col-span-9 flex items-center px-8 sm:px-8 md:px-16 py-14 sm:py-14 md:py-16
+
     transition-all ease-out delay-300 duration-700
     ${s2.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}
   `}
@@ -213,20 +219,21 @@ con metodo, calidad y compromiso`}
               {/* IMAGEN FULL HEIGHT DERECHA (blur lento) */}
               <div
                 className={`
-                  lg:col-span-3 relative
-                  transition-[filter] ease-out
-                  ${s3.visible ? "blur-0" : "blur-md"}
-                `}
+    lg:col-span-3 relative
+    h-[38vh] sm:h-[44vh] lg:h-auto
+    transition-[filter] ease-out
+    ${s3.visible ? "blur-0" : "blur-md"}
+  `}
                 style={{ transitionDuration: `${IMG_FOCUS_MS}ms` }}
               >
                 <Image
                   src="/images/original/equipo.JPG"
                   alt="Misión"
                   fill
-                  className="object-cover saturate-70 contrast-110"
+                  sizes="(max-width: 1024px) 100vw, 25vw"
+                  className="object-cover object-center saturate-70 contrast-110"
                 />
 
-                {/* Overlay negro */}
                 <div className="absolute inset-0 bg-black/45 mix-blend-multiply" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
               </div>

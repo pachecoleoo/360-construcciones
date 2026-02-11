@@ -17,7 +17,7 @@ export default function HeroImage() {
       <div className="absolute inset-0 bg-black/45" />
 
       {/* Contenido */}
-      <div className="relative z-10 flex h-full items-center justify-center px-6">
+      <div className="relative z-10 flex h-full items-center justify-center px-0 md:px-6">
         <div className="text-center max-w-3xl">
           {/* TÍTULO */}
           <h1
