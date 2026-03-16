@@ -45,11 +45,11 @@ export default function HeroVideo() {
           </div>
 
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <BrandButtonC href="/proyectos" variant="primary">
+            <BrandButtonC href="/proyectos" variant="outline">
               Desarrollo Inmobiliario
             </BrandButtonC>
 
-            <BrandButtonC href="/" variant="secondary">
+            <BrandButtonC href="/" variant="outline">
               Infraestructura y movimientos de suelos
             </BrandButtonC>
           </div>
