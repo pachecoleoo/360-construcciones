@@ -259,7 +259,7 @@ export default function ContactFormSection() {
                         placeholder="Email"
                         value={values.email}
                         onChange={onChange("email")}
-                        className={inputClass(errors.email)}
+                        className={inputClass(!!errors.name)}
                       />
 
                       {submitted && errors.email && (
