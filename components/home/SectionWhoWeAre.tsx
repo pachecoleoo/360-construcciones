@@ -44,7 +44,10 @@ export default function SectionWhoWeAre() {
   }, []);
 
   return (
-    <section className="relative bg-white py-10  md:py-16 md:px-6 px-8 my-0 overflow-hidden">
+    <section
+      id="primera-seccion"
+      className="relative bg-white py-10  md:py-16 md:px-6 px-8 my-0 overflow-hidden"
+    >
       {/* Blueprint grid sutil (muy leve, para “ingeniería”) */}
       <div
         aria-hidden="true"

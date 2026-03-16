@@ -1,24 +1,19 @@
 "use client";
 
-import Image from "next/image";
-import HeroBackground from "@/components/HeroBackground";
+// import Image from "next/image";
+// import HeroBackground from "@/components/HeroBackground";
+// import Tipografias from "@/components/TypographyDebugSection";
 import Footer from "@/components/footer/Footer";
-import { Suspense } from "react";
-import { useReveal } from "@/components/hooks/useReveal";
 import NewsletterCTA from "@/components/NewsletterCTA";
 import ContactFormSection from "@/components/contacto/ContactFormSection";
 import LocationSection from "@/components/contacto/LocationSection";
 import SocialSection from "@/components/contacto/SocialSection";
-import Tipografias from "@/components/TypographyDebugSection";
 import HeroImagen from "@/components/contacto/HeroImage";
 export default function NosotrosPage() {
   return (
     <>
       <HeroImagen />
-      {/* <Tipografias /> */}
-      <Suspense fallback={null}>
-        <ContactFormSection />
-      </Suspense>
+      <ContactFormSection />
       <LocationSection />
       <SocialSection />
       <NewsletterCTA />

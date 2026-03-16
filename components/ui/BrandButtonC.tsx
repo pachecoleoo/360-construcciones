@@ -1,9 +1,10 @@
 import React from "react";
 
-type Props = {
+type ButtonProps = {
   href: string;
   children: React.ReactNode;
   variant?: "solid" | "outline";
+  icon?: React.ReactNode;
   className?: string;
   target?: React.HTMLAttributeAnchorTarget;
   rel?: string;
@@ -17,11 +18,12 @@ export function BrandButtonC({
   href,
   children,
   variant = "solid",
+  icon,
   className,
   target,
   rel,
-}: Props) {
-  const solid = variant === "solid";
+}: ButtonProps) {
+  const isSolid = variant === "solid";
 
   return (
     <a
@@ -29,53 +31,52 @@ export function BrandButtonC({
       target={target}
       rel={rel}
       className={cx(
-        "group relative inline-flex items-center justify-center",
-        "rounded-none border px-7 py-3",
-
-        // "font-body text-xs uppercase tracking-[0.18em] font-semibold",
-
-        // Ultra Compressed (hero / 360 gigante
-        // " font-ultra font-[950] tracking-tight  text-xxl  ",
-
-        // Extra Compressed (subtítulos)
-        // " font-extra font-extrabold text-xxl  ",
-
-        // Black Condensed (títulos principales)
-        // "font-heading font-black text-xxl  ",
-
-        // Condensed (texto normal)
-        "font-body font-normal  text-xxl  ",
-
-        "transition-transform duration-200",
-        "focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#081835]",
-        solid
-          ? "bg-white text-[#081835] border-white/35"
-          : "bg-transparent text-white border-white/40",
+        "group relative inline-flex items-center justify-center overflow-hidden",
+        "min-h-[54px] px-6 md:px-8",
+        "rounded-none",
+        "transition-all duration-500 ease-out",
+        "uppercase text-[11px] md:text-[12px] tracking-[0.16em] font-medium",
+        "border",
+        isSolid
+          ? "border-white/20 bg-[#0b1f33]/70 text-white"
+          : "border-white/25 bg-transparent text-white/90",
+        "hover:border-white/40 hover:text-white",
+        "focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent",
         className,
       )}
     >
-      {/* Placa offset */}
+      {/* fondo hover deslizante */}
       <span
         aria-hidden="true"
         className={cx(
-          "absolute inset-0 -z-10 translate-x-2 translate-y-2",
-          "transition-transform duration-200 group-hover:translate-x-0 group-hover:translate-y-0",
-          solid ? "bg-[#062a47]" : "bg-white/25",
+          "absolute inset-0 origin-left scale-x-0 transition-transform duration-500 ease-out group-hover:scale-x-100",
+          isSolid ? "bg-white/10" : "bg-white/8",
         )}
       />
 
-      {/* Hover invert para outline */}
-      {!solid && (
-        <span
-          aria-hidden="true"
-          className="absolute inset-0 -z-10 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-        />
-      )}
-
+      {/* línea izquierda técnica */}
       <span
-        className={cx("relative z-10", !solid && "group-hover:text-[#081835]")}
-      >
-        {children}
+        aria-hidden="true"
+        className="absolute left-0 top-0 h-full w-[2px] bg-white/60 transition-all duration-500 group-hover:w-[6px]"
+      />
+
+      {/* línea superior fina */}
+      <span
+        aria-hidden="true"
+        className="absolute left-0 top-0 h-px w-full bg-white/20"
+      />
+
+      <span className="relative z-10 flex items-center gap-3">
+        <span>{children}</span>
+
+        {icon && (
+          <span
+            aria-hidden="true"
+            className="transition-transform duration-500 group-hover:translate-x-1"
+          >
+            {icon}
+          </span>
+        )}
       </span>
     </a>
   );

@@ -1,10 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import { ReactNode } from "react";
 
 type HeroBackgroundProps = {
   title: string;
-  highlight?: string[]; // palabras o frases exactas a colorear (case-sensitive)
-  highlightClassName?: string; // opcional para override
+  highlight?: string[];
+  highlightClassName?: string;
   eyebrow?: string;
   subtitle?: string;
   imageSrc: string;
@@ -18,7 +20,6 @@ function renderHighlightedText(
 ): ReactNode[] {
   if (!highlights?.length) return [text];
 
-  // Filtra vacíos y ordena por longitud desc (para priorizar frases largas)
   const sorted = [...highlights]
     .map((h) => h?.trim())
     .filter(Boolean) as string[];
@@ -40,7 +41,6 @@ function renderHighlightedText(
         const chunk = pieces[i];
         if (chunk) out.push(chunk);
 
-        // Inserta el token entre piezas (menos al final)
         if (i < pieces.length - 1) {
           out.push(
             <span key={`hl-${key++}`} className={className}>
@@ -72,6 +72,12 @@ export default function HeroBackground({
     highlightClassName,
   );
 
+  const scrollNext = () => {
+    document
+      .getElementById("primera-seccion")
+      ?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section className="relative min-h-screen overflow-hidden">
       <Image src={imageSrc} alt="" fill priority className="object-cover" />
@@ -82,14 +88,14 @@ export default function HeroBackground({
       <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/60 to-transparent" />
 
       <div className="relative z-10 min-h-screen">
-        <div className="mx-auto max-w-7xl px-6 min-h-screen flex items-center pt-[var(--nav-h)]">
+        <div className="mx-auto flex min-h-screen max-w-7xl items-center px-6 pt-[var(--nav-h)]">
           <div
             className={
-              align === "center" ? "mx-auto text-center max-w-4xl" : "max-w-4xl"
+              align === "center" ? "mx-auto max-w-4xl text-center" : "max-w-4xl"
             }
           >
             {eyebrow ? (
-              <p className="text-white/75 text-xs tracking-[0.35em] uppercase">
+              <p className="text-xs uppercase tracking-[0.35em] text-white/75">
                 {eyebrow}
               </p>
             ) : null}
@@ -97,26 +103,58 @@ export default function HeroBackground({
             <h1
               className="hero-title
                 mt-4
-                font-extra font-black  uppercase
-                text-white
-                text-6xl md:text-7xl
+                whitespace-pre-line
+                text-6xl
+                font-extra
+                font-black
+                uppercase
                 leading-[1.02]
                 tracking-[0.01em]
-                whitespace-pre-line
+                text-white
                 [text-shadow:0_8px_30px_rgba(0,0,0,0.55)]
+                md:text-7xl
               "
             >
               {titleNodes}
             </h1>
 
             {subtitle ? (
-              <p className="hero-subtitle mt-6 text-white/90 text-sm md:text-base max-w-3xl">
+              <p className="hero-subtitle mt-6 max-w-3xl text-sm text-white/90 md:text-base">
                 {subtitle}
               </p>
             ) : null}
           </div>
         </div>
       </div>
+
+      {/* flecha scroll */}
+      <button
+        type="button"
+        onClick={scrollNext}
+        aria-label="Ir a la primera sección"
+        className="
+          absolute bottom-10 left-1/2 z-20 -translate-x-1/2
+          flex flex-col items-center gap-2
+          text-white/70 transition
+          hover:text-white
+          animate-bounce
+        "
+      >
+        {/* <span className="text-[10px] uppercase tracking-[0.35em]">
+          Primera sección
+        </span> */}
+
+        <svg
+          width="56"
+          height="36"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        >
+          <path d="M6 9l6 6 6-6" />
+        </svg>
+      </button>
     </section>
   );
 }

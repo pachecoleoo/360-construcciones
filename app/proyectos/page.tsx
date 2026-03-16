@@ -112,7 +112,7 @@ export default function ProyectosPage() {
         imageSrc="/images/original/frameGatica3.jpg"
       />
 
-      <main className="bg-white">
+      <main id="primera-seccion" className="bg-white">
         <ProjectsSection projects={projects} />
       </main>
 
