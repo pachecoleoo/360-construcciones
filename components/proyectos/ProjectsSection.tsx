@@ -6,6 +6,9 @@ export default function ProjectsSection({
 }: {
   projects: ProyectoUnified[];
 }) {
+  const desarrollados = projects.filter((p) => p.status === "desarrollado");
+  const ejecucion = projects.filter((p) => p.status === "ejecucion");
+
   return (
     <section className="py-16">
       <div className="mx-auto max-w-7xl px-6">
@@ -18,11 +21,41 @@ export default function ProjectsSection({
           </p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((p) => (
-            <ProyectoCard key={p.id} p={p} />
-          ))}
-        </div>
+        {/* DESARROLLADOS */}
+        {desarrollados.length > 0 && (
+          <div className="mb-14">
+            <div className="mb-6">
+              <h3 className="text-xl md:text-2xl font-bold uppercase tracking-[0.04em] text-[#062a47]">
+                Obras desarrolladas
+              </h3>
+              <div className="mt-3 h-[2px] w-16 bg-[#062a47]" />
+            </div>
+
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {desarrollados.map((p) => (
+                <ProyectoCard key={p.id} p={p} />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* EN EJECUCIÓN */}
+        {ejecucion.length > 0 && (
+          <div>
+            <div className="mb-6">
+              <h3 className="text-xl md:text-2xl font-bold uppercase tracking-[0.04em] text-[#062a47]">
+                Proyectos en ejecución
+              </h3>
+              <div className="mt-3 h-[2px] w-16 bg-[#062a47]" />
+            </div>
+
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {ejecucion.map((p) => (
+                <ProyectoCard key={p.id} p={p} />
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

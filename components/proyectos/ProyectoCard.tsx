@@ -9,48 +9,62 @@ function splitLeadingNumber(title: string) {
 }
 
 export default function ProyectoCard({ p }: { p: ProyectoUnified }) {
-  // ✅ VARIANTE: EN EJECUCIÓN
+  const href = "slug" in p && p.slug ? `/proyectos/${p.slug}` : undefined;
+
   if (p.status === "ejecucion") {
+    const Wrapper = href ? Link : "div";
+    const wrapperProps = href
+      ? {
+          href,
+          className:
+            "group block rounded-3xl border border-slate-200 overflow-hidden bg-white shadow-sm hover:shadow-md transition",
+        }
+      : {
+          className:
+            "group block rounded-3xl border border-slate-200 overflow-hidden bg-white shadow-sm hover:shadow-md transition",
+        };
+
     return (
-      <article className="rounded-3xl border border-slate-200 overflow-hidden bg-white shadow-sm hover:shadow-md transition">
-        <div className="relative h-48 bg-slate-200">
-          {/* Placeholder blueprint */}
-          <div className="pointer-events-none absolute inset-0 opacity-[0.12]">
-            <div className="absolute inset-0 [background-image:linear-gradient(to_right,rgba(0,0,0,.18)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,.18)_1px,transparent_1px)] [background-size:32px_32px]" />
+      <Wrapper {...wrapperProps}>
+        <article>
+          <div className="relative h-48 bg-slate-200">
+            <div className="pointer-events-none absolute inset-0 opacity-[0.12]">
+              <div className="absolute inset-0 [background-image:linear-gradient(to_right,rgba(0,0,0,.18)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,.18)_1px,transparent_1px)] [background-size:32px_32px]" />
+            </div>
+
+            <div className="absolute left-5 top-5 rounded-full bg-white/90 px-3 py-1 text-[11px] font-bold tracking-widest uppercase text-[#062a47] backdrop-blur">
+              {p.badge ?? "En ejecución"}
+            </div>
           </div>
 
-          <div className="absolute left-5 top-5 rounded-full bg-white/90 px-3 py-1 text-[11px] font-bold tracking-widest uppercase text-[#062a47] backdrop-blur">
-            {p.badge ?? "En ejecución"}
+          <div className="p-6">
+            <h4 className="text-lg font-bold text-slate-900">{p.title}</h4>
+
+            {p.description ? (
+              <p className="mt-2 text-sm text-slate-600">{p.description}</p>
+            ) : null}
+
+            <div className="mt-5 h-px w-full bg-slate-200" />
+
+            <div className="mt-4 flex items-center justify-between">
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#3b2358]">
+                En ejecución
+              </span>
+
+              <span className="text-xs text-slate-500 transition group-hover:text-slate-700">
+                {href ? "Ver detalles →" : "Próximamente"}
+              </span>
+            </div>
           </div>
-        </div>
-
-        <div className="p-6">
-          <h4 className="text-lg font-bold text-slate-900">{p.title}</h4>
-          {p.description ? (
-            <p className="mt-2 text-sm text-slate-600">{p.description}</p>
-          ) : null}
-
-          <div className="mt-5 h-px w-full bg-slate-200" />
-
-          <div className="mt-4 flex items-center justify-between">
-            <span className="text-xs font-semibold uppercase tracking-widest text-[#3b2358]">
-              En ejecución
-            </span>
-            <span className="text-xs text-slate-500 hover:text-slate-700 transition">
-              Ver detalles →
-            </span>
-          </div>
-        </div>
-      </article>
+        </article>
+      </Wrapper>
     );
   }
 
-  // ✅ VARIANTE: DESARROLLADO (terminado)
-  // Si no hay href, igual renderiza como “card”, pero sin Link.
-  const Wrapper: any = p.href ? Link : "div";
-  const wrapperProps = p.href
+  const Wrapper = href ? Link : "div";
+  const wrapperProps = href
     ? {
-        href: p.href,
+        href,
         className:
           "group block border border-slate-300 bg-white overflow-hidden transition-all duration-500 shadow-[0_12px_28px_rgba(0,0,0,0.12)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.22)] focus:outline-none focus:ring-2 focus:ring-[#062a47]/30",
       }
@@ -69,21 +83,17 @@ export default function ProyectoCard({ p }: { p: ProyectoUnified }) {
             fill
             className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
             sizes="(max-width: 1024px) 100vw, 33vw"
-            priority={false}
           />
         ) : (
           <div className="absolute inset-0 bg-slate-200" />
         )}
 
-        {/* Overlay */}
         <div className="absolute inset-0 bg-black/55 transition duration-500 group-hover:bg-black/15" />
 
-        {/* Blueprint lines sutil (corregido) */}
         <div className="pointer-events-none absolute inset-0 opacity-[0.12]">
           <div className="absolute inset-0 [background-image:linear-gradient(to_right,rgba(255,255,255,.35)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,.35)_1px,transparent_1px)] [background-size:32px_32px]" />
         </div>
 
-        {/* Título */}
         <div
           className="
             absolute inset-x-0 bottom-0 z-20
@@ -96,6 +106,7 @@ export default function ProyectoCard({ p }: { p: ProyectoUnified }) {
         >
           {(() => {
             const { num, rest } = splitLeadingNumber(p.title);
+
             return (
               <h2
                 className="
@@ -121,7 +132,6 @@ export default function ProyectoCard({ p }: { p: ProyectoUnified }) {
           })()}
         </div>
 
-        {/* Logo en hover (si existe) */}
         {p.logoSrc ? (
           <div
             className="

@@ -196,7 +196,7 @@ con metodo, calidad y compromiso`}
     ${s2.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}
   `}
               >
-                <div className="max-w-3xl ml-30 sm:ml-0">
+                <div className="max-w-3xl ml-10 sm:ml-0">
                   <h2 className="mt-4 font-heading font-black uppercase text-5xl md:text-6xl leading-[1.05]">
                     Visión
                   </h2>
@@ -257,16 +257,16 @@ con metodo, calidad y compromiso`}
     ${s3.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}
   `}
               >
-                <div className="max-w-3xl">
+                <div className="max-w-3xl ml-10 md:ml-30">
                   {/* <p className="font-body text-xs tracking-[0.28em] uppercase text-[#002B49]/60">
                     Declaración
                   </p> */}
 
-                  <h2 className="mt-4 ml-30 font-heading font-black uppercase text-5xl md:text-6xl text-[#002B49] leading-[1.05]">
+                  <h2 className="mt-4 font-heading font-black uppercase text-5xl md:text-6xl text-[#002B49] leading-[1.05]">
                     Misión
                   </h2>
 
-                  <p className="ml-30 mt-8 font-body text-[#002B49]/85 text-base md:text-xl leading-relaxed">
+                  <p className=" mt-8 font-body text-[#002B49]/85 text-base md:text-xl leading-relaxed">
                     <strong className="font-semibold  text-[#002B49]">
                       Crear, ejecutar y gestionar soluciones innovadoras
                     </strong>{" "}

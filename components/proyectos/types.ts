@@ -4,6 +4,12 @@ export type ProyectoUnified = {
   id: string;
   status: ProyectoStatus;
   title: string;
+  slug: string;
+
+  // común
+  imageSrc?: string; // imagen de card / secundaria
+  heroImageSrc?: string; // imagen principal del hero
+  logoSrc?: string;
 
   // ejecución
   description?: string;
@@ -14,9 +20,12 @@ export type ProyectoUnified = {
   year?: string;
   type?: string;
   highlights?: string[];
-  href?: string;
-  logoSrc?: string;
 
-  // común (si querés usar imagen para ambos)
-  imageSrc?: string;
+  // contenido interno
+  sectionEyebrow?: string;
+  sectionTitle?: string;
+  paragraphs?: string[];
+
+  technicalTitle?: string;
+  technicalItems?: string[];
 };

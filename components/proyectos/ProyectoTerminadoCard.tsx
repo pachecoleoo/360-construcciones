@@ -42,18 +42,15 @@ export default function ProyectoTerminadoCard({ p }: { p: ProyectoTerminado }) {
           sizes="(max-width: 1024px) 100vw, 33vw"
           priority={false}
         />
-
         {/* Overlay base (suave) */}
         <div className="absolute inset-0 bg-black/55 transition duration-500 group-hover:bg-black/15" />
-
-        {/* Blueprint lines sutil */}
+        Blueprint lines sutil
         <div className="pointer-events-none absolute inset-0 opacity-[0.12]">
           <div
             className="absolute inset-0  background-image:linear-gradient(to_right,rgba(255,255,255,.35)_1px, transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,.35)_1px,transparent_1px)] 
             [bg-size:32px_32px]"
           />
         </div>
-
         {/* Badge */}
         {/* <div
           className="absolute  z-10 rounded-full bg-white/90  left-4 top-4 px-3 py-1 text-[10px]
@@ -61,7 +58,6 @@ font-bold tracking-widest uppercase text-[#062a47] backdrop-blur"
         >
           Desarrollado
         </div> */}
-
         {/* Título estilo logo (abajo, grande, no centrado) */}
         <div
           className="
@@ -101,7 +97,6 @@ drop-shadow-[0_0_26px_rgba(6,42,71,0.95)]
             );
           })()}
         </div>
-
         {/* Footer info abajo (se oculta en hover) */}
         {/* Banner glass (SOLO en hover) */}
         {/* Banner glass (aparece SOLO en hover – transición armónica) */}
