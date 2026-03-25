@@ -3,25 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import Button from "@/components/ui/Button";
 
-const values = [
-  {
-    title: "Calidad",
-    desc: "Ejecución precisa, materiales adecuados y control en cada etapa.",
-  },
-  {
-    title: "Seguridad",
-    desc: "Protocolos, prevención y responsabilidad en obra como prioridad.",
-  },
-  {
-    title: "Cumplimiento",
-    desc: "Planificación realista y entrega a tiempo, con transparencia.",
-  },
-  {
-    title: "Gestión integral",
-    desc: "Acompañamiento completo: diseño, obra, coordinación y entrega.",
-  },
-];
-
 export default function SectionWhoWeAre() {
   const ref = useRef<HTMLDivElement | null>(null);
   const [visible, setVisible] = useState(false);
