@@ -1,3 +1,5 @@
+export type ProyectoStatus = "desarrollado" | "ejecucion" | "futuro";
+
 export type ProjectSection =
   | {
       type: "intro";
@@ -58,3 +60,31 @@ export type ProjectSection =
       title: string;
       description: string;
     };
+
+export type ProyectoUnified = {
+  id: string;
+  status: ProyectoStatus;
+  title: string;
+  slug: string;
+
+  location?: string;
+  year?: string;
+  type?: string;
+
+  imageSrc?: string;
+  heroImageSrc?: string;
+  logoSrc?: string;
+
+  description?: string;
+  badge?: string;
+  highlights?: string[];
+
+  sectionEyebrow?: string;
+  sectionTitle?: string;
+  paragraphs?: string[];
+
+  technicalTitle?: string;
+  technicalItems?: string[];
+
+  sections?: ProjectSection[];
+};
