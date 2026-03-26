@@ -2,8 +2,9 @@ import ProjectHero from "@/components/proyectos/sections/ProjectHero";
 import ProjectAmenities from "@/components/proyectos/sections/ProjectAmenities";
 import ProjectIntroWithData from "@/components/proyectos/sections/ProjectIntroWithData";
 import ProjectGallery from "@/components/proyectos/sections/ProjectGallery";
-import ProjectCTA from "@/components/proyectos/sections/ProjectCTA";
 import ProjectLocationMap from "@/components/proyectos/sections/ProjectLocationMap";
+// import ProjectGallerySlider from "@/components/proyectos/sections/ProjectGallerySlider";
+import ProjectGallerySlider2 from "@/components/proyectos/sections/ProjectGallerySlider2";
 import Footer from "@/components/footer/Footer";
 export default function Belgrano531Page() {
   return (
@@ -14,16 +15,8 @@ export default function Belgrano531Page() {
         heroImageSrc="/images/belgrano/afuera.jpg"
       />
 
-      {/* <ProjectIntro
-        eyebrow="Descripción general"
-        title="Arquitectura, detalle y presencia urbana"
-        paragraphs={[
-          "Belgrano 531 es un desarrollo concebido para integrarse al tejido urbano de Neuquén con una imagen contemporánea, sólida y sobria.",
-          "La propuesta combina lenguaje arquitectónico, funcionalidad y una lectura técnica del proyecto, buscando expresar calidad constructiva y una presencia clara dentro de la ciudad.",
-        ]}
-      /> */}
       <ProjectIntroWithData
-        eyebrow="Descripción general"
+        eyebrow=""
         title="Arquitectura, detalle y presencia urbana"
         paragraphs={[
           "Belgrano 531 es un desarrollo concebido para integrarse al tejido urbano de Neuquén con una imagen contemporánea, sólida y sobria.",
@@ -41,7 +34,7 @@ export default function Belgrano531Page() {
       />
 
       <ProjectAmenities
-        title="Prestaciones del desarrollo"
+        title="Amenities"
         items={[
           {
             icon: "/icons/pileta.png",
@@ -75,43 +68,72 @@ export default function Belgrano531Page() {
           },
         ]}
       />
+
       <ProjectGallery
-        eyebrow="Visual del proyecto"
-        title="Imagen y material del desarrollo"
+        eyebrow=""
+        title="GALERIA DE LA OBRA"
+        intro="Una lectura visual de los espacios, materiales y atmósfera general del desarrollo."
         images={[
           {
-            // src: "/images/belgrano/renders/balcon.jpg",
-            src: "/images/belgrano/cochera.jpg",
-            alt: "Vista principal",
-            label: "Vista principal",
+            src: "/images/belgrano/balcon2.jpg",
+            alt: "Cocina integrada",
+            label: "Cocina integrada",
           },
           {
             src: "/images/belgrano/renders/terraza.jpg",
-            alt: "Acceso",
-            label: "Acceso",
+            alt: "Terraza exterior",
+            label: "Terraza exterior",
           },
           {
-            // src: "/images/belgrano/renders/cocina.jpg",
-            src: "/images/belgrano/balcon.jpg",
-            alt: "Fachada",
-            label: "Fachada",
+            src: "/images/belgrano/renders/balcon.jpg",
+            alt: "Balcón con visuales",
+            label: "Balcón con visuales",
           },
           {
-            // src: "/images/belgrano/renders/living.jpg",
-            src: "/images/belgrano/balcon2.jpg",
-            alt: "Detalle arquitectónico",
-            label: "Detalle arquitectónico",
+            src: "/images/belgrano/renders/living.jpg",
+            alt: "Living principal",
+            label: "Living principal",
           },
         ]}
       />
-
       <ProjectLocationMap
-        title="Ubicación del desarrollo"
+        title="Ubicación"
         description="Belgrano 531 se implanta en una ubicación estratégica dentro del tejido urbano de Neuquén, con acceso a servicios, equipamientos y los principales corredores de circulación de la ciudad."
         address="Belgrano 531, Neuquén Capital, Argentina"
         mapQuery="Belgrano 531, Neuquén Capital, Argentina"
       />
-      <ProjectCTA />
+
+      <ProjectGallerySlider2
+        eyebrow=""
+        title="Recorrido"
+        description="Explorá los distintos espacios del desarrollo a través de renders y
+            visualizaciones. Una mirada integral del proyecto, su diseño y su
+            integración con el entorno urbano."
+        metaLabel="Dirección"
+        metaValue="Belgrano 531, Neuquén Capital, Argentina"
+        images={[
+          {
+            src: "/images/belgrano/renders/cocina.jpg",
+            alt: "Frente del edificio",
+            label: "Frente del edificio",
+          },
+          {
+            src: "/images/belgrano/renders/terraza.jpg",
+            alt: "Vista de la calle",
+            label: "Vista de la calle",
+          },
+          {
+            src: "/images/belgrano/renders/balcon.jpg",
+            alt: "Acceso inmediato",
+            label: "Acceso inmediato",
+          },
+          {
+            src: "/images/belgrano/renders/cocina.jpg",
+            alt: "Entorno urbano",
+            label: "Entorno urbano",
+          },
+        ]}
+      />
       <Footer />
     </main>
   );

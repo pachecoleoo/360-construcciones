@@ -32,7 +32,7 @@ export function BrandButtonC({
       rel={rel}
       className={cx(
         "group relative inline-flex items-center justify-center overflow-hidden",
-        "min-h-[54px] px-6 md:px-8",
+        "min-h-[34px]  px-6 md:px-8",
         "rounded-none",
         "transition-all duration-500 ease-out",
         "uppercase text-[11px] md:text-[12px] tracking-[0.16em] font-medium",
