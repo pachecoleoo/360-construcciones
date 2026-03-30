@@ -40,7 +40,7 @@ function useInViewOnce<T extends HTMLElement>() {
 }
 
 export default function ProjectLocationMap({
-  eyebrow = "Ubicación",
+  eyebrow = "",
   title,
   description,
   address,

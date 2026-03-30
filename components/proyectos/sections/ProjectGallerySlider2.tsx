@@ -71,7 +71,7 @@ export default function ProjectGallerySlider2({
               "font-heading font-black",
               "text-[120px] md:text-[180px]",
               "leading-none",
-              "text-[#0b2f4a]/10",
+              "text-[#C9D8E2]/60",
               "transition-all duration-1000 ease-out",
               visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6",
             )}

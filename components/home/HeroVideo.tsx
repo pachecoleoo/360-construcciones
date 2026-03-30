@@ -19,7 +19,7 @@ export default function HeroVideo() {
           object-[center_25%]
           md:object-center
         "
-        src="/images/buildvideo.mp4"
+        src="/images/VIDEOPORTADA.mp4"
         autoPlay
         muted
         loop

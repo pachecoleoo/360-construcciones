@@ -3,16 +3,16 @@ import ProjectAmenities from "@/components/proyectos/sections/ProjectAmenities";
 import ProjectIntroWithData from "@/components/proyectos/sections/ProjectIntroWithData";
 import ProjectGallery from "@/components/proyectos/sections/ProjectGallery";
 import ProjectLocationMap from "@/components/proyectos/sections/ProjectLocationMap";
-// import ProjectGallerySlider from "@/components/proyectos/sections/ProjectGallerySlider";
+import ProjectContactForm from "@/components/proyectos/sections/ProjectContactForm";
 import ProjectGallerySlider2 from "@/components/proyectos/sections/ProjectGallerySlider2";
 import Footer from "@/components/footer/Footer";
-export default function Belgrano531Page() {
+export default function EdificioPage() {
   return (
     <main className="bg-white text-slate-900">
       <ProjectHero
         title="Belgrano 531"
         location="Neuquén, Argentina"
-        heroImageSrc="/images/belgrano/afuera.jpg"
+        heroImageSrc="/images/belgrano/afuera.JPG"
       />
 
       <ProjectIntroWithData
@@ -31,6 +31,13 @@ export default function Belgrano531Page() {
           { label: "Ambientes", value: "2, 3, 4 & 5 " },
           { label: "Pisos", value: "19" },
         ]}
+        button={{
+          label: "Ver brochure",
+          href: "/brochures/belgrano531.pdf",
+          variant: "dark",
+          target: "_blank",
+          rel: "noopener noreferrer",
+        }}
       />
 
       <ProjectAmenities
@@ -75,7 +82,7 @@ export default function Belgrano531Page() {
         intro="Una lectura visual de los espacios, materiales y atmósfera general del desarrollo."
         images={[
           {
-            src: "/images/belgrano/balcon2.jpg",
+            src: "/images/belgrano/balcon2.JPG",
             alt: "Cocina integrada",
             label: "Cocina integrada",
           },
@@ -114,25 +121,30 @@ export default function Belgrano531Page() {
         images={[
           {
             src: "/images/belgrano/renders/cocina.jpg",
-            alt: "Frente del edificio",
-            label: "Frente del edificio",
+            alt: "Cocina",
+            label: "Cocina",
           },
           {
             src: "/images/belgrano/renders/terraza.jpg",
-            alt: "Vista de la calle",
-            label: "Vista de la calle",
+            alt: "Terraza",
+            label: "Terraza",
           },
           {
             src: "/images/belgrano/renders/balcon.jpg",
-            alt: "Acceso inmediato",
-            label: "Acceso inmediato",
+            alt: "Balcon",
+            label: "Balcon",
           },
           {
-            src: "/images/belgrano/renders/cocina.jpg",
-            alt: "Entorno urbano",
-            label: "Entorno urbano",
+            src: "/images/belgrano/renders/living.jpg",
+            alt: "Living",
+            label: "Living",
           },
         ]}
+      />
+      <ProjectContactForm
+        eyebrow="Contacto"
+        title="SOLICITÁ MÁS INFORMACIÓN"
+        intro="Completá el formulario y te contactaremos para compartirte detalles del proyecto, disponibilidad y documentación comercial."
       />
       <Footer />
     </main>

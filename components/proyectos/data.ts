@@ -153,13 +153,4 @@ export const PROJECTS: ProyectoUnified[] = [
       "Calidad final del conjunto",
     ],
   },
-
-  {
-    id: "e1",
-    status: "ejecucion",
-    title: "Proyecto #1",
-    description: "Ubicación · Tipología · Estado actual de obra.",
-    badge: "En ejecución",
-    slug: "",
-  },
 ];

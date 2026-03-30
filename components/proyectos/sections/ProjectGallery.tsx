@@ -65,7 +65,7 @@ export default function ProjectGallery({
     <section
       id="galeria"
       ref={ref}
-      className="border-t border-[#d9dde2] bg-[#f4f5f6] py-20 md:py-24"
+      className="border-t border-[#d9dde2] bg-[#f4f5f6] pt-20 md:pt-24"
     >
       <div className="mx-auto max-w-[1280px] px-6 md:px-10">
         {/* HEADER */}
@@ -76,7 +76,7 @@ export default function ProjectGallery({
               "pointer-events-none absolute right-0 -top-10 md:-top-10  select-none",
               "font-heading font-black leading-none",
               "text-[120px] md:text-[180px]",
-              "text-[#062a47]/10",
+              "text-[#C9D8E2]/60",
               "transition-all duration-1000 ease-out",
               visible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0",
             )}
@@ -150,7 +150,8 @@ export default function ProjectGallery({
           visible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0",
         )}
       >
-        <div className="min-h-[85vh]">
+        <div className="h-[85vh] overflow-hidden">
+          {" "}
           {/* MOBILE */}
           <div className="block md:hidden">
             <div className="relative h-[55vh] w-full overflow-hidden">
@@ -202,9 +203,9 @@ export default function ProjectGallery({
               ))}
             </div>
           </div>
-
           {/* DESKTOP */}
-          <div className="hidden min-h-[85vh] md:grid md:grid-cols-[1.8fr_0.7fr]">
+          <div className="hidden h-full md:grid md:grid-cols-[1.8fr_0.7fr] gap-[2px] bg-white/40">
+            {" "}
             {/* principal */}
             <article className="relative overflow-hidden">
               <div
@@ -226,9 +227,9 @@ export default function ProjectGallery({
                 </p>
               </div>
             </article>
-
             {/* columna lateral */}
-            <div className="grid grid-cols-1">
+            <div className="grid h-full grid-rows-3 gap-[2px] ">
+              {" "}
               {sideImages.map((image, index) => {
                 const realIndex = safeImages.findIndex(
                   (img) => img.src === image.src,

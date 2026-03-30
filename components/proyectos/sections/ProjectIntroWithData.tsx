@@ -8,12 +8,21 @@ type DataItem = {
   value: string;
 };
 
+type IntroButton = {
+  label: string;
+  href: string;
+  variant?: "dark" | "light";
+  target?: string;
+  rel?: string;
+};
+
 type ProjectIntroWithDataProps = {
   eyebrow?: string;
   title: string;
   paragraphs: string[];
   dataTitle?: string;
   items: DataItem[];
+  button?: IntroButton;
 };
 
 function cx(...classes: Array<string | false | null | undefined>) {
@@ -51,6 +60,7 @@ export default function ProjectIntroWithData({
   paragraphs,
   dataTitle = "Información",
   items,
+  button,
 }: ProjectIntroWithDataProps) {
   const { ref, visible } = useInViewOnce<HTMLElement>();
 
@@ -144,24 +154,26 @@ export default function ProjectIntroWithData({
               </div>
 
               {/* BOTÓN */}
-              <div
-                className={cx(
-                  "mt-8",
-                  "transition-all duration-700 delay-300 ease-out",
-                  visible
-                    ? "translate-y-0 opacity-100"
-                    : "translate-y-5 opacity-0",
-                )}
-              >
-                <Button
-                  href="/brochures/belgrano531.pdf"
-                  variant="dark"
-                  target="_blank"
-                  rel="noopener noreferrer"
+              {button && (
+                <div
+                  className={cx(
+                    "mt-8",
+                    "transition-all duration-700 delay-300 ease-out",
+                    visible
+                      ? "translate-y-0 opacity-100"
+                      : "translate-y-5 opacity-0",
+                  )}
                 >
-                  Brochure
-                </Button>
-              </div>
+                  <Button
+                    href={button.href}
+                    variant={button.variant ?? "dark"}
+                    target={button.target}
+                    rel={button.rel}
+                  >
+                    {button.label}
+                  </Button>
+                </div>
+              )}
             </div>
           </div>
 
