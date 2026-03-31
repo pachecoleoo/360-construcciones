@@ -33,7 +33,7 @@ export default function EdificioPage() {
         ]}
         button={{
           label: "Ver brochure",
-          href: "/brochures/belgrano531.pdf",
+          href: "/brochures/Belgrano531.pdf",
           variant: "dark",
           target: "_blank",
           rel: "noopener noreferrer",

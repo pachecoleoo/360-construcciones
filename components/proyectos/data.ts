@@ -128,29 +128,4 @@ export const PROJECTS: ProyectoUnified[] = [
       "Ejecución integral",
     ],
   },
-  {
-    id: "d6",
-    status: "desarrollado",
-    title: "246 SALTA",
-    location: "Neuquén, Salta 246",
-    year: "2022",
-    type: "Residencial",
-    imageSrc: "/images/renders/salta246.jpg",
-    highlights: ["Ingeniería", "Control", "Ejecución"],
-    slug: "salta-246",
-    logoSrc: "/images/marca/Belgrano 531.png",
-
-    sectionEyebrow: "Descripción general",
-    sectionTitle: "Desarrollo residencial con identidad técnica",
-    paragraphs: [
-      "246 Salta se ejecutó bajo una lógica de calidad, precisión y seguimiento continuo, alineada con la forma de trabajo de 360 Construcciones.",
-      "El desarrollo prioriza funcionalidad, consistencia constructiva y una imagen final sobria, clara y contemporánea.",
-    ],
-    technicalTitle: "Claves constructivas",
-    technicalItems: [
-      "Ingeniería y control",
-      "Seguimiento de ejecución",
-      "Calidad final del conjunto",
-    ],
-  },
 ];

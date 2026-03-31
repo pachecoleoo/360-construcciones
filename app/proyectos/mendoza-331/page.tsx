@@ -38,7 +38,7 @@ export default function Belgrano531Page() {
         ]}
         button={{
           label: "Ver brochure",
-          href: "/brochures/mendoza331.pdf",
+          href: "/brochures/Mendoza331.pdf",
           variant: "dark",
           target: "_blank",
           rel: "noopener noreferrer",

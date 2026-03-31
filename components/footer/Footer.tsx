@@ -3,12 +3,15 @@
 import Link from "next/link";
 
 const NAV = [
-  { label: "Proyectos", href: "/proyectos" },
+  { label: "Inicio", href: "/" },
   { label: "Nosotros", href: "/nosotros" },
-  { label: "Servicios", href: "/#NuestrosServicios" },
-  { label: "Desarrollos", href: "/proyectos?estado=desarrollados" },
+  {
+    label: "Infraestructura y movimiento de suelos",
+    href: "/infraestructura",
+  },
+  { label: "Proyectos", href: "/proyectos?estado=desarrollados" },
   { label: "En ejecución", href: "/proyectos?estado=en-desarrollo" },
-  { label: "Contacto", href: "/#Contacto" },
+  { label: "Contacto", href: "/contacto" },
 ];
 
 export default function Footer() {

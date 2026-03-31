@@ -38,7 +38,7 @@ export default function EdificioPage() {
         ]}
         button={{
           label: "Ver brochure",
-          href: "/brochures/cordoba434.pdf",
+          href: "/brochures/Cordoba434.pdf",
           variant: "dark",
           target: "_blank",
           rel: "noopener noreferrer",

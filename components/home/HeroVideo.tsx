@@ -74,7 +74,7 @@ export default function HeroVideo() {
                 variant="ghost"
                 className="w-full"
               >
-                Infraestructura y suelos
+                Infraestructura y movimiento de suelos
               </BrandButtonC>
             </div>
           </div>

@@ -69,7 +69,7 @@ export default function SectionTwo() {
           <div className="mt-10 ">
             <div className="mt-10">
               <Button
-                href="#NuestrosServicios"
+                href="/infraestructura"
                 variant="light"
                 icon={
                   <svg

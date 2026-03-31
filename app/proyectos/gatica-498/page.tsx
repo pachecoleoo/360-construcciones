@@ -34,7 +34,7 @@ export default function EdificioPage() {
         ]}
         button={{
           label: "Ver brochure",
-          href: "/brochures/gatica498.pdf",
+          href: "/brochures/Gatica498.pdf",
           variant: "dark",
           target: "_blank",
           rel: "noopener noreferrer",

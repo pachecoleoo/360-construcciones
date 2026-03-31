@@ -7,6 +7,11 @@ import { NavItem, useNavPillTransform } from "./navbar/useNavPillTransform";
 const NAV: NavItem[] = [
   { label: "Inicio", href: "/", match: (p) => p === "/" },
   { label: "Proyectos", href: "/proyectos", match: (p) => p === "/proyectos" },
+  {
+    label: "Infraestructura",
+    href: "/infraestructura",
+    match: (p) => p === "/infraestructura",
+  },
   { label: "Nosotros", href: "/nosotros", match: (p) => p === "/nosotros" },
   {
     label: "Contacto",
@@ -80,7 +85,7 @@ export default function FloatingNavbar() {
     "relative z-10 inline-flex items-center justify-center whitespace-nowrap rounded-full transition",
     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/25",
     scrolled ? "h-9 px-4 text-[13px]" : "h-10 px-4 text-[13px]",
-    "border border-transparent",
+    "border border-transparent font-medium",
   );
 
   return (
@@ -96,7 +101,7 @@ export default function FloatingNavbar() {
       <div
         className={cx(
           "rounded-full border transition-all duration-300 ease-out",
-          "backdrop-blur-xl",
+          "backdrop-blur-xxl",
           scrolled
             ? cx(
                 "bg-slate-950/92 border-white/12",
@@ -124,7 +129,10 @@ export default function FloatingNavbar() {
               )}
               style={{
                 ...pillStyle,
-                opacity: activeIndex === -1 ? 0 : 1,
+                opacity:
+                  activeIndex === -1 || NAV[activeIndex]?.variant === "cta"
+                    ? 0
+                    : 1,
               }}
             />
 
@@ -141,14 +149,36 @@ export default function FloatingNavbar() {
                   }}
                   className={cx(
                     baseItem,
-                    active ? "text-white" : "text-white/70 hover:text-white",
+                    !isCta &&
+                      (active
+                        ? "text-white"
+                        : "text-white/70 hover:text-white"),
                     isCta &&
                       cx(
-                        "ml-1 border border-white/15 bg-white/5",
-                        "hover:bg-white/10 hover:border-white/25",
-                        "hover:shadow-[0_12px_35px_rgba(255,255,255,0.18)]",
-                        "active:scale-[0.98] active:bg-white/15",
-                        "transition-all duration-200 ease-out",
+                        "ml-2",
+                        "border",
+                        "backdrop-blur-xl",
+                        active
+                          ? [
+                              "text-white",
+                              "border-[#b9d2e6]/45",
+                              "bg-[linear-gradient(180deg,rgba(167,197,222,0.22)_0%,rgba(103,132,160,0.18)_100%)]",
+                              "shadow-[0_14px_40px_rgba(5,18,33,0.45),0_0_0_1px_rgba(185,210,230,0.10),inset_0_1px_0_rgba(255,255,255,0.22)]",
+                              "hover:border-[#c9deee]/55",
+                              "hover:bg-[linear-gradient(180deg,rgba(177,205,228,0.26)_0%,rgba(108,139,170,0.22)_100%)]",
+                            ].join(" ")
+                          : [
+                              "text-white/92",
+                              "border-[#b5cade]/28",
+                              "bg-[linear-gradient(180deg,rgba(120,145,170,0.14)_0%,rgba(70,90,112,0.10)_100%)]",
+                              "shadow-[0_10px_28px_rgba(5,18,33,0.30),inset_0_1px_0_rgba(255,255,255,0.14)]",
+                              "hover:text-white",
+                              "hover:border-[#c7dbeb]/38",
+                              "hover:bg-[linear-gradient(180deg,rgba(140,170,194,0.18)_0%,rgba(80,102,125,0.14)_100%)]",
+                              "hover:shadow-[0_14px_34px_rgba(5,18,33,0.36),inset_0_1px_0_rgba(255,255,255,0.18)]",
+                            ].join(" "),
+                        "active:scale-[0.985]",
+                        "transition-all duration-300 ease-out",
                       ),
                   )}
                 >
