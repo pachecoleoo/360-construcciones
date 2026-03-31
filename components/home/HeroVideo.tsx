@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import { BrandButtonC } from "../ui/BrandButtonC";
-
+import { button } from "motion/react-client";
+import { useEffect, useRef } from "react";
 export default function HeroVideo() {
   const scrollNext = () => {
     document
@@ -10,6 +11,19 @@ export default function HeroVideo() {
       ?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+
+    if (video) {
+      video.onloadedmetadata = () => {
+        // video.currentTime = 3; // empieza en segundo 3
+        video.playbackRate = 1.3; // 👈 velocidad 1.2x
+        video.play(); // asegura autoplay
+      };
+    }
+  }, []);
   return (
     <section className="relative h-screen w-full overflow-hidden">
       <video
@@ -19,7 +33,8 @@ export default function HeroVideo() {
           object-[center_25%]
           md:object-center
         "
-        src="/images/VIDEOPORTADA.mp4"
+        ref={videoRef}
+        src="/images/VIDEOPORTADA2.mp4"
         autoPlay
         muted
         loop
@@ -29,9 +44,10 @@ export default function HeroVideo() {
       <div className="absolute inset-0 bg-black/40" />
 
       <div className="relative z-10 flex h-full items-center justify-center px-6">
-        <div className="text-center max-w-3xl">
-          {/* LOGO */}
+        <div className="text-center">
+          {/* LOGO + BOTONES COMPARTEN ANCHO */}
           <div className="mx-auto w-[320px] md:w-[420px]">
+            {/* LOGO */}
             <div className="logo-reveal">
               <Image
                 src="/brand/logoBlanco.png"
@@ -42,36 +58,32 @@ export default function HeroVideo() {
                 className="h-auto w-full"
               />
             </div>
-          </div>
 
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <BrandButtonC href="/proyectos" variant="outline">
-              Desarrollo Inmobiliario
-            </BrandButtonC>
+            {/* BOTONES */}
+            <div className="mt-7 flex flex-col gap-3 w-full">
+              <BrandButtonC
+                href="/proyectos"
+                variant="glass"
+                className="w-full"
+              >
+                Desarrollo inmobiliario
+              </BrandButtonC>
 
-            <BrandButtonC href="/" variant="outline">
-              Infraestructura y movimientos de suelos
-            </BrandButtonC>
+              <BrandButtonC
+                href="/infraestructura"
+                variant="ghost"
+                className="w-full"
+              >
+                Infraestructura y suelos
+              </BrandButtonC>
+            </div>
           </div>
         </div>
       </div>
-
-      {/* INDICADOR SCROLL */}
       <button
         onClick={scrollNext}
-        className="
-        absolute bottom-10 left-1/2 -translate-x-1/2
-        z-20
-        flex flex-col items-center
-        gap-2
-        text-white/70
-        hover:text-white
-        transition
-        animate-bounce
-      "
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center text-white/70 hover:text-white transition animate-bounce z-20"
       >
-        {/* <span className="text-[10px] uppercase tracking-[0.35em]">Ver más</span> */}
-
         <svg
           width="56"
           height="36"

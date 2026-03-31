@@ -3,7 +3,7 @@ import React from "react";
 type ButtonProps = {
   href: string;
   children: React.ReactNode;
-  variant?: "solid" | "outline";
+  variant?: "glass" | "ghost";
   icon?: React.ReactNode;
   className?: string;
   target?: React.HTMLAttributeAnchorTarget;
@@ -17,13 +17,13 @@ function cx(...c: Array<string | false | null | undefined>) {
 export function BrandButtonC({
   href,
   children,
-  variant = "solid",
+  variant = "glass",
   icon,
   className,
   target,
   rel,
 }: ButtonProps) {
-  const isSolid = variant === "solid";
+  const isGlass = variant === "glass";
 
   return (
     <a
@@ -31,48 +31,40 @@ export function BrandButtonC({
       target={target}
       rel={rel}
       className={cx(
-        "group relative inline-flex items-center justify-center overflow-hidden",
-        "min-h-[34px]  px-6 md:px-8",
-        "rounded-none",
-        "transition-all duration-500 ease-out",
-        "uppercase text-[11px] md:text-[12px] tracking-[0.16em] font-medium",
-        "border",
-        isSolid
-          ? "border-white/20 bg-[#0b1f33]/70 text-white"
-          : "border-white/25 bg-transparent text-white/90",
-        "hover:border-white/40 hover:text-white",
-        "focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent",
+        "group relative inline-flex w-full items-center justify-center overflow-hidden",
+        "min-h-[42px] px-4 md:px-5",
+        "rounded-full border backdrop-blur-md",
+        "text-center uppercase",
+        "text-[9px] sm:text-[10px] md:text-[11px]",
+        "leading-none tracking-[0.12em] md:tracking-[0.14em]",
+        "font-medium",
+        "transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
+        "focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 hover:-translate-y-[3px]",
+        isGlass
+          ? "border-white/18 bg-white/[0.07] text-white shadow-[0_8px_24px_rgba(0,0,0,0.22),inset_0_1px_0_rgba(255,255,255,0.14)] hover:bg-white/[0.10] hover:border-white/26 hover:-translate-y-[3px]"
+          : "border-white/12 bg-transparent text-white/82 hover:bg-white/[0.05] hover:text-white hover:border-white/20",
         className,
       )}
     >
-      {/* fondo hover deslizante */}
+      {/* brillo superior suave */}
       <span
         aria-hidden="true"
-        className={cx(
-          "absolute inset-0 origin-left scale-x-0 transition-transform duration-500 ease-out group-hover:scale-x-100",
-          isSolid ? "bg-white/10" : "bg-white/8",
-        )}
+        className="pointer-events-none absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/12 to-transparent"
       />
 
-      {/* línea izquierda técnica */}
+      {/* línea inferior mínima */}
       <span
         aria-hidden="true"
-        className="absolute left-0 top-0 h-full w-[2px] bg-white/60 transition-all duration-500 group-hover:w-[6px]"
+        className="absolute bottom-0 left-1/2 h-px w-0 -translate-x-1/2 bg-white/35 transition-all duration-500 group-hover:w-[58%]"
       />
 
-      {/* línea superior fina */}
-      <span
-        aria-hidden="true"
-        className="absolute left-0 top-0 h-px w-full bg-white/20"
-      />
-
-      <span className="relative z-10 flex items-center gap-3">
-        <span>{children}</span>
+      <span className="relative z-10 flex items-center justify-center gap-2 px-1">
+        <span className="block">{children}</span>
 
         {icon && (
           <span
             aria-hidden="true"
-            className="transition-transform duration-500 group-hover:translate-x-1"
+            className="transition-transform duration-500 group-hover:translate-x-[2px]"
           >
             {icon}
           </span>

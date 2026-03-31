@@ -23,7 +23,7 @@ export default function NosotrosPage() {
         title={`En 360 construimos  
 con metodo, calidad y compromiso`}
         highlight={[" 360"]}
-        subtitle="Arquitectura e ingeniería con planificación, control técnico y ejecución enfocada en detalle y eficiencia."
+        subtitle="Arquitectura e ingeniería con planificación."
         imageSrc="/images/original/frameGatica4.jpg"
         align="left"
       />
