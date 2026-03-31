@@ -33,11 +33,11 @@ export default function HeroImage() {
           </h1>
 
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <BrandButtonC href="#email" variant="outline">
+            <BrandButtonC href="#email" variant="glass">
               Envíanos un email
             </BrandButtonC>
 
-            <BrandButtonC href="#whatsapp" variant="outline">
+            <BrandButtonC href="#whatsapp" variant="ghost">
               Contactate con un asesor
             </BrandButtonC>
           </div>
