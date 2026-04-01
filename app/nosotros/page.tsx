@@ -4,6 +4,7 @@ import Image from "next/image";
 import HeroBackground from "@/components/HeroBackground";
 import Footer from "@/components/footer/Footer";
 import { useReveal } from "@/components/hooks/useReveal";
+import NosotrosSlogansSection from "@/components/nosotros/NosotrosSlogansSection";
 import NewsletterCTA from "@/components/NewsletterCTA";
 import Button from "@/components/ui/Button";
 
@@ -20,23 +21,22 @@ export default function NosotrosPage() {
     <>
       <HeroBackground
         eyebrow=""
-        title={`En 360 construimos  
-con metodo, calidad y compromiso`}
-        highlight={[" 360"]}
+        title={`Seguimos construyendo`}
+        highlight={[" construyendo"]}
         subtitle="Arquitectura e ingeniería con planificación."
         imageSrc="/images/original/frameGatica4.jpg"
         align="left"
       />
       <main>
         {" "}
+        <div id="primera-seccion">
+          {" "}
+          <NosotrosSlogansSection />{" "}
+        </div>
         {/* =========================
             SECTION 1 — BLANCA
         ========================== */}
-        <section
-          id="primera-seccion"
-          data-section="01"
-          className="relative bg-white py-24"
-        >
+        <section data-section="01" className="relative bg-white py-24">
           {/* NUMERO DE SECCIÓN */}
           <div
             className={`
@@ -72,7 +72,7 @@ con metodo, calidad y compromiso`}
         `}
                 >
                   <h2 className="mt-4 font-heading font-black uppercase text-5xl md:text-6xl text-[#002B49] leading-[1.05]">
-                    Nosotros
+                    Somos 360
                   </h2>
 
                   <p className="mt-8 font-body text-[#081835]/80 text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0">
@@ -80,17 +80,6 @@ con metodo, calidad y compromiso`}
                     medible. Desde la planificación hasta la entrega final,
                     cuidamos cada decisión técnica y cada detalle constructivo.
                   </p>
-
-                  <div className="mt-8">
-                    <Button
-                      href="/brochures/brochures.pdf"
-                      variant="dark"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Brochure
-                    </Button>
-                  </div>
                 </div>
 
                 {/* LOGO */}
