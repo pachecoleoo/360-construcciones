@@ -142,7 +142,7 @@ export default function NosotrosSlogansSection() {
               <div className="relative mb-6">
                 <div
                   className={cx(
-                    "pointer-events-none absolute right-0 -top-10 select-none lg:-top-16",
+                    "pointer-events-none absolute right-0 -top-30 select-none lg:-top-16",
                     "font-heading font-black leading-none",
                     "text-[110px] md:text-[170px]",
                     "text-[#062a47]/10",

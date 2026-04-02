@@ -4,7 +4,7 @@ export const PROJECTS: ProyectoUnified[] = [
   {
     id: "d1",
     status: "desarrollado",
-    title: "531 BELGRANO",
+    title: "BELGRANO  531 ",
     location: "Neuquén",
     year: "2023",
     type: "Mixto",
@@ -30,7 +30,7 @@ export const PROJECTS: ProyectoUnified[] = [
   {
     id: "d2",
     status: "desarrollado",
-    title: "498 GATICA",
+    title: "GATICA 498 ",
     location: "Neuquén",
     year: "2023",
     type: "Mixto",
@@ -56,7 +56,7 @@ export const PROJECTS: ProyectoUnified[] = [
   {
     id: "d3",
     status: "desarrollado",
-    title: "331 MENDOZA",
+    title: " MENDOZA 331 ",
     location: "Neuquén, Mendoza 331",
     year: "2022",
     type: "Residencial",
@@ -81,7 +81,7 @@ export const PROJECTS: ProyectoUnified[] = [
   {
     id: "d4",
     status: "desarrollado",
-    title: "434 CORDOBA",
+    title: " CORDOBA 434",
     location: "Neuquén, Córdoba 434",
     year: "2022",
     type: "Residencial",
@@ -106,7 +106,7 @@ export const PROJECTS: ProyectoUnified[] = [
   {
     id: "d5",
     status: "desarrollado",
-    title: "256 SALTA",
+    title: " SALTA 256",
     location: "Neuquén, Salta 256",
     year: "2022",
     type: "Residencial",

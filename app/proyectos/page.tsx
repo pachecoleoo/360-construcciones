@@ -2,7 +2,7 @@
 
 import HeroBackground from "@/components/HeroBackground";
 import ProjectsSection from "@/components/proyectos/ProjectsSection";
-import ProjectsAccordion from "@/components/proyectos/ProjectsAccordion";
+// import ProjectsAccordion from "@/components/proyectos/ProjectsAccordion";
 import Footer from "@/components/footer/Footer";
 import NewsletterCTA from "@/components/NewsletterCTA";
 import { PROJECTS } from "@/components/proyectos/data";
@@ -18,7 +18,7 @@ export default function ProyectosPage() {
       <main className="bg-white" id="primera-seccion">
         <ProjectsSection projects={PROJECTS} />{" "}
       </main>{" "}
-      <ProjectsAccordion projects={PROJECTS} />
+      {/* <ProjectsAccordion projects={PROJECTS} /> */}
       <NewsletterCTA />
       <Footer />
     </>
