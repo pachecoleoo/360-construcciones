@@ -17,7 +17,7 @@ export default function NosotrosVisionSection() {
         className={`
     pointer-events-none
     absolute
-    right-3 top-65 md:top-80 sm:top-90 lg:top-10
+    right-3 top-80 md:top-80 sm:top-90 lg:top-10
     sm:right-[-10px] md:right-[-20px] lg:right-[-40px]
     z-10
     font-heading font-black

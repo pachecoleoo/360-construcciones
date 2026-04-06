@@ -76,7 +76,7 @@ function CardInner({ p, isActive }: { p: ProyectoUnified; isActive: boolean }) {
 
       <div className="absolute inset-x-0 bottom-0 z-20">
         <div
-          className={`px-5 pb-6 transition-all duration-500 ${
+          className={`px-5 pb-6 transition-all duration-1000 ${
             isActive ? "translate-y-0 opacity-100" : "translate-y-0 opacity-100"
           }`}
         >
