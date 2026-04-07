@@ -1,8 +1,6 @@
-"use client";
-
 import HeroBackground from "@/components/HeroBackground";
-import ProjectsSection from "@/components/proyectos/ProjectsSection";
-// import ProjectsAccordion from "@/components/proyectos/ProjectsAccordion";
+import ProjectsIntroSection from "@/components/proyectos/ProjectsIntroSection";
+import ProjectsGridSection from "@/components/proyectos/ProjectsGridSection";
 import Footer from "@/components/footer/Footer";
 import NewsletterCTA from "@/components/NewsletterCTA";
 import { PROJECTS } from "@/components/proyectos/data";
@@ -15,10 +13,12 @@ export default function ProyectosPage() {
         subtitle="Obras desarrolladas y desarrollos en ejecución"
         imageSrc="/images/original/frameGatica3.jpg"
       />
-      <main className="bg-white" id="primera-seccion">
-        <ProjectsSection projects={PROJECTS} />{" "}
-      </main>{" "}
-      {/* <ProjectsAccordion projects={PROJECTS} /> */}
+
+      <main id="primera-seccion">
+        <ProjectsIntroSection />
+        <ProjectsGridSection projects={PROJECTS} />
+      </main>
+
       <NewsletterCTA />
       <Footer />
     </>
