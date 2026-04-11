@@ -3,6 +3,7 @@ import ProjectsIntroSection from "@/components/proyectos/ProjectsIntroSection";
 import ProjectsGridSection from "@/components/proyectos/ProjectsGridSection";
 import Footer from "@/components/footer/Footer";
 import NewsletterCTA from "@/components/NewsletterCTA";
+import ConstruyendoBanner from "@/components/ConstruyendoBanner";
 import { PROJECTS } from "@/components/proyectos/data";
 
 export default function ProyectosPage() {
@@ -19,7 +20,8 @@ export default function ProyectosPage() {
         <ProjectsGridSection projects={PROJECTS} />
       </main>
 
-      <NewsletterCTA />
+      <ConstruyendoBanner />
+      {/* <NewsletterCTA /> */}
       <Footer />
     </>
   );

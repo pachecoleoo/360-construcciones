@@ -6,6 +6,7 @@ import SectionTwo from "@/components/home/SectionTwo";
 import SectionWhoWeAre from "@/components/home/SectionWhoWeAre";
 import Footer from "@/components/footer/Footer";
 import NewsletterCTA from "@/components/NewsletterCTA";
+import ConstruyendoBanner from "@/components/ConstruyendoBanner";
 
 export default function HomePage() {
   return (
@@ -15,7 +16,8 @@ export default function HomePage() {
       <SectionTwo />
       <SectionOne />
       <AboutStats />
-      <NewsletterCTA />
+      <ConstruyendoBanner />
+      {/* <NewsletterCTA /> */}
       <Footer />
     </>
   );

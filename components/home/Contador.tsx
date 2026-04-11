@@ -35,7 +35,7 @@ export default function Counter({
           requestAnimationFrame(animate);
         }
       },
-      { threshold: 0.6 }
+      { threshold: 0.6 },
     );
 
     observer.observe(ref.current);
@@ -46,11 +46,11 @@ export default function Counter({
     <span
       ref={ref}
       className="
-        text-3xl md:text-4xl
+        text-4xl md:text-6xl
         font-black
         tracking-tight
-        text-white
-        tabular-nums
+text-brand-blue        
+tabular-nums
       "
     >
       {prefix}

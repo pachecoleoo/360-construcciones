@@ -60,7 +60,7 @@ export default function HeroVideo() {
             </div>
 
             {/* BOTONES */}
-            <div className="mt-7 flex flex-col gap-3 w-full">
+            {/* <div className="mt-7 flex flex-col gap-3 w-full">
               <BrandButtonC
                 href="/proyectos"
                 variant="glass"
@@ -76,7 +76,7 @@ export default function HeroVideo() {
               >
                 Infraestructura y movimiento de suelos
               </BrandButtonC>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

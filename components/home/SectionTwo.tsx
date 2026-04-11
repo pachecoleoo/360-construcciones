@@ -82,7 +82,7 @@ export default function SectionTwo() {
 
         {/* DERECHA: TEXTO */}
         <div className="order-1 md:order-2 mt-2 text-center md:mt-0 md:text-left md:ml-auto">
-          <h2 className="font-heading font-black uppercase tracking-[0.02em] text-[40px] leading-[0.95] text-white sm:text-5xl md:text-6xl md:leading-[1.05]">
+          <h2 className="font-heading font-black uppercase tracking-[0.02em] text-[40px] leading-[0.95] text-white sm:text-5xl md:text-6xl md:leading-[0.95]">
             <span className="block text-[#C9D8E2]">Infraestructura</span>
             <span className="block mt-2">y movimiento</span>
             <span className="block mt-2 ">de suelo</span>

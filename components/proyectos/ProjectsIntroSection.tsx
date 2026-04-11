@@ -37,7 +37,7 @@ export default function ProjectsIntroSection() {
   return (
     <section
       ref={ref}
-      className="relative overflow-hidden border-b border-[#d9dde2] bg-[#f4f5f6] py-20 md:py-24 lg:py-28"
+      className="relative overflow-hidden  bg-[#ffffff] py-20 md:py-24 lg:py-28"
     >
       {/* grid técnica sutil */}
       <div
@@ -94,7 +94,7 @@ export default function ProjectsIntroSection() {
         {/* BLOQUE INFERIOR */}
         <div
           className={cx(
-            "mt-10 grid gap-8 border-t border-[#cfd5dc] pt-8 md:mt-12 md:grid-cols-[1.15fr_0.85fr] md:gap-10",
+            "mt-10 grid gap-8 pt-4 md:mt-12 md:grid-cols-[1.15fr_0.85fr] md:gap-10",
             "transition-all duration-700 delay-200 ease-out",
             visible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0",
           )}

@@ -36,16 +36,19 @@ export default function SectionWhoWeAre() {
       {/* Vignette suave superior */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-24 left-1/2 h-64 w-[52rem] -translate-x-1/2 rounded-full bg-[#002849]/10 blur-3xl"
+        className="pointer-events-none absolute left-1/2 h-64 w-[52rem] -translate-x-1/2 rounded-full bg-[#002849]/10 blur-3xl"
       />
 
-      <div ref={ref} className="relative mx-auto max-w-[1380px] px-6 md:px-10">
+      <div
+        ref={ref}
+        className="relative mx-auto max-w-[1380px] px-6 md:px-10 -my-10"
+      >
         {/* Título full width */}
         <div className="mt-3 overflow-hidden pt-4">
           <h2
             className={cx(
               "max-w-[1180px] font-heading font-black uppercase text-[#062a47]",
-              "leading-[0.9] tracking-[0.01em]",
+              "leading-[1.0] tracking-[0.01em]",
               "text-[42px] sm:text-[58px] md:text-[76px] lg:text-[92px] xl:text-[97px]",
               "transition-all duration-700 delay-100 ease-out ",
               visible
