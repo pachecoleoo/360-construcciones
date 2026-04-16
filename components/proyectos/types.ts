@@ -42,20 +42,6 @@ export type ProjectSection =
       images: string[];
     }
   | {
-      type: "typologies";
-      eyebrow?: string;
-      title: string;
-      items: {
-        name: string;
-        units?: string[];
-        description?: string;
-        covered?: string;
-        semiCovered?: string;
-        total?: string;
-        imageSrc?: string;
-      }[];
-    }
-  | {
       type: "cta";
       title: string;
       description: string;
@@ -74,17 +60,6 @@ export type ProyectoUnified = {
   imageSrc?: string;
   heroImageSrc?: string;
   logoSrc?: string;
-
-  description?: string;
-  badge?: string;
-  highlights?: string[];
-
-  sectionEyebrow?: string;
-  sectionTitle?: string;
-  paragraphs?: string[];
-
-  technicalTitle?: string;
-  technicalItems?: string[];
 
   sections?: ProjectSection[];
 };

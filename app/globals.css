@@ -235,3 +235,8 @@ html {
     transform: translateY(0) scale(1);
   }
 }
+
+/* scroll de navegación  */
+html {
+  scroll-behavior: smooth;
+}

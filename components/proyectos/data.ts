@@ -10,22 +10,8 @@ export const PROJECTS: ProyectoUnified[] = [
     type: "Mixto",
     imageSrc: "/images/renders/belgrano531.jpg",
     heroImageSrc: "/images/original/belgrano531.jpg",
-    highlights: ["Eficiencia", "Calidad", "Terminaciones premium"],
     slug: "belgrano-531",
     logoSrc: "",
-
-    sectionEyebrow: "Descripción general",
-    sectionTitle: "Desarrollo mixto con criterio funcional y urbano",
-    paragraphs: [
-      "498 Gatica fue pensado como un desarrollo de uso mixto, articulando funcionalidad, calidad de ejecución y presencia urbana en una propuesta equilibrada y contemporánea.",
-      "La obra refleja una búsqueda por optimizar espacios, garantizar una ejecución precisa y consolidar una imagen sólida dentro del entorno construido.",
-    ],
-    technicalTitle: "Claves del desarrollo",
-    technicalItems: [
-      "Tipología mixta",
-      "Eficiencia espacial",
-      "Terminaciones premium",
-    ],
   },
   {
     id: "d2",
@@ -36,22 +22,8 @@ export const PROJECTS: ProyectoUnified[] = [
     type: "Mixto",
     imageSrc: "/images/renders/gatica.jpg",
     heroImageSrc: "/images/original/rendergatica.jpg",
-    highlights: ["Eficiencia", "Calidad", "Terminaciones premium"],
     slug: "gatica-498",
     logoSrc: "",
-
-    sectionEyebrow: "Descripción general",
-    sectionTitle: "Desarrollo mixto con criterio funcional y urbano",
-    paragraphs: [
-      "498 Gatica fue pensado como un desarrollo de uso mixto, articulando funcionalidad, calidad de ejecución y presencia urbana en una propuesta equilibrada y contemporánea.",
-      "La obra refleja una búsqueda por optimizar espacios, garantizar una ejecución precisa y consolidar una imagen sólida dentro del entorno construido.",
-    ],
-    technicalTitle: "Claves del desarrollo",
-    technicalItems: [
-      "Tipología mixta",
-      "Eficiencia espacial",
-      "Terminaciones premium",
-    ],
   },
   {
     id: "d3",
@@ -61,22 +33,8 @@ export const PROJECTS: ProyectoUnified[] = [
     year: "2022",
     type: "Residencial",
     imageSrc: "/images/renders/mendoza331.jpg",
-    highlights: ["Ingeniería", "Control", "Ejecución"],
     slug: "mendoza-331",
     logoSrc: "",
-
-    sectionEyebrow: "Descripción general",
-    sectionTitle: "Ejecución residencial con foco en control y precisión",
-    paragraphs: [
-      "331 Mendoza se desarrolló bajo una lógica de ejecución rigurosa, priorizando control técnico, calidad constructiva y soluciones acordes a una vivienda contemporánea.",
-      "El proyecto expresa una forma de trabajo basada en planificación, seguimiento y cuidado del detalle en cada instancia de obra.",
-    ],
-    technicalTitle: "Puntos destacados",
-    technicalItems: [
-      "Ingeniería aplicada",
-      "Seguimiento de obra",
-      "Resolución técnica",
-    ],
   },
   {
     id: "d4",
@@ -86,22 +44,8 @@ export const PROJECTS: ProyectoUnified[] = [
     year: "2022",
     type: "Residencial",
     imageSrc: "/images/renders/cordoba434.jpg",
-    highlights: ["Ingeniería", "Control", "Ejecución"],
     slug: "cordoba-434",
     logoSrc: "",
-
-    sectionEyebrow: "Descripción general",
-    sectionTitle: "Calidad constructiva y ejecución ordenada",
-    paragraphs: [
-      "434 Córdoba representa un desarrollo residencial trabajado con una metodología clara de planificación, control y ejecución.",
-      "La obra fue resuelta atendiendo tanto a la funcionalidad como a la calidad final del conjunto, con una impronta técnica y sobria.",
-    ],
-    technicalTitle: "Valores del proyecto",
-    technicalItems: [
-      "Planificación de obra",
-      "Control de procesos",
-      "Ejecución precisa",
-    ],
   },
   {
     id: "d5",
@@ -111,21 +55,29 @@ export const PROJECTS: ProyectoUnified[] = [
     year: "2022",
     type: "Residencial",
     imageSrc: "/images/renders/salta256.jpg",
-    highlights: ["Ingeniería", "Control", "Ejecución"],
     slug: "salta-256",
     logoSrc: "",
-
-    sectionEyebrow: "Descripción general",
-    sectionTitle: "Proyecto residencial con resolución técnica integral",
-    paragraphs: [
-      "256 Salta forma parte de los desarrollos ejecutados por 360 Construcciones con foco en calidad constructiva, control de obra y resolución técnica.",
-      "El proyecto fue concebido para responder a criterios de funcionalidad, presencia urbana y terminaciones alineadas con un estándar contemporáneo.",
-    ],
-    technicalTitle: "Aspectos destacados",
-    technicalItems: [
-      "Resolución estructural",
-      "Control técnico",
-      "Ejecución integral",
-    ],
+  },
+  {
+    id: "d6",
+    status: "ejecucion",
+    title: " SANTIAGO 611",
+    location: "Neuquén, Santiago 611",
+    year: "2026",
+    type: "Residencial",
+    imageSrc: "/images/stgo611/20.jpg",
+    slug: "santiago-611",
+    logoSrc: "",
+  },
+  {
+    id: "d7",
+    status: "ejecucion",
+    title: " SANTIAGO 667",
+    location: "Neuquén, Santiago 667",
+    year: "2026",
+    type: "Residencial",
+    imageSrc: "/images/renders/santiago667.jpg",
+    slug: "santiago-667",
+    logoSrc: "",
   },
 ];
