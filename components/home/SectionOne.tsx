@@ -43,7 +43,7 @@ export default function SectionOne() {
   );
 
   return (
-    <section className="mt-12 overflow-hidden bg-white px-6 py-0 text-center sm:px-8 md:px-10 md:text-left lg:px-16">
+    <section className="my-10 overflow-hidden bg-white px-6 py-0 text-center sm:px-8 md:px-10 md:text-left lg:px-16  md:my-1 ">
       <div
         ref={ref}
         className={`
@@ -74,7 +74,7 @@ export default function SectionOne() {
         <div
           className={`
             order-2
-            flex flex-col items-center md:items-end
+            flex flex-col items-center md:items-end -mb-8
             transition-all duration-[1200ms] ease-out delay-150
             ${visible ? "translate-x-0 opacity-100" : "translate-x-24 opacity-0"}
           `}

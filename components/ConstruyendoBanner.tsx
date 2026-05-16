@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const ITEMS = [
   { text: "soluciones a la altura de nuestros clientes.", highlight: false },
   {
-    text: "relaciones a largo plazo con nuestros proveedores.",
+    text: "relaciones con nuestros proveedores.",
     highlight: false,
   },
   { text: "una empresa cada vez más completa.", highlight: false },

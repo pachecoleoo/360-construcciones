@@ -2,7 +2,6 @@ import HeroBackground from "@/components/HeroBackground";
 import ProjectsIntroSection from "@/components/proyectos/ProjectsIntroSection";
 import ProjectsGridSection from "@/components/proyectos/ProjectsGridSection";
 import Footer from "@/components/footer/Footer";
-import NewsletterCTA from "@/components/NewsletterCTA";
 import ConstruyendoBanner from "@/components/ConstruyendoBanner";
 import { PROJECTS } from "@/components/proyectos/data";
 
@@ -21,7 +20,6 @@ export default function ProyectosPage() {
       </main>
 
       <ConstruyendoBanner />
-      {/* <NewsletterCTA /> */}
       <Footer />
     </>
   );

@@ -1,22 +1,25 @@
 import HeroBackground from "@/components/HeroBackground";
+import Infraestructuraysuelo from "@/components/infraestructura/Infraestructuraysuelo";
 import Footer from "@/components/footer/Footer";
-import { useReveal } from "@/components/hooks/useReveal";
-import NewsletterCTA from "@/components/NewsletterCTA";
-import Button from "@/components/ui/Button";
+import ConstruyendoBanner from "@/components/ConstruyendoBanner";
 
-export default function Infraestructura() {
+export default function InfraestructuraPage() {
   return (
     <>
       <HeroBackground
         eyebrow=""
         title={"Infraestructura &\n movimiento de suelo"}
-        highlight={[" Infraestructura"]}
+        highlight={["Infraestructura"]}
         subtitle="Ejecución técnica con precisión y control de obra."
         imageSrc="/images/infra.JPG"
         align="left"
       />
-      <main></main>
-      <NewsletterCTA />
+
+      <main>
+        <Infraestructuraysuelo />
+        <ConstruyendoBanner />
+      </main>
+
       <Footer />
     </>
   );

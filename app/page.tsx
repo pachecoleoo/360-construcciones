@@ -5,7 +5,6 @@ import SectionOne from "@/components/home/SectionOne";
 import SectionTwo from "@/components/home/SectionTwo";
 import SectionWhoWeAre from "@/components/home/SectionWhoWeAre";
 import Footer from "@/components/footer/Footer";
-import NewsletterCTA from "@/components/NewsletterCTA";
 import ConstruyendoBanner from "@/components/ConstruyendoBanner";
 
 export default function HomePage() {
@@ -17,7 +16,6 @@ export default function HomePage() {
       <SectionOne />
       <AboutStats />
       <ConstruyendoBanner />
-      {/* <NewsletterCTA /> */}
       <Footer />
     </>
   );

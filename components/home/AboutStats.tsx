@@ -2,25 +2,25 @@ import Counter from "./Contador";
 
 const STATS = [
   {
-    value: 30,
-    prefix: "+",
-    label: "Años de trayectoria",
-  },
-  {
     value: 50,
     prefix: "+",
-    label: "Desarrollos",
+    label: "Empleados",
+  },
+  {
+    value: 500,
+    prefix: "+",
+    label: "M² Proyectados ",
   },
   {
     value: 250,
     prefix: "+",
     suffix: "k",
-    label: "M² de obra",
+    label: "M² en construcción",
   },
   {
-    value: 1500,
+    value: 9,
     prefix: "+",
-    label: "Unidades",
+    label: "Obras activas",
   },
 ];
 
@@ -89,31 +89,43 @@ function StatBlock({
   return (
     <div
       className="
-        group 
-        flex items-center justify-between 
+        group
+        grid grid-cols-[110px_1fr] items-center
         py-6
-        border-b border-[#d9dde2] 
+        border-b border-[#d9dde2]
         last:border-none
+
+        sm:grid-cols-[140px_1fr]
 
         md:block md:border-none md:py-0 md:px-20
       "
     >
       {/* NUMERO */}
-      <div className="font-heading text-[44px] font-black leading-[0.9] tracking-[-0.03em] text-[#062a47] sm:text-[72px] md:text-[88px] lg:text-[96px] xl:text-[108px]">
+      <div
+        className="
+          font-heading text-[44px] font-black leading-[0.9] tracking-[-0.03em]
+          text-[#062a47]
+          sm:text-[72px]
+          md:text-[88px]
+          lg:text-[96px]
+          xl:text-[108px]
+        "
+      >
         <Counter to={value} prefix={prefix} suffix={suffix} />
       </div>
 
       {/* TEXTO */}
       <p
         className="
-          ml-20              /* 👈 esto es CLAVE (lo separa del número) */
-          -mb-2              /* 👈 esto es CLAVE (lo separa del número) */
-          text-left         /* 👈 ya no a la derecha */
-          flex-1            /* 👈 ocupa el espacio sin irse al borde */
-          text-[30px]       /* 👈 más grande */
-          font-body uppercase leading-[1.25] tracking-[0.02em] text-[#062a47]
+          -mb-2
+          text-left
+          text-[26px]
+          font-body uppercase leading-[1.25] tracking-[0.02em]
+          text-[#062a47]
 
-          md:mt-4 md:max-w-[14ch] md:text-[17px] md:text-center md:ml-0
+          sm:text-[30px]
+
+          md:mt-4 md:max-w-[14ch] md:text-[17px] md:text-center
         "
       >
         {label}

@@ -3,10 +3,10 @@
 import HeroBackground from "@/components/HeroBackground";
 import Footer from "@/components/footer/Footer";
 import NosotrosSlogansSection from "@/components/nosotros/NosotrosSlogansSection";
-import NewsletterCTA from "@/components/NewsletterCTA";
 import NosotrosIntroSection from "@/components/nosotros/NostrosIntroSection";
 import NosotrosVisionSection from "@/components/nosotros/NosotrosVisionSection";
 import NosotrosMisionSection from "@/components/nosotros/NosotrosMisionSection";
+import ConstruyendoBanner from "@/components/ConstruyendoBanner";
 
 export default function NosotrosPage() {
   return (
@@ -28,11 +28,7 @@ export default function NosotrosPage() {
         <NosotrosIntroSection />
         <NosotrosVisionSection />
         <NosotrosMisionSection />
-
-        <NewsletterCTA
-          withEmail
-          onSubmit={(email) => console.log("signup:", email)}
-        />
+        <ConstruyendoBanner />
       </main>
 
       <Footer />
