@@ -61,7 +61,7 @@ export default function ProjectGallerySlider2({
   const { ref, visible } = useInViewOnce<HTMLDivElement>();
 
   return (
-    <section ref={ref} className="w-full py-14 md:py-20">
+    <section id="recorrido" ref={ref} className="w-full py-14 md:py-20">
       <div className="mx-auto w-full max-w-[1280px] px-6 md:px-10">
         {/* HEADER */}
         <div className="relative mb-10 md:mb-12">
@@ -76,7 +76,7 @@ export default function ProjectGallerySlider2({
               visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6",
             )}
           >
-            05
+            04
           </div>
           <div className="mb-10 md:mb-12">
             <p

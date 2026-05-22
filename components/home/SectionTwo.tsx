@@ -43,10 +43,10 @@ export default function SectionTwo() {
   );
 
   return (
-    <section className="mt-12 overflow-hidden bg-[#081835] px-6 pt-12 pb-8 text-center sm:px-8 md:px-10 md:py-10 md:text-left lg:px-16">
+    <section className=" mt-12 overflow-hidden bg-[#081835] px-6 pt-12 pb-8 text-center sm:px-8 md:px-10 md:py-10 md:text-left lg:px-16">
       <div
         ref={ref}
-        className={`
+        className={`  max-w-[1280px] 
           mx-auto max-w-7xl
           grid grid-cols-1 md:grid-cols-2 items-center
           gap-10 md:gap-16

@@ -43,7 +43,7 @@ export default function SectionOne() {
   );
 
   return (
-    <section className="my-10 overflow-hidden bg-white px-6 py-0 text-center sm:px-8 md:px-10 md:text-left lg:px-16  md:my-1 ">
+    <section className="  max-w-[1280px]  my-10 overflow-hidden bg-white px-6 py-0 text-center sm:px-8 md:px-10 md:text-left lg:px-16  md:my-1 ">
       <div
         ref={ref}
         className={`

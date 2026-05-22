@@ -54,7 +54,7 @@ export default function ProjectAmenities({
   if (!items?.length) return null;
 
   return (
-    <section ref={ref} className="bg-white py-20 md:py-24">
+    <section id="amenities" ref={ref} className="bg-white py-20 md:py-24">
       <div className="mx-auto max-w-[1280px] px-6 md:px-10">
         {/* HEADER */}
         <div className="relative mb-14">

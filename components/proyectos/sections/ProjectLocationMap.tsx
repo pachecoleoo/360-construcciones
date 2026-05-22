@@ -58,6 +58,7 @@ export default function ProjectLocationMap({
 
   return (
     <section
+      id="ubicacion"
       ref={ref}
       className="border-t border-[#d9dde2] bg-white py-20 md:py-20"
     >
@@ -76,7 +77,7 @@ export default function ProjectLocationMap({
               visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6",
             )}
           >
-            04
+            03
           </div>
 
           {/* CONTENIDO */}

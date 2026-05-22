@@ -71,7 +71,7 @@ export default function ProjectHero({
       {/* CONTENIDO */}
       <div className="relative z-10 flex h-full flex-col">
         {/* LOGO */}
-        <div className="absolute left-5 top-5 z-30 sm:left-7 sm:top-7 md:left-16 md:top-8">
+        {/* <div className="absolute left-5 top-5 z-30 sm:left-7 sm:top-7 md:left-16 md:top-8">
           <Image
             src="/brand/360blanco2.png"
             alt="360 Construcciones"
@@ -80,26 +80,11 @@ export default function ProjectHero({
             priority
             className="h-auto w-[85px] sm:w-[85px] md:w-[95px] lg:w-[105px]"
           />
-        </div>
+        </div> */}
 
         {/* BLOQUE HERO */}
         <div className="mx-auto flex h-full w-full max-w-[1400px] items-end px-5 pb-[90px] sm:px-7 md:px-10 md:pb-[110px]">
           <div className="max-w-[900px]">
-            {/* EYEBROW / UBICACIÓN */}
-            {/* {location && (
-              <p
-                className={cx(
-                  "text-[11px] uppercase tracking-[0.28em] text-white/70",
-                  "transition-all duration-700 ease-out",
-                  visible
-                    ? "translate-y-0 opacity-100"
-                    : "translate-y-4 opacity-0",
-                )}
-              >
-                {location}
-              </p>
-            )} */}
-
             {/* TÍTULO */}
             <div className="mt-3 overflow-hidden">
               <h1
@@ -135,19 +120,31 @@ export default function ProjectHero({
               href="#proyecto"
               className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70 transition hover:text-white"
             >
-              Proyecto
-            </a>
-            <a
-              href="#ficha"
-              className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70 transition hover:text-white"
-            >
               Ficha
             </a>
             <a
-              href="#galeria"
+              href="#amenities"
+              className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70 transition hover:text-white"
+            >
+              Aminities
+            </a>
+            <a
+              href="#Galeria"
               className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70 transition hover:text-white"
             >
               Galería
+            </a>
+            <a
+              href="#ubicacion"
+              className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70 transition hover:text-white"
+            >
+              Ubicación
+            </a>
+            <a
+              href="#recorrido"
+              className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70 transition hover:text-white"
+            >
+              Recorrido
             </a>
             <a
               href="#contacto"

@@ -52,7 +52,7 @@ export default function ProjectsIntroSection() {
         }}
       />
 
-      <div className="relative mx-auto max-w-[1380px] px-6 md:px-10">
+      <div className="relative mx-auto max-w-[1280px] px-6 md:px-10">
         {/* EYEBROW */}
         <p
           className={cx(

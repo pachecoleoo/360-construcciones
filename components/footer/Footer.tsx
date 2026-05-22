@@ -100,14 +100,14 @@ export default function Footer() {
                     <div className="flex flex-col gap-2">
                       <a
                         href="https://www.instagram.com/360construcciones/?hl=en"
-                        className="w-fit text-white/85 hover:text-white focus-visible:text-white outline-none
+                        className=" w-fit text-white/85 hover:text-white focus-visible:text-white outline-none
                                    underline decoration-white/0 hover:decoration-white/40 focus-visible:decoration-white/40
                                    underline-offset-4 transition"
                       >
                         Instagram
                       </a>
                       <a
-                        href="#"
+                        href="https://www.linkedin.com/company/360-construcciones/posts/?feedView=all"
                         className="w-fit text-white/85 hover:text-white focus-visible:text-white outline-none
                                    underline decoration-white/0 hover:decoration-white/40 focus-visible:decoration-white/40
                                    underline-offset-4 transition"

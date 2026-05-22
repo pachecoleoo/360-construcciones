@@ -63,7 +63,7 @@ export default function ProjectGallery({
 
   return (
     <section
-      id="galeria"
+      id="Galeria"
       ref={ref}
       className="border-t border-[#d9dde2] bg-[#f4f5f6] pt-20 md:pt-24"
     >

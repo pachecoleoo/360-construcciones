@@ -210,7 +210,7 @@ export default function SocialSection({
   subtitle = "Escribinos por el canal que te resulte más cómodo para consultas, coordinación o seguimiento comercial.",
   whatsappNumber = "5490000000000",
   instagramUrl = "https://www.instagram.com/360construcciones/",
-  linkedinUrl = "https://linkedin.com/company/tuempresa",
+  linkedinUrl = "https://www.linkedin.com/company/360-construcciones/posts/?feedView=all",
 }: {
   id?: string;
   title?: string;

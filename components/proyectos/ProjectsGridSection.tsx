@@ -41,7 +41,7 @@ export default function ProjectsGridSection({
   const { ref, visible } = useInViewOnce<HTMLElement>();
 
   return (
-    <section ref={ref} className="bg-white py-16 md:py-20">
+    <section ref={ref} className="bg-white py-16 md:py-10">
       <div className="mx-auto max-w-[1280px] px-6 md:px-10">
         <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
           {projects.map((p, index) => (

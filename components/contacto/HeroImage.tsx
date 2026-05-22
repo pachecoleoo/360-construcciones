@@ -37,7 +37,7 @@ export default function HeroImage() {
               Envíanos un email
             </BrandButtonC>
 
-            <BrandButtonC href="#whatsapp" variant="ghost">
+            <BrandButtonC href="#asesor" variant="ghost">
               Contactate con un asesor
             </BrandButtonC>
           </div>

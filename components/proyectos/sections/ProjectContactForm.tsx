@@ -105,7 +105,7 @@ ${values.mensaje}`,
               visible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0",
             )}
           >
-            06
+            05
           </div>
           {/* CONTENIDO */}
           <div className="relative z-10 max-w-3xl pr-6 md:pr-20">

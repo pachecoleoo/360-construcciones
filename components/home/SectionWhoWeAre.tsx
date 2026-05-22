@@ -41,7 +41,7 @@ export default function SectionWhoWeAre() {
 
       <div
         ref={ref}
-        className="relative mx-auto max-w-[1380px] px-6 md:px-10 -my-10"
+        className="relative mx-auto max-w-[1280px] px-6 md:px-10 -my-10"
       >
         {/* Título full width */}
         <div className="mt-3 overflow-hidden pt-4">

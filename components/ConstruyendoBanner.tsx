@@ -43,7 +43,7 @@ export default function ConstruyendoBanner() {
   const current = ITEMS[index];
 
   return (
-    <section className="relative overflow-hidden  bg-[#000000] py-10 md:py-16">
+    <section className="relative overflow-hidden  bg-[#000000] py-6  md:py-8">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 opacity-[0.05]"
@@ -61,19 +61,20 @@ export default function ConstruyendoBanner() {
           Principios
         </p> */}
 
-        <div className="mt-6 grid items-center gap-2 lg:grid-cols-[560px_minmax(0,1fr)] lg:gap-10  text-center">
+        <div className="mt-6 grid items-center gap-2 lg:grid-cols-[520px_minmax(0,1fr)] lg:gap-10  text-center">
           {/* palabra fija */}
           <div className="min-w-0">
-            <h2 className="md:ml-32 font-heading text-[40px] font-black uppercase leading-[0.92] tracking-[0.01em] text-[#ffffff] sm:text-[54px] md:text-[68px] lg:text-[82px] ">
+            <h2 className="md:ml-32 font-heading text-[40px] font-black uppercase leading-[0.] tracking-[0.01em] text-[#ffffff] sm:text-[54px] md:text-[68px] lg:text-[70px] ">
               Construyendo
             </h2>
           </div>
 
           {/* frase rotativa */}
-          <div className="relative h-[40px] overflow-hidden md:h-[46px] lg:h-[76px]">
+          <div className="relative flex items-center overflow-hidden  -mt-3 min-h-[48px] md:min-h-[64px] lg:min-h-[92px]">
+            {" "}
             <div
               className={cx(
-                "absolute inset-0 flex items-center will-change-transform",
+                "absolute left-0 top-1/2 flex w-full -translate-y-1/2 items-center will-change-transform",
                 "transition-all duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)]",
                 phase === "idle" && "translate-y-0 rotate-x-0 opacity-100",
                 phase === "out" &&
@@ -92,10 +93,10 @@ export default function ConstruyendoBanner() {
             >
               <p
                 className={cx(
-                  "w-full whitespace-nowrap leading-none md:mt-7", //LETRA DE ABAJO
-                  "text-[20px] md:text-[26px] lg:text-[30px] ml-0 md:mr-17  md:ml-5",
+                  "w-full whitespace-nowrap leading-none ",
+                  "text-[20px] md:text-[26px] lg:text-[28px] ml-0 md:mr-17 md:ml-5 ",
                   current.highlight
-                    ? "font-heading font-black lg:text-[40px]  md:ml-10 -mb-2 uppercase tracking-[0.01em] text-[#ffffff]"
+                    ? "font-heading font-black lg:text-[32px] md:ml-10 -mb-2 uppercase tracking-[0.01em] text-[#ffffff]"
                     : "font-body font-medium text-[#ffffff]",
                 )}
               >

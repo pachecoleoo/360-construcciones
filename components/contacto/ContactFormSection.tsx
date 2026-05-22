@@ -133,7 +133,7 @@ export default function ContactFormSection() {
   return (
     <section
       ref={ref}
-      id="contacto"
+      id="primera-seccion"
       className="relative overflow-hidden border-t border-[#d9dde2] bg-[#f4f5f6] text-[#062a47]"
     >
       {/* blueprint grid */}
@@ -165,6 +165,7 @@ export default function ContactFormSection() {
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           {/* COLUMNA IZQUIERDA */}
           <div
+            id="email"
             className={cx(
               "max-w-xl",
               "transition-all duration-1000 ease-out",
@@ -264,6 +265,7 @@ export default function ContactFormSection() {
 
           {/* FORMULARIO */}
           <div
+            id="asesor"
             className={cx(
               "mt-10 border border-[#d9dde2] bg-white shadow-[0_18px_40px_rgba(6,42,71,0.08)]",
               "transition-all duration-1000 delay-400 ease-out",

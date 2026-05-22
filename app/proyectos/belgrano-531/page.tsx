@@ -12,7 +12,7 @@ export default function EdificioPage() {
       <ProjectHero
         title="Belgrano 531"
         location="Neuquén, Argentina"
-        heroImageSrc="/images/belgrano/afuera.JPG"
+        heroImageSrc="/images/belgrano/comprimido/belgrano3.jpg"
       />
 
       <ProjectIntroWithData
@@ -82,24 +82,24 @@ export default function EdificioPage() {
         intro="Una lectura visual de los espacios, materiales y atmósfera general del desarrollo."
         images={[
           {
-            src: "/images/belgrano/balcon2.JPG",
-            alt: "Cocina integrada",
-            label: "Cocina integrada",
+            src: "/images/belgrano/comprimido/ingreso.jpg",
+            alt: "Ingreso",
+            label: "Ingreso",
           },
           {
-            src: "/images/belgrano/renders/terraza.jpg",
-            alt: "Terraza exterior",
-            label: "Terraza exterior",
+            src: "/images/belgrano/comprimido/belgrano2.jpg",
+            alt: "Pileta",
+            label: "Pileta",
           },
           {
-            src: "/images/belgrano/renders/balcon.jpg",
-            alt: "Balcón con visuales",
-            label: "Balcón con visuales",
+            src: "/images/belgrano/comprimido/belgrano6.jpg",
+            alt: "Balcón ",
+            label: "Balcón",
           },
           {
-            src: "/images/belgrano/renders/living.jpg",
-            alt: "Living principal",
-            label: "Living principal",
+            src: "/images/belgrano/comprimido/belgrano7.jpg",
+            alt: "Ubicación",
+            label: "Ubicación",
           },
         ]}
       />
@@ -120,24 +120,24 @@ export default function EdificioPage() {
         metaValue="Belgrano 531, Neuquén Capital, Argentina"
         images={[
           {
-            src: "/images/belgrano/renders/cocina.jpg",
-            alt: "Cocina",
-            label: "Cocina",
-          },
-          {
-            src: "/images/belgrano/renders/terraza.jpg",
+            src: "/images/belgrano/comprimido/terraza2.jpg",
             alt: "Terraza",
             label: "Terraza",
           },
           {
-            src: "/images/belgrano/renders/balcon.jpg",
-            alt: "Balcon",
-            label: "Balcon",
+            src: "/images/belgrano/comprimido/pileta.jpg",
+            alt: "Pileta",
+            label: "Pileta",
           },
           {
-            src: "/images/belgrano/renders/living.jpg",
-            alt: "Living",
-            label: "Living",
+            src: "/images/belgrano/comprimido/cochera.jpg",
+            alt: "Cochera",
+            label: "Cochera",
+          },
+          {
+            src: "/images/belgrano/comprimido/ingreso.jpg",
+            alt: "Ingreso",
+            label: "Ingreso",
           },
         ]}
       />

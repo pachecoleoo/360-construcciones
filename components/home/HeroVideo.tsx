@@ -20,7 +20,11 @@ export default function HeroVideo() {
       video.onloadedmetadata = () => {
         // video.currentTime = 3; // empieza en segundo 3
         video.playbackRate = 1.3; // 👈 velocidad 1.2x
-        video.play(); // asegura autoplay
+        video.play().catch((error) => {
+          if (error.name !== "AbortError") {
+            console.warn("Video play error:", error);
+          }
+        });
       };
     }
   }, []);
@@ -34,7 +38,7 @@ export default function HeroVideo() {
           md:object-center
         "
         ref={videoRef}
-        src="/images/VIDEOPORTADA2.mp4"
+        src="/images/home.mp4"
         autoPlay
         muted
         loop
@@ -46,7 +50,7 @@ export default function HeroVideo() {
       <div className="relative z-10 flex h-full items-center justify-center px-6">
         <div className="text-center">
           {/* LOGO + BOTONES COMPARTEN ANCHO */}
-          <div className="mx-auto w-[320px] md:w-[420px]">
+          <div className="mx-auto w-[320px] md:w-[320px]">
             {/* LOGO */}
             <div className="logo-reveal">
               <Image
@@ -58,25 +62,6 @@ export default function HeroVideo() {
                 className="h-auto w-full"
               />
             </div>
-
-            {/* BOTONES */}
-            {/* <div className="mt-7 flex flex-col gap-3 w-full">
-              <BrandButtonC
-                href="/proyectos"
-                variant="glass"
-                className="w-full"
-              >
-                Desarrollo inmobiliario
-              </BrandButtonC>
-
-              <BrandButtonC
-                href="/infraestructura"
-                variant="ghost"
-                className="w-full"
-              >
-                Infraestructura y movimiento de suelos
-              </BrandButtonC>
-            </div> */}
           </div>
         </div>
       </div>
