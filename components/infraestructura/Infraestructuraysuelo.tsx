@@ -83,7 +83,7 @@ export default function Infraestructuraysuelo() {
     <section
       id="primera-seccion"
       ref={ref}
-      className="relative overflow-hidden border-t border-[#d9dde2] bg-[#f4f5f6] py-16 md:py-28"
+      className="relative overflow-visible border-t border-[#d9dde2] bg-[#f4f5f6] py-16 md:py-28"
     >
       {/* Fondo cuadriculado */}
       <div
