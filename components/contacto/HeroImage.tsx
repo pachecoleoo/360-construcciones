@@ -26,7 +26,7 @@ export default function HeroImage() {
       {/* Sombra superior para mejorar la lectura del navbar */}
       {/* Iluminación central detrás del título */}
       {/* Sombra inferior suave */}+{/* Contenido */}
-      <div className="relative z-10 flex h-full items-center justify-center px-0 md:px-6">
+      <div className="relative z-10 flex h-full items-center justify-center px-10 md:px-6">
         <div className="max-w-3xl text-center">
           <h1
             className="
