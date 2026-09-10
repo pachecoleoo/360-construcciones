@@ -14,7 +14,7 @@ export default function HeroImage() {
     <section className="relative h-screen w-full overflow-hidden">
       {/* Imagen de fondo */}
       <Image
-        src="/images/original/grua2.jpg"
+        src="/images/original/frameGatica4.jpg"
         alt="360 Construcciones - Contacto"
         fill
         priority

@@ -68,7 +68,7 @@ export default function NosotrosSlogansSection() {
               </p>
 
               {/* TÍTULO */}
-              <div className="overflow-hidden">
+              <div className="overflow-visible">
                 <h2
                   className={cx(
                     "mt-2 max-w-[950px]",

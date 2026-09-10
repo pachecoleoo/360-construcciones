@@ -341,21 +341,31 @@ export default function ContactFormSection() {
 
                 <div
                   className="
-        flex h-11 w-11 items-center justify-center
-        rounded-full border border-[#cfd5dc] bg-white/60
-        transition-all duration-300
-        group-hover:rotate-[-45deg]
-        group-hover:border-white/25
-        group-hover:bg-white/10
-      "
+    flex h-11 w-11 shrink-0 items-center justify-center
+    rounded-full border border-[#cfd5dc] bg-white/60
+    text-[#062a47]
+    transition-all duration-300
+    group-hover:rotate-[-45deg]
+    group-hover:border-white/25
+    group-hover:bg-white/10
+    group-hover:text-white
+  "
                 >
-                  <Image
-                    src="/images/iconos/abir2.png"
-                    alt=""
-                    width={17}
-                    height={17}
-                    className="transition duration-300 group-hover:invert"
-                  />
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-[18px] w-[18px]"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M5 19L19 5M19 5H8M19 5V16"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
                 </div>
               </a>
             </div>

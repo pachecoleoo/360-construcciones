@@ -1,5 +1,6 @@
 export default function TypographyDebugSection() {
   return (
+    // esta section es una prueba de las diferentes tipografias, para poder viualizarlas en un mejor contexto
     <section className="bg-white py-24 px-8">
       <div className="max-w-6xl mx-auto space-y-20">
         {/* TITLE */}

@@ -86,7 +86,7 @@ export default function ProjectHero({
         <div className="mx-auto flex h-full w-full max-w-[1400px] items-end px-5 pb-[90px] sm:px-7 md:px-10 md:pb-[110px]">
           <div className="max-w-[900px]">
             {/* TÍTULO */}
-            <div className="mt-3 overflow-hidden">
+            <div className="mt-3 overflow-visible">
               <h1
                 className={cx(
                   "text-[44px] leading-[0.9] tracking-tight text-white sm:text-[62px] md:text-[82px] lg:text-[96px]",

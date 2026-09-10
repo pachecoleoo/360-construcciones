@@ -226,6 +226,7 @@ export default function FloatingNavbar() {
                 aria-expanded={mobileOpen}
                 onClick={() => setMobileOpen((prev) => !prev)}
                 className={cx(
+                  "  drop-shadow-[0_2px_4px_rgba(0,0,0,0.99)]",
                   "relative flex h-10 w-10 items-center justify-center",
                   "transition-all duration-300 ease-out",
                   "active:scale-[0.95]",
@@ -257,7 +258,6 @@ export default function FloatingNavbar() {
             </div>
           </div>
 
-          {/* MENÚ MOBILE */}
           {/* MENÚ MOBILE PERSONALIZADO */}
           <div
             className={cx(
@@ -386,13 +386,27 @@ export default function FloatingNavbar() {
 
                           <span
                             className={cx(
-                              "relative flex h-9 w-9 items-center justify-center rounded-full",
+                              "relative flex h-9 w-9 shrink-0 items-center justify-center rounded-full",
                               "border border-white/12 bg-white/[0.06] text-white/75",
                               "transition-all duration-300",
                               "group-active:translate-x-1 group-active:bg-white/10",
                             )}
                           >
-                            ↗
+                            <svg
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="h-[15px] w-[15px]"
+                              aria-hidden="true"
+                            >
+                              <path
+                                d="M5 19L19 5M19 5H8M19 5V16"
+                                stroke="currentColor"
+                                strokeWidth="1.7"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                            </svg>
                           </span>
                         </Link>
                       );

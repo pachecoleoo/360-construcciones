@@ -65,7 +65,7 @@ export default function ProjectsIntroSection() {
         </p>
 
         {/* TITULO FULL WIDTH */}
-        <div className="mt-3 overflow-hidden">
+        <div className="mt-3 overflow-visible">
           <h2
             className={cx(
               "max-w-[1200px] font-heading font-black uppercase text-[#062a47]",

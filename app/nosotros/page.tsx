@@ -16,7 +16,8 @@ export default function NosotrosPage() {
         title="Seguimos construyendo"
         // highlight={[" construyendo"]}
         subtitle="Arquitectura e ingeniería con planificación."
-        imageSrc="/images/original/frameGatica4.jpg"
+        // imageSrc="/images/original/frameGatica4.jpg"
+        imageSrc="/images/original/grua2.jpg"
         align="left"
       />
 

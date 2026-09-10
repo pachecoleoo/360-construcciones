@@ -32,7 +32,7 @@ const ITEMS = [
   {
     n: "04",
     title: "Partners",
-    image: "/images/suelo/suelo4.jpg",
+    image: "/images/suelo/suelo4.JPG",
     text: "Relaciones de largo plazo con proveedores, equipos técnicos y aliados estratégicos para sostener proyectos eficientes y confiables.",
     details: [
       "Alianzas estratégicas",
@@ -122,7 +122,7 @@ export default function Infraestructuraysuelo() {
           <div className="mt-4 overflow-hidden">
             <h2
               className={cx(
-                "font-heading text-[clamp(38px,11vw,88px)] font-black uppercase leading-[0.9] tracking-[0.01em] text-[#062a47]",
+                "font-heading text-[clamp(38px,11vw,88px)] font-black overflow-visible uppercase leading-[0.9] tracking-[0.01em] text-[#062a47]",
                 "transition-all delay-100 duration-700 ease-out",
                 visible
                   ? "translate-y-0 opacity-100"
