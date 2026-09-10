@@ -206,7 +206,7 @@ function Card({
 
 export default function SocialSection({
   id = "redes",
-  title = "Redes y contacto directo",
+  title = "Redes y <br /> contacto directo",
   subtitle = "Escribinos por el canal que te resulte más cómodo para consultas, coordinación o seguimiento comercial.",
   whatsappNumber = "5490000000000",
   instagramUrl = "https://www.instagram.com/360construcciones/",
