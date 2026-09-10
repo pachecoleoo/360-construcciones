@@ -119,10 +119,10 @@ export default function Infraestructuraysuelo() {
             Servicios e infraestructura
           </p>
 
-          <div className="mt-4 overflow-hidden">
+          <div className="mt-4 overflow-visible ">
             <h2
               className={cx(
-                "font-heading text-[clamp(38px,11vw,88px)] font-black overflow-visible uppercase leading-[0.9] tracking-[0.01em] text-[#062a47]",
+                "font-heading text-[clamp(38px,11vw,88px)] font-black  uppercase leading-[0.9] tracking-[0.01em] text-[#062a47]",
                 "transition-all delay-100 duration-700 ease-out",
                 visible
                   ? "translate-y-0 opacity-100"
