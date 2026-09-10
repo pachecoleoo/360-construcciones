@@ -1,11 +1,11 @@
 import ProjectHero from "@/components/proyectos/sections/ProjectHero";
-import ProjectAmenities from "@/components/proyectos/sections/ProjectAmenities";
 import ProjectIntroWithData from "@/components/proyectos/sections/ProjectIntroWithData";
 import ProjectGallery from "@/components/proyectos/sections/ProjectGallery";
 import ProjectLocationMap from "@/components/proyectos/sections/ProjectLocationMap";
 import ProjectContactForm from "@/components/proyectos/sections/ProjectContactForm";
 import ProjectGallerySlider2 from "@/components/proyectos/sections/ProjectGallerySlider2";
 import Footer from "@/components/footer/Footer";
+
 export default function EdificioPage() {
   return (
     <main className="bg-white text-slate-900">
@@ -16,146 +16,117 @@ export default function EdificioPage() {
       />
 
       <ProjectIntroWithData
-        eyebrow=""
-        title="Arquitectura contemporánea en el corazón de Neuquén"
+        eyebrow="Nuestra sede"
+        title="El espacio donde construimos cada proyecto"
         paragraphs={[
-          "Mendoza 331 es un desarrollo residencial pensado para integrarse con fuerza y claridad al centro de Neuquén, combinando lenguaje contemporáneo, calidad constructiva y una propuesta funcional para la vida urbana.",
-          "El proyecto articula viviendas de 1 y 2 dormitorios, amplias áreas de cocheras y amenities en altura, incorporando soluciones técnicas de alta prestación y una lectura arquitectónica sobria, sólida y actual.",
+          "Salta 256 es la sede de 360 Construcciones en la ciudad de Neuquén. Un espacio pensado para acompañar el trabajo diario del equipo y representar la identidad, la solidez y la trayectoria de la empresa.",
+          "Desde estas oficinas se desarrollan ideas, se planifican proyectos y se coordinan las distintas etapas de cada obra. Es el punto de encuentro entre arquitectura, construcción, gestión y atención personalizada.",
         ]}
-        dataTitle="Ficha técnica"
-        items={[
-          { label: "Proyecto", value: "Mendoza 331" },
-          { label: "Ubicación", value: "Neuquén Capital, Argentina" },
-          { label: "Tipo", value: "Edificio residencial" },
-          { label: "Estado", value: "Desarrollado" },
-          { label: "Pisos", value: "22" },
-          { label: "Unidades", value: "Departamentos de 1 y 2 dormitorios" },
-          { label: "Cocheras", value: "Planta baja y pisos 1 a 3" },
-          {
-            label: "Amenities",
-            value: "Pileta, solárium, SUM y terraza verde",
-          },
-        ]}
-        // button={{
-        //   label: "Ver brochure",
-        //   href: "/brochures/cordoba434.pdf",
-        //   variant: "dark",
-        //   target: "_blank",
-        //   rel: "noopener noreferrer",
-        // }}
-      />
-
-      <ProjectAmenities
-        title="Amenities"
+        dataTitle="Información"
         items={[
           {
-            icon: "/icons/pileta.png",
-            label: "Pileta",
-            description: "Piscina de 24 metros con solárium.",
+            label: "Nombre",
+            value: "Salta 256",
           },
           {
-            icon: "/icons/aire.png",
-            label: "Aire acondicionado",
-            description: "Preinstalación en todos los ambientes.",
+            label: "Ubicación",
+            value: "Neuquén Capital, Argentina",
           },
           {
-            icon: "/icons/losa2.png",
-            label: "Losa radiante",
-            description: "Sistema con termostato individual.",
+            label: "Dirección",
+            value: "Salta 256",
           },
           {
-            icon: "/icons/seguridad.png",
-            label: "Seguridad",
-            description: "Cámaras y control de accesos.",
+            label: "Uso",
+            value: "Sede corporativa y oficinas",
           },
           {
-            icon: "/icons/ascensor.png",
-            label: "Ascensores",
-            description: "Última generación.",
+            label: "Empresa",
+            value: "360 Construcciones",
           },
           {
-            icon: "/icons/cocheras.png",
-            label: "Cocheras",
-            description: "Amplias y funcionales.",
+            label: "Estado",
+            value: "En funcionamiento",
           },
         ]}
       />
 
       <ProjectGallery
-        eyebrow=""
-        title="GALERIA DE LA OBRA"
-        intro="Una lectura visual de los espacios, materiales y atmósfera general del desarrollo."
+        eyebrow="Nuestra sede"
+        title="GALERÍA"
+        intro="Una mirada a las oficinas de 360 Construcciones, su arquitectura y los espacios donde se desarrollan nuestros proyectos."
         images={[
           {
             src: "/images/salta/drone.JPG",
-            alt: "Cocina integrada",
-            label: "Cocina integrada",
+            alt: "Vista aérea de las oficinas de 360 Construcciones",
+            label: "Vista aérea",
           },
           {
             src: "/images/salta/entrada.jpg",
-            alt: "Terraza exterior",
-            label: "Terraza exterior",
+            alt: "Acceso a las oficinas de 360 Construcciones",
+            label: "Acceso principal",
           },
           {
             src: "/images/salta/abertura2.jpg",
-            alt: "Balcón con visuales",
-            label: "Balcón con visuales",
+            alt: "Detalle arquitectónico de las oficinas",
+            label: "Detalles",
           },
           {
             src: "/images/salta/fachada2.jpg",
-            alt: "Living principal",
-            label: "Living principal",
+            alt: "Fachada de las oficinas de 360 Construcciones",
+            label: "Fachada",
           },
         ]}
       />
+
       <ProjectLocationMap
         title="Ubicación"
-        description="Belgrano 531 se implanta en una ubicación estratégica dentro del tejido urbano de Neuquén, con acceso a servicios, equipamientos y los principales corredores de circulación de la ciudad."
-        address="Belgrano 531, Neuquén Capital, Argentina"
-        mapQuery="Belgrano 531, Neuquén Capital, Argentina"
+        description="Las oficinas de 360 Construcciones se encuentran en Salta 256, en la ciudad de Neuquén. Desde nuestra sede coordinamos el desarrollo y la ejecución de cada proyecto."
+        address="Salta 256, Neuquén Capital, Argentina"
+        mapQuery="Salta 256, Neuquén Capital, Argentina"
       />
 
       <ProjectGallerySlider2
-        eyebrow=""
-        title="Recorrido"
-        description="Explorá los distintos espacios del desarrollo a través de renders y
-            visualizaciones. Una mirada integral del proyecto, su diseño y su
-            integración con el entorno urbano."
+        eyebrow="360 Construcciones"
+        title="Nuestro espacio"
+        description="Un recorrido por la sede de 360 Construcciones, el lugar donde nuestro equipo transforma ideas en proyectos y proyectos en obras."
         metaLabel="Dirección"
-        metaValue="Belgrano 531, Neuquén Capital, Argentina"
+        metaValue="Salta 256, Neuquén Capital, Argentina"
         images={[
           {
             src: "/images/salta/renders/img3.jpg",
-            alt: "Terraza",
-            label: "Terraza",
+            alt: "Vista de la sede de 360 Construcciones",
+            label: "Salta 256",
           },
           {
             src: "/images/salta/renders/img2.jpg",
-            alt: "Balcon",
-            label: "Balcon",
+            alt: "Espacio de las oficinas de 360 Construcciones",
+            label: "Nuestra sede",
           },
           {
             src: "/images/salta/renders/img1.jpg",
-            alt: "Living",
-            label: "Living",
+            alt: "Interior de las oficinas de 360 Construcciones",
+            label: "Espacios de trabajo",
           },
           {
             src: "/images/salta/renders/img4.jpg",
-            alt: "Living",
-            label: "Living",
+            alt: "Detalle interior de las oficinas",
+            label: "Interior",
           },
           {
             src: "/images/salta/renders/img5.jpg",
-            alt: "Living",
-            label: "Living",
+            alt: "Arquitectura de la sede de 360 Construcciones",
+            label: "Arquitectura",
           },
         ]}
       />
+
       <ProjectContactForm
         eyebrow="Contacto"
-        title="SOLICITÁ MÁS INFORMACIÓN"
-        intro="Completá el formulario y te contactaremos para compartirte detalles del proyecto, disponibilidad y documentación comercial."
+        title="HABLEMOS DE TU PRÓXIMO PROYECTO"
+        intro="Contactanos para conocer más sobre nuestros servicios, proyectos y desarrollos. Nuestro equipo te acompañará desde la primera idea hasta la ejecución de la obra."
       />
+
       <Footer />
     </main>
   );

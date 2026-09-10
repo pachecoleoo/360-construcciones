@@ -39,7 +39,10 @@ function renderHighlightedText(
 
       for (let i = 0; i < pieces.length; i++) {
         const chunk = pieces[i];
-        if (chunk) out.push(chunk);
+
+        if (chunk) {
+          out.push(chunk);
+        }
 
         if (i < pieces.length - 1) {
           out.push(
@@ -80,13 +83,19 @@ export default function HeroBackground({
 
   return (
     <section className="relative min-h-screen overflow-hidden">
+      {/* Imagen principal */}
       <Image src={imageSrc} alt="" fill priority className="object-cover" />
 
-      {/* overlays estilo banner */}
-      <div className="absolute inset-0 bg-black/40" />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
-      <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/60 to-transparent" />
+      {/* Oscurecimiento general más equilibrado */}
+      <div className="absolute inset-0 bg-black/20" />
 
+      {/* Sombra lateral suave detrás del contenido */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/20 to-transparent" />
+
+      {/* Sombra superior para el navbar */}
+      <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/55 to-transparent" />
+
+      {/* Contenido */}
       <div className="relative z-10 min-h-screen">
         <div className="mx-auto flex min-h-screen max-w-7xl items-center px-6 pt-[var(--nav-h)]">
           <div
@@ -95,13 +104,22 @@ export default function HeroBackground({
             }
           >
             {eyebrow ? (
-              <p className="text-xs uppercase tracking-[0.35em] text-white/75">
+              <p
+                className="
+                  text-xs
+                  uppercase
+                  tracking-[0.35em]
+                  text-white/75
+                  [text-shadow:0_2px_6px_rgba(0,0,0,0.95)]
+                "
+              >
                 {eyebrow}
               </p>
             ) : null}
 
             <h1
-              className="hero-title
+              className="
+                hero-title
                 mt-4
                 whitespace-pre-line
                 text-6xl
@@ -111,7 +129,7 @@ export default function HeroBackground({
                 leading-[1.02]
                 tracking-[0.01em]
                 text-white
-                [text-shadow:0_8px_30px_rgba(0,0,0,0.55)]
+                [text-shadow:0_3px_8px_rgba(0,0,0,0.95),0_10px_35px_rgba(0,0,0,0.75)]
                 md:text-7xl
               "
             >
@@ -119,7 +137,17 @@ export default function HeroBackground({
             </h1>
 
             {subtitle ? (
-              <p className="hero-subtitle mt-6 max-w-3xl text-sm text-white/90 md:text-base">
+              <p
+                className="
+                  hero-subtitle
+                  mt-6
+                  max-w-3xl
+                  text-sm
+                  text-white/100
+                  [text-shadow:0_2px_5px_rgba(0,0,0,0.95),0_6px_20px_rgba(0,0,0,0.8)]
+                  md:text-base
+                "
+              >
                 {subtitle}
               </p>
             ) : null}
@@ -127,23 +155,20 @@ export default function HeroBackground({
         </div>
       </div>
 
-      {/* flecha scroll */}
+      {/* Flecha scroll */}
       <button
         type="button"
         onClick={scrollNext}
         aria-label="Ir a la primera sección"
         className="
-          absolute bottom-10 left-1/2 z-20 -translate-x-1/2
-          flex flex-col items-center gap-2
-          text-white/70 transition
-          hover:text-white
+          absolute bottom-10 left-1/2 z-20
+          flex -translate-x-1/2 flex-col items-center gap-2
           animate-bounce
+          text-white/70
+          transition
+          hover:text-white
         "
       >
-        {/* <span className="text-[10px] uppercase tracking-[0.35em]">
-          Primera sección
-        </span> */}
-
         <svg
           width="56"
           height="36"
@@ -151,6 +176,7 @@ export default function HeroBackground({
           fill="none"
           stroke="currentColor"
           strokeWidth="1.5"
+          aria-hidden="true"
         >
           <path d="M6 9l6 6 6-6" />
         </svg>

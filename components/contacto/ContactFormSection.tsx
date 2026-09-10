@@ -194,9 +194,7 @@ export default function ContactFormSection() {
                     : "translate-y-[110%] opacity-0",
                 )}
               >
-                Hablemos de
-                <br />
-                tu proyecto
+                Invertí en real estate
               </h2>
             </div>
 
@@ -223,39 +221,139 @@ export default function ContactFormSection() {
               infraestructura y desarrollo urbano.
             </p>
 
+            {/* INFORMACIÓN DE CONTACTO */}
             <div
               className={cx(
-                "mt-10 space-y-0 border border-[#d9dde2] bg-white shadow-[0_14px_34px_rgba(6,42,71,0.06)]",
+                "relative mt-10 overflow-hidden border-y border-[#cfd5dc]",
                 "transition-all duration-1000 delay-300 ease-out",
                 visible
                   ? "translate-y-0 opacity-100"
                   : "translate-y-8 opacity-0",
               )}
             >
-              <InfoRow eyebrow="Horarios" value="Lun a Vie · 09:00 – 18:00" />
-              <InfoRow eyebrow="Tiempo de respuesta" value="24–48 hs hábiles" />
+              {/* Número decorativo */}
 
+              {/* Encabezado */}
+              <div className="relative flex items-center justify-between py-5">
+                <p className="text-[10px] uppercase tracking-[0.28em] text-[#7a8a97]">
+                  Información de contacto
+                </p>
+              </div>
+
+              {/* Horarios */}
+              <div
+                className="
+      group relative grid grid-cols-[36px_1fr] gap-4
+      border-t border-[#cfd5dc] py-5
+      transition-all duration-300
+      hover:bg-white/65 hover:px-4
+      sm:grid-cols-[42px_1fr] sm:gap-5
+    "
+              >
+                <span className="pt-1 text-[10px] font-semibold tracking-[0.16em] text-[#062a47]/50">
+                  01
+                </span>
+
+                <div className="transition-transform duration-300 group-hover:translate-x-1">
+                  <p className="text-[9px] uppercase tracking-[0.25em] text-[#7a8a97]">
+                    Horarios de atención
+                  </p>
+
+                  <p className="mt-2 font-heading text-[19px] font-black uppercase leading-tight text-[#062a47] sm:text-[21px]">
+                    Lun a Vie · 09:00 – 18:00
+                  </p>
+                </div>
+              </div>
+
+              {/* Tiempo de respuesta */}
+              <div
+                className="
+      group relative grid grid-cols-[36px_1fr] gap-4
+      border-t border-[#cfd5dc] py-5
+      transition-all duration-300
+      hover:bg-white/65 hover:px-4
+      sm:grid-cols-[42px_1fr] sm:gap-5
+    "
+              >
+                <span className="pt-1 text-[10px] font-semibold tracking-[0.16em] text-[#062a47]/50">
+                  02
+                </span>
+
+                <div className="transition-transform duration-300 group-hover:translate-x-1">
+                  <p className="text-[9px] uppercase tracking-[0.25em] text-[#7a8a97]">
+                    Tiempo de respuesta
+                  </p>
+
+                  <p className="mt-2 font-heading text-[19px] font-black uppercase leading-tight text-[#062a47] sm:text-[21px]">
+                    24–48 hs hábiles
+                  </p>
+                </div>
+              </div>
+
+              {/* WhatsApp */}
               <a
                 href="https://wa.me/5490000000000"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-between border-t border-[#d9dde2] px-6 py-6 transition-colors duration-300 hover:bg-[#25D366]"
+                className="
+      group relative grid grid-cols-[36px_1fr_auto] items-center gap-4
+      border-t border-[#cfd5dc] py-5
+      transition-all duration-300
+      hover:bg-[#062a47] hover:px-4
+      sm:grid-cols-[42px_1fr_auto] sm:gap-5
+    "
               >
-                <div>
-                  <p className="text-[11px] uppercase tracking-[0.28em] text-[#7a8a97] transition-colors duration-300 group-hover:text-white/80">
+                <span
+                  className="
+        text-[10px] font-semibold tracking-[0.16em]
+        text-[#062a47]/50
+        transition-colors duration-300
+        group-hover:text-white/45
+      "
+                >
+                  03
+                </span>
+
+                <div className="transition-transform duration-300 group-hover:translate-x-1">
+                  <p
+                    className="
+          text-[9px] uppercase tracking-[0.25em]
+          text-[#7a8a97]
+          transition-colors duration-300
+          group-hover:text-white/55
+        "
+                  >
                     Contacto directo
                   </p>
-                  <p className="mt-2 font-heading text-[28px] font-black uppercase leading-none text-[#062a47] transition-colors duration-300 group-hover:text-white">
+
+                  <p
+                    className="
+          mt-2 font-heading text-[23px] font-black uppercase leading-none
+          text-[#062a47]
+          transition-colors duration-300
+          group-hover:text-white
+          sm:text-[27px]
+        "
+                  >
                     WhatsApp
                   </p>
                 </div>
 
-                <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#d9dde2] bg-[#f4f5f6] transition-all duration-300 group-hover:border-white/20 group-hover:bg-white/10">
+                <div
+                  className="
+        flex h-11 w-11 items-center justify-center
+        rounded-full border border-[#cfd5dc] bg-white/60
+        transition-all duration-300
+        group-hover:rotate-[-45deg]
+        group-hover:border-white/25
+        group-hover:bg-white/10
+      "
+                >
                   <Image
                     src="/images/iconos/abir2.png"
-                    alt="WhatsApp"
-                    width={18}
-                    height={18}
+                    alt=""
+                    width={17}
+                    height={17}
                     className="transition duration-300 group-hover:invert"
                   />
                 </div>

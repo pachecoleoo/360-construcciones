@@ -125,7 +125,7 @@ export default function Belgrano531Page() {
             visualizaciones. Una mirada integral del proyecto, su diseño y su
             integración con el entorno urbano."
         metaLabel="Dirección"
-        metaValue="Belgrano 531, Neuquén Capital, Argentina"
+        metaValue="Mendoza 331, Neuquén Capital, Argentina"
         images={[
           {
             src: "/images/mendoza/renders/living2.jpg",

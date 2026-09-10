@@ -26,7 +26,7 @@ export default function EdificioPage() {
           { label: "Proyecto", value: "Gatica 498" },
           { label: "Ubicación", value: "Neuquén, Argentina" },
           { label: "Tipo", value: "Edificio residencial" },
-          { label: "Estado", value: "En desarrollo" },
+          { label: "Estado", value: "Desarrollado" },
           { label: "Pisos", value: "17" },
           { label: "Unidades", value: "1, 2 y 3 ambientes" },
           { label: "Superficie", value: "30 a 135 m²" },
@@ -120,7 +120,7 @@ export default function EdificioPage() {
             visualizaciones. Una mirada integral del proyecto, su diseño y su
             integración con el entorno urbano."
         metaLabel="Dirección"
-        metaValue="Belgrano 531, Neuquén Capital, Argentina"
+        metaValue="Gatica 498, Neuquén Capital, Argentina"
         images={[
           {
             src: "/images/gatica/renders/acceso.jpg",
