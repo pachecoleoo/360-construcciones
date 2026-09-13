@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { ReactNode } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 type HeroBackgroundProps = {
   title: string;
@@ -69,9 +70,10 @@ export default function HeroBackground({
   imageSrc,
   align = "left",
 }: HeroBackgroundProps) {
+  const { t } = useLanguage();
   const titleNodes = renderHighlightedText(
-    title,
-    highlight,
+    t(title),
+    highlight.map(t),
     highlightClassName,
   );
 
@@ -113,7 +115,7 @@ export default function HeroBackground({
                   [text-shadow:0_2px_6px_rgba(0,0,0,0.95)]
                 "
               >
-                {eyebrow}
+                {t(eyebrow)}
               </p>
             ) : null}
 
@@ -148,7 +150,7 @@ export default function HeroBackground({
                   md:text-base
                 "
               >
-                {subtitle}
+                {t(subtitle)}
               </p>
             ) : null}
           </div>
@@ -159,7 +161,7 @@ export default function HeroBackground({
       <button
         type="button"
         onClick={scrollNext}
-        aria-label="Ir a la primera sección"
+        aria-label={t("Ir a la primera sección")}
         className="
           absolute bottom-10 left-1/2 z-20
           flex -translate-x-1/2 flex-col items-center gap-2

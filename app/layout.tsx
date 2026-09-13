@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { cookies } from "next/headers";
 import { Suspense } from "react";
 
 import "./globals.css";
@@ -7,7 +8,10 @@ import "./globals.css";
 import FloatingNavbar from "@/components/FloatingNavbar";
 import FloatingLogo from "@/components/FloatingLogo";
 import SmoothScroll from "@/components/SmoothScroll";
-import { LanguageProvider } from "@/context/LanguageContext";
+import {
+  LanguageProvider,
+  type Language,
+} from "@/context/LanguageContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,17 +28,21 @@ export const metadata: Metadata = {
   description: "Arquitectura e ingeniería para proyectos de alto impacto",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const savedLanguage = cookieStore.get("language")?.value;
+  const initialLanguage: Language = savedLanguage === "en" ? "en" : "es";
+
   return (
-    <html lang="es">
+    <html lang={initialLanguage}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} overflow-x-hidden antialiased`}
       >
-        <LanguageProvider>
+        <LanguageProvider initialLanguage={initialLanguage}>
           <Suspense fallback={null}>
             <FloatingNavbar />
           </Suspense>

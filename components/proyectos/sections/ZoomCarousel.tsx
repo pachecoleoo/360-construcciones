@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 type CarouselImage = {
   src: string;
@@ -36,6 +37,7 @@ export default function ZoomCarousel({
 }: ZoomCarouselProps) {
   const safeImages = useMemo(() => images ?? [], [images]);
   const [current, setCurrent] = useState(0);
+  const { t } = useLanguage();
 
   const goTo = (index: number) => {
     if (!safeImages.length) return;
@@ -103,7 +105,7 @@ export default function ZoomCarousel({
                 {image.title && (
                   <div className="absolute left-6 bottom-6 md:left-10 md:bottom-10 z-20">
                     <p className="text-white text-3xl md:text-5xl font-light tracking-tight">
-                      {image.title}
+                      {t(image.title)}
                     </p>
                   </div>
                 )}
@@ -116,7 +118,7 @@ export default function ZoomCarousel({
             <div className="absolute right-5 bottom-5 z-30 flex items-center gap-3">
               <button
                 onClick={prev}
-                aria-label="Imagen anterior"
+                aria-label={t("Imagen anterior")}
                 className="grid h-12 w-12 place-items-center border border-white/25 bg-white/10 text-white backdrop-blur-md transition hover:bg-white/20 active:scale-95 rounded-none"
               >
                 <svg
@@ -137,7 +139,7 @@ export default function ZoomCarousel({
 
               <button
                 onClick={next}
-                aria-label="Imagen siguiente"
+                aria-label={t("Imagen siguiente")}
                 className="grid h-12 w-12 place-items-center border border-white/25 bg-white/10 text-white backdrop-blur-md transition hover:bg-white/20 active:scale-95 rounded-none"
               >
                 <svg
@@ -168,7 +170,7 @@ export default function ZoomCarousel({
                   <button
                     key={index}
                     onClick={() => goTo(index)}
-                    aria-label={`Ir a imagen ${index + 1}`}
+                    aria-label={`${t("Ir a imagen")} ${index + 1}`}
                     className={cx(
                       "h-[3px] transition-all duration-300 rounded-none",
                       active
@@ -201,7 +203,7 @@ export default function ZoomCarousel({
                 >
                   <Image
                     src={image.src}
-                    alt={image.alt ?? `Miniatura ${index + 1}`}
+                    alt={image.alt ? t(image.alt) : `${t("Miniatura")} ${index + 1}`}
                     fill
                     className="object-cover rounded-none"
                   />

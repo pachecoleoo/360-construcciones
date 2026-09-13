@@ -2,6 +2,7 @@
 
 import ZoomCarousel from "@/components/proyectos/sections/ZoomCarousel";
 import { useEffect, useRef, useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 type ImageItem = {
   src: string;
@@ -59,6 +60,7 @@ export default function ProjectGallerySlider2({
   images,
 }: Props) {
   const { ref, visible } = useInViewOnce<HTMLDivElement>();
+  const { t } = useLanguage();
 
   return (
     <section id="recorrido" ref={ref} className="w-full py-14 md:py-20">
@@ -87,7 +89,7 @@ export default function ProjectGallerySlider2({
                   : "translate-y-4 opacity-0",
               )}
             >
-              {eyebrow}
+              {t(eyebrow)}
             </p>
 
             <div className="overflow-hidden">
@@ -104,7 +106,7 @@ export default function ProjectGallerySlider2({
                     : "translate-y-[110%] opacity-0",
                 )}
               >
-                {title}
+                {t(title)}
               </h2>
             </div>
 
@@ -127,7 +129,7 @@ export default function ProjectGallerySlider2({
                     : "translate-y-5 opacity-0",
                 )}
               >
-                {description}
+                {t(description)}
               </p>
             )}
 
@@ -143,7 +145,7 @@ export default function ProjectGallerySlider2({
               >
                 <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
                   <span className="text-[11px] uppercase tracking-[0.24em] text-[#90a0ad]">
-                    {metaLabel}
+                    {t(metaLabel)}
                   </span>
 
                   {metaValue && (
@@ -166,8 +168,8 @@ export default function ProjectGallerySlider2({
           <ZoomCarousel
             images={images.map((img) => ({
               src: img.src,
-              alt: img.alt,
-              title: img.label,
+              alt: img.alt ? t(img.alt) : undefined,
+              title: img.label ? t(img.label) : undefined,
             }))}
             heightClassName="h-[420px] md:h-[620px]"
             zoomDuration={3000}

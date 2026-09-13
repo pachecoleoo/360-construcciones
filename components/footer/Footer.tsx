@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
 
 const NAV = [
   { label: "Inicio", href: "/" },
@@ -15,6 +16,7 @@ const NAV = [
 ];
 
 export default function Footer() {
+  const { language, t } = useLanguage();
   return (
     <footer className="bg-black text-white">
       <div className="relative">
@@ -35,7 +37,7 @@ export default function Footer() {
             {/* NAV */}
             <div className="lg:col-span-5">
               <p className="font-body text-xs tracking-[0.28em] uppercase text-white/55">
-                Navegación
+                {language === "es" ? "Navegación" : "Navigation"}
               </p>
 
               <ul className="mt-6 divide-y divide-white/12">
@@ -59,7 +61,7 @@ export default function Footer() {
                         "
                       />
                       <span className="relative font-body text-base text-white/90">
-                        {item.label}
+                        {t(item.label)}
                       </span>
                       <span
                         aria-hidden
@@ -80,12 +82,12 @@ export default function Footer() {
             {/* INFO */}
             <div className="lg:col-span-7">
               <p className="font-body text-xs tracking-[0.28em] uppercase text-white/55">
-                Información
+                {t("Información")}
               </p>
 
               <div className="mt-6 divide-y divide-white/12">
                 <Row
-                  label="Dirección"
+                  label={t("Dirección")}
                   value={
                     <>
                       Salta 256, Neuquén Capital - Piso 2 <br />
@@ -95,7 +97,7 @@ export default function Footer() {
                 />
 
                 <Row
-                  label="Redes"
+                  label={t("Redes")}
                   value={
                     <div className="flex flex-col gap-2">
                       <a
@@ -119,7 +121,7 @@ export default function Footer() {
                 />
 
                 <Row
-                  label="Teléfono"
+                  label={t("Teléfono")}
                   value={
                     <>
                       +54 299 536-0404 <br />
@@ -157,8 +159,7 @@ export default function Footer() {
           {/* bottom */}
           <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
             <p className="font-body text-xs text-white/60">
-              © {new Date().getFullYear()} 360 Construcciones. Todos los
-              derechos reservados.
+              © {new Date().getFullYear()} 360 Construcciones. {language === "es" ? "Todos los derechos reservados." : "All rights reserved."}
             </p>
 
             <p className="font-body text-xs text-white/60">

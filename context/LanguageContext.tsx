@@ -1,39 +1,34 @@
 "use client";
 
-import {
-  createContext,
-  ReactNode,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import { createContext, ReactNode, useContext, useState } from "react";
+import { translate } from "./translations";
 
-type Language = "es" | "en";
+export type Language = "es" | "en";
 
 interface LanguageContextType {
   language: Language;
   setLanguage: (language: Language) => void;
   toggleLanguage: () => void;
+  t: (text: string) => string;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(
   undefined,
 );
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<Language>("es");
-
-  useEffect(() => {
-    const savedLanguage = localStorage.getItem("language");
-
-    if (savedLanguage === "es" || savedLanguage === "en") {
-      setLanguageState(savedLanguage);
-    }
-  }, []);
+export function LanguageProvider({
+  children,
+  initialLanguage = "es",
+}: {
+  children: ReactNode;
+  initialLanguage?: Language;
+}) {
+  const [language, setLanguageState] = useState<Language>(initialLanguage);
 
   const setLanguage = (newLanguage: Language) => {
     setLanguageState(newLanguage);
     localStorage.setItem("language", newLanguage);
+    document.cookie = `language=${newLanguage}; path=/; max-age=31536000; samesite=lax`;
     document.documentElement.lang = newLanguage;
   };
 
@@ -42,7 +37,14 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, toggleLanguage }}>
+    <LanguageContext.Provider
+      value={{
+        language,
+        setLanguage,
+        toggleLanguage,
+        t: (text) => translate(text, language),
+      }}
+    >
       {children}
     </LanguageContext.Provider>
   );

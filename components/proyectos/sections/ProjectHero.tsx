@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 type ProjectHeroProps = {
   title: string;
@@ -44,6 +45,7 @@ export default function ProjectHero({
   heroImageSrc,
 }: ProjectHeroProps) {
   const { ref, visible } = useInViewOnce<HTMLElement>();
+  const { t } = useLanguage();
 
   return (
     <section
@@ -97,7 +99,7 @@ export default function ProjectHero({
                     : "translate-y-[110%] opacity-0",
                 )}
               >
-                {title}
+                {t(title)}
               </h1>
             </div>
 
@@ -120,37 +122,37 @@ export default function ProjectHero({
               href="#proyecto"
               className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70 transition hover:text-white"
             >
-              Ficha
+              {t("Ficha")}
             </a>
             <a
               href="#amenities"
               className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70 transition hover:text-white"
             >
-              Aminities
+              Amenities
             </a>
             <a
               href="#Galeria"
               className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70 transition hover:text-white"
             >
-              Galería
+              {t("Galería")}
             </a>
             <a
               href="#ubicacion"
               className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70 transition hover:text-white"
             >
-              Ubicación
+              {t("Ubicación")}
             </a>
             <a
               href="#recorrido"
               className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70 transition hover:text-white"
             >
-              Recorrido
+              {t("Recorrido")}
             </a>
             <a
               href="#contacto"
               className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70 transition hover:text-white"
             >
-              Contacto
+              {t("Contacto")}
             </a>
           </div>
         </div>

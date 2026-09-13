@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Button from "@/components/ui/Button";
+import { useLanguage } from "@/context/LanguageContext";
 
 type DataItem = {
   label: string;
@@ -63,6 +64,7 @@ export default function ProjectIntroWithData({
   button,
 }: ProjectIntroWithDataProps) {
   const { ref, visible } = useInViewOnce<HTMLElement>();
+  const { t } = useLanguage();
 
   return (
     <section
@@ -101,7 +103,7 @@ export default function ProjectIntroWithData({
                     : "translate-y-4 opacity-0",
                 )}
               >
-                {eyebrow}
+                {t(eyebrow)}
               </p>
 
               {/* TÍTULO */}
@@ -119,7 +121,7 @@ export default function ProjectIntroWithData({
                       : "translate-y-[110%] opacity-0",
                   )}
                 >
-                  {title}
+                  {t(title)}
                 </h2>
               </div>
 
@@ -148,7 +150,7 @@ export default function ProjectIntroWithData({
                     key={index}
                     className="max-w-2xl text-[15px] leading-8 text-[#5f6f84] md:text-base"
                   >
-                    {paragraph}
+                    {t(paragraph)}
                   </p>
                 ))}
               </div>
@@ -170,7 +172,7 @@ export default function ProjectIntroWithData({
                     target={button.target}
                     rel={button.rel}
                   >
-                    {button.label}
+                    {t(button.label)}
                   </Button>
                 </div>
               )}
@@ -212,7 +214,7 @@ export default function ProjectIntroWithData({
                       : "translate-y-4 opacity-0",
                   )}
                 >
-                  {dataTitle}
+                  {t(dataTitle)}
                 </p>
               </div>
 
@@ -228,12 +230,12 @@ export default function ProjectIntroWithData({
                     )}
                   >
                     <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#062a47]/55">
-                      {item.label}
+                      {t(item.label)}
                     </span>
 
                     <div>
                       <p className="text-[15px] leading-8 text-[#22384f]">
-                        {item.value}
+                        {t(item.value)}
                       </p>
                     </div>
                   </div>

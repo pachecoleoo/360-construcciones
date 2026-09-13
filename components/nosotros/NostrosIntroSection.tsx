@@ -2,9 +2,11 @@
 
 import Image from "next/image";
 import { useReveal } from "@/components/hooks/useReveal";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function NosotrosIntroSection() {
   const s1 = useReveal({ duration: 900 });
+  const { language, t } = useLanguage();
 
   return (
     <section
@@ -54,17 +56,17 @@ export default function NosotrosIntroSection() {
               `}
             >
               <p className="text-[11px] uppercase tracking-[0.28em] text-[#7a8a97]">
-                Sobre nosotros
+                {t("Sobre nosotros")}
               </p>
 
               <h2 className="mt-4 max-w-[720px] font-heading text-[48px] font-black uppercase leading-[0.9] tracking-[0.01em] text-[#002B49] md:text-6xl">
-                Somos 360
+                {t("Somos 360")}
               </h2>
 
               <p className="mt-7 max-w-[680px] font-body text-[17px] leading-8 text-[#081835]/75 md:text-xl md:leading-9">
-                Integramos arquitectura e ingeniería en un flujo claro y
-                medible. Desde la planificación hasta la entrega final, cuidamos
-                cada decisión técnica y cada detalle constructivo.
+                {language === "es"
+                  ? "Integramos arquitectura e ingeniería en un flujo claro y medible. Desde la planificación hasta la entrega final, cuidamos cada decisión técnica y cada detalle constructivo."
+                  : "We integrate architecture and engineering into a clear, measurable workflow. From planning through final delivery, we care for every technical decision and construction detail."}
               </p>
             </div>
 

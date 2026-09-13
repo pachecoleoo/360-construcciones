@@ -3,10 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Button from "../ui/Button";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function SectionOne() {
   const ref = useRef<HTMLDivElement | null>(null);
   const [visible, setVisible] = useState(false);
+  const { language, t } = useLanguage();
 
   useEffect(() => {
     if (!ref.current) return;
@@ -57,15 +59,15 @@ export default function SectionOne() {
         {/* IZQUIERDA: TEXTO */}
         <div className="order-1">
           <h2 className="font-heading font-black uppercase tracking-[0.02em] text-[42px] -mb-10 leading-[0.95] text-[#002849] sm:text-5xl md:text-6xl md:leading-[1.05] md:mb-0">
-            Desarrollo
+            {language === "es" ? "Desarrollo" : "Real estate"}
             <br />
-            inmobiliario
+            {language === "es" ? "inmobiliario" : "development"}
           </h2>
 
           {/* BOTÓN SOLO DESKTOP */}
           <div className="mt-10 hidden md:block">
             <Button href="/proyectos" variant="dark" icon={buttonIcon}>
-              Proyectos desarrollados
+              {t("Proyectos desarrollados")}
             </Button>
           </div>
         </div>
@@ -81,7 +83,7 @@ export default function SectionOne() {
         >
           <Image
             src="/images/belgranoLineas.png"
-            alt="Desarrollo inmobiliario"
+            alt={t("Desarrollo inmobiliario")}
             width={280}
             height={420}
             className="h-auto w-[280px] opacity-90 sm:w-[220px] md:w-[280px]"
@@ -91,7 +93,7 @@ export default function SectionOne() {
           {/* BOTÓN SOLO MOBILE */}
           <div className="mb-14 md:hidden">
             <Button href="/proyectos" variant="dark" icon={buttonIcon}>
-              Proyectos desarrollados
+              {t("Proyectos desarrollados")}
             </Button>
           </div>
         </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 type ProjectContactFormProps = {
   eyebrow?: string;
@@ -51,6 +52,7 @@ export default function ProjectContactForm({
   intro = "Dejanos tus datos y te contactaremos para brindarte más información sobre el desarrollo.",
 }: ProjectContactFormProps) {
   const { ref, visible } = useInViewOnce<HTMLElement>();
+  const { t } = useLanguage();
 
   const [values, setValues] = useState<FormValues>({
     nombre: "",
@@ -70,14 +72,14 @@ export default function ProjectContactForm({
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    const subject = encodeURIComponent("Consulta sobre el desarrollo");
+    const subject = encodeURIComponent(t("Consulta sobre el desarrollo"));
     const body = encodeURIComponent(
-      `Nombre: ${values.nombre}
-Apellido: ${values.apellido}
+      `${t("Nombre")}: ${values.nombre}
+${t("Apellido")}: ${values.apellido}
 Email: ${values.email}
-Teléfono: ${values.telefono}
+${t("Teléfono")}: ${values.telefono}
 
-Mensaje:
+${t("Mensaje")}:
 ${values.mensaje}`,
     );
 
@@ -133,7 +135,7 @@ ${values.mensaje}`,
                     : "translate-y-[110%] opacity-0",
                 )}
               >
-                {title}
+                {t(title)}
               </h2>
             </div>
 
@@ -155,7 +157,7 @@ ${values.mensaje}`,
                   : "translate-y-5 opacity-0",
               )}
             >
-              {intro}
+              {t(intro)}
             </p>
           </div>
         </div>
@@ -172,7 +174,7 @@ ${values.mensaje}`,
             className="grid gap-x-8 gap-y-8 md:grid-cols-2"
           >
             <Field
-              label="Nombre"
+              label={t("Nombre")}
               name="nombre"
               value={values.nombre}
               onChange={handleChange}
@@ -180,7 +182,7 @@ ${values.mensaje}`,
             />
 
             <Field
-              label="Apellido"
+              label={t("Apellido")}
               name="apellido"
               value={values.apellido}
               onChange={handleChange}
@@ -197,7 +199,7 @@ ${values.mensaje}`,
             />
 
             <Field
-              label="Teléfono"
+              label={t("Teléfono")}
               name="telefono"
               type="tel"
               value={values.telefono}
@@ -208,7 +210,7 @@ ${values.mensaje}`,
             <div className="md:col-span-2">
               <label className="block">
                 <span className="mb-3 block text-[13px] uppercase tracking-[0.16em] text-[#062a47]/75">
-                  Mensaje
+                  {t("Mensaje")}
                 </span>
 
                 <textarea
@@ -224,7 +226,7 @@ ${values.mensaje}`,
                     "focus:border-[#062a47] focus:ring-0",
                     "placeholder:text-[#8c9aa6]",
                   )}
-                  placeholder="Escribinos tu consulta"
+                  placeholder={t("Escribinos tu consulta")}
                 />
               </label>
             </div>
@@ -241,7 +243,7 @@ ${values.mensaje}`,
                   "active:scale-[0.98]",
                 )}
               >
-                Enviar
+                {t("Enviar")}
               </button>
             </div>
           </form>

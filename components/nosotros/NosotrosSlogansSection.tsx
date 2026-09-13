@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Button from "../ui/Button";
+import { useLanguage } from "@/context/LanguageContext";
 const SLOGANS = [
   "Construyendo soluciones a la altura de nuestros clientes.",
   "Construyendo relaciones a largo plazo con nuestros proveedores.",
@@ -43,6 +44,16 @@ function useInViewOnce<T extends HTMLElement>() {
 
 export default function NosotrosSlogansSection() {
   const { ref, visible } = useInViewOnce<HTMLElement>();
+  const { language, t } = useLanguage();
+  const slogans = language === "es" ? SLOGANS : [
+    "Building solutions that meet our clients’ needs.",
+    "Building long-term relationships with our suppliers.",
+    "Building an increasingly comprehensive company.",
+    "Building an image founded on efficiency.",
+    "Building trust through our experience.",
+    "Building a flexible and transparent organization.",
+    "Building a new way to build.",
+  ];
 
   return (
     <section
@@ -64,7 +75,7 @@ export default function NosotrosSlogansSection() {
                     : "translate-y-4 opacity-0",
                 )}
               >
-                Nosotros
+                {t("Nosotros")}
               </p>
 
               {/* TÍTULO */}
@@ -82,11 +93,11 @@ export default function NosotrosSlogansSection() {
                       : "translate-y-[110%] opacity-0",
                   )}
                 >
-                  Construimos
+                  {language === "es" ? "Construimos" : "We build"}
                   <br />
-                  una manera
+                  {language === "es" ? "una manera" : "a better way"}
                   <br />
-                  de trabajar
+                  {language === "es" ? "de trabajar" : "to work"}
                 </h2>
               </div>
 
@@ -111,9 +122,9 @@ export default function NosotrosSlogansSection() {
                 )}
               >
                 <p className="max-w-2xl text-[15px] leading-8 text-[#5f6f84] md:text-base">
-                  Nuestra identidad se define por una forma de trabajo clara,
-                  técnica y consistente. Cada vínculo, cada proceso y cada obra
-                  responden a una misma visión.
+                  {language === "es"
+                    ? "Nuestra identidad se define por una forma de trabajo clara, técnica y consistente. Cada vínculo, cada proceso y cada obra responden a una misma visión."
+                    : "Our identity is defined by a clear, technical and consistent way of working. Every relationship, process and project reflects the same vision."}
                 </p>
                 <div className="mt-8">
                   <Button
@@ -164,14 +175,14 @@ export default function NosotrosSlogansSection() {
                       : "translate-y-4 opacity-0",
                   )}
                 >
-                  Principios
+                  {t("Principios")}
                 </p>
               </div>
 
               <div className="mt-6 border-t border-[#cfd5dc]">
-                {SLOGANS.map((item, index) => {
-                  const isLast = index === SLOGANS.length - 1;
-                  const rest = item.replace("Construyendo ", "");
+                {slogans.map((item, index) => {
+                  const isLast = index === slogans.length - 1;
+                  const rest = item.replace(language === "es" ? "Construyendo " : "Building ", "");
 
                   return (
                     <div
@@ -195,7 +206,7 @@ export default function NosotrosSlogansSection() {
                             isLast && "font-semibold text-[#062a47]",
                           )}
                         >
-                          <span className="font-semibold">Construyendo</span>{" "}
+                          <span className="font-semibold">{language === "es" ? "Construyendo" : "Building"}</span>{" "}
                           {rest}
                         </p>
 

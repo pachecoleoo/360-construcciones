@@ -2,8 +2,10 @@
 
 import Image from "next/image";
 import { BrandButtonC } from "../ui/BrandButtonC";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function HeroImage() {
+  const { language, t } = useLanguage();
   const scrollNext = () => {
     document
       .getElementById("primera-seccion")
@@ -15,7 +17,7 @@ export default function HeroImage() {
       {/* Imagen de fondo */}
       <Image
         src="/images/original/frameGatica4.jpg"
-        alt="360 Construcciones - Contacto"
+        alt={`360 Construcciones - ${t("Contacto")}`}
         fill
         priority
         sizes="100vw"
@@ -42,14 +44,14 @@ export default function HeroImage() {
               md:text-7xl
             "
           >
-            Contactanos{" "}
+            {language === "es" ? "Contactanos" : "Contact us"}{" "}
             <span
               className="
                 text-white
                 [text-shadow:0_2px_8px_rgba(0,0,0,0.9),0_8px_30px_rgba(6,42,71,0.75)]
               "
             >
-              AHORA
+              {language === "es" ? "AHORA" : "NOW"}
             </span>
           </h1>
 
@@ -65,11 +67,11 @@ export default function HeroImage() {
             "
           >
             <BrandButtonC href="#email" variant="glass">
-              Envíanos un email
+              {language === "es" ? "Envíanos un email" : "Send us an email"}
             </BrandButtonC>
 
             <BrandButtonC href="#asesor" variant="ghost">
-              Contactate con un asesor
+              {language === "es" ? "Contactate con un asesor" : "Speak with an advisor"}
             </BrandButtonC>
           </div>
         </div>
@@ -78,7 +80,7 @@ export default function HeroImage() {
       <button
         type="button"
         onClick={scrollNext}
-        aria-label="Ir a la primera sección"
+        aria-label={t("Ir a la primera sección")}
         className="
           absolute bottom-10 left-1/2 z-20
           flex -translate-x-1/2 flex-col items-center

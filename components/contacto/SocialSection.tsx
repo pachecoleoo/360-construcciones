@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react";
 import { useEffect, useRef, useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 function cx(...classes: Array<string | false | null | undefined>) {
   return classes.filter(Boolean).join(" ");
@@ -220,9 +221,10 @@ export default function SocialSection({
   linkedinUrl?: string;
 }) {
   const { ref, visible } = useInViewOnce<HTMLElement>();
+  const { language, t } = useLanguage();
 
   const waUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-    "Hola! Quisiera consultar por un proyecto.",
+    language === "es" ? "Hola! Quisiera consultar por un proyecto." : "Hello! I would like to inquire about a project.",
   )}`;
 
   return (
@@ -263,7 +265,7 @@ export default function SocialSection({
               visible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0",
             )}
           >
-            Comunicación
+            {language === "es" ? "Comunicación" : "Communication"}
           </p>
 
           <div className="overflow-hidden">
@@ -276,7 +278,7 @@ export default function SocialSection({
                   : "translate-y-[110%] opacity-0",
               )}
             >
-              {title}
+              {language === "es" ? title : "Social media and\ndirect contact"}
             </h2>
           </div>
           <div className="mt-3 h-[2px] w-20 overflow-hidden">
@@ -294,16 +296,16 @@ export default function SocialSection({
               visible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0",
             )}
           >
-            {subtitle}
+            {language === "es" ? subtitle : "Reach us through whichever channel is most convenient for inquiries, coordination or commercial follow-up."}
           </p>
         </div>
 
         <div className="mt-12 grid gap-5 md:grid-cols-3">
           <Card
             title="WhatsApp"
-            desc="Respuesta ágil para coordinar una visita, solicitar presupuesto o iniciar una consulta técnica."
+            desc={language === "es" ? "Respuesta ágil para coordinar una visita, solicitar presupuesto o iniciar una consulta técnica." : "A quick response to schedule a visit, request a quote or start a technical inquiry."}
             href={waUrl}
-            label="Abrir chat"
+            label={t("Abrir chat")}
             accentClass="bg-[#062a47]"
             hoverBorderClass="hover:border-[#062a47]/25"
             icon={<WhatsAppIcon className="h-[30px] w-[30px]" />}
@@ -313,9 +315,9 @@ export default function SocialSection({
 
           <Card
             title="Instagram"
-            desc="Seguinos para conocer avances de obra, novedades y contenido vinculado a nuestros desarrollos."
+            desc={language === "es" ? "Seguinos para conocer avances de obra, novedades y contenido vinculado a nuestros desarrollos." : "Follow us for construction updates, news and content related to our developments."}
             href={instagramUrl}
-            label="Ver perfil"
+            label={t("Ver perfil")}
             accentClass="bg-[#062a47]"
             hoverBorderClass="hover:border-[#062a47]/25"
             icon={<InstagramIcon className="h-[30px] w-[30px]" />}
@@ -325,9 +327,9 @@ export default function SocialSection({
 
           <Card
             title="LinkedIn"
-            desc="Conocé el perfil institucional de la empresa, su enfoque profesional y su trayectoria."
+            desc={language === "es" ? "Conocé el perfil institucional de la empresa, su enfoque profesional y su trayectoria." : "Learn about the company’s institutional profile, professional approach and track record."}
             href={linkedinUrl}
-            label="Ver LinkedIn"
+            label={t("Ver LinkedIn")}
             accentClass="bg-[#062a47]"
             hoverBorderClass="hover:border-[#062a47]/25"
             icon={<LinkedInIcon className="h-[30px] w-[30px]" />}

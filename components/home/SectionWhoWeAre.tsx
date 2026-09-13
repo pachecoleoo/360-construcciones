@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Button from "@/components/ui/Button";
+import { useLanguage } from "@/context/LanguageContext";
 
 function cx(...classes: Array<string | false | null | undefined>) {
   return classes.filter(Boolean).join(" ");
@@ -10,6 +11,7 @@ function cx(...classes: Array<string | false | null | undefined>) {
 export default function SectionWhoWeAre() {
   const ref = useRef<HTMLDivElement | null>(null);
   const [visible, setVisible] = useState(false);
+  const { language, t } = useLanguage();
 
   useEffect(() => {
     if (!ref.current) return;
@@ -56,9 +58,9 @@ export default function SectionWhoWeAre() {
                 : "translate-y-[110%] opacity-0",
             )}
           >
-            Construimos con método,
+            {language === "es" ? "Construimos con método," : "We build with method,"}
             <br />
-            entregamos con precisión
+            {language === "es" ? "entregamos con precisión" : "we deliver with precision"}
           </h2>
         </div>
 
@@ -83,10 +85,9 @@ export default function SectionWhoWeAre() {
           <div className="grid gap-8 md:grid-cols-[1.1fr_0.9fr] md:gap-10 lg:gap-16  md:-mt-5 -mb-20">
             <div className="max-w-[880px] ">
               <p className="text-[15px] leading-8 text-[#5f6f84] md:text-[16px] md:leading-9 lg:text-[17px]">
-                Somos una empresa orientada a la arquitectura, la ingeniería y
-                la ejecución de obras con gestión integral. Nos involucramos
-                desde la planificación hasta la entrega final, cuidando el
-                detalle técnico, los tiempos y la calidad del resultado.
+                {language === "es"
+                  ? "Somos una empresa orientada a la arquitectura, la ingeniería y la ejecución de obras con gestión integral. Nos involucramos desde la planificación hasta la entrega final, cuidando el detalle técnico, los tiempos y la calidad del resultado."
+                  : "We are a company focused on architecture, engineering and comprehensive construction management. We are involved from planning through final delivery, protecting technical detail, schedules and the quality of every result."}
               </p>
             </div>
             <br />
@@ -100,7 +101,7 @@ export default function SectionWhoWeAre() {
                 )}
               >
                 <Button href="/nosotros" variant="dark">
-                  Conocé más
+                  {t("Conocé más")}
                 </Button>
               </div>
             </div>

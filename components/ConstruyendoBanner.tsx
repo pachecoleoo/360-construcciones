@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 const ITEMS = [
   { text: "soluciones a la altura de nuestros clientes.", highlight: false },
@@ -22,6 +23,7 @@ function cx(...classes: Array<string | false | null | undefined>) {
 export default function ConstruyendoBanner() {
   const [index, setIndex] = useState(0);
   const [phase, setPhase] = useState<"idle" | "out" | "in">("idle");
+  const { language } = useLanguage();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -40,6 +42,11 @@ export default function ConstruyendoBanner() {
     return () => clearInterval(interval);
   }, []);
 
+  const englishItems = [
+    "solutions that meet our clients’ needs.", "relationships with our suppliers.",
+    "an increasingly comprehensive company.", "an image founded on efficiency.",
+    "trust through our experience.", "a flexible and transparent organization.", "a new way to build.",
+  ];
   const current = ITEMS[index];
 
   return (
@@ -65,7 +72,7 @@ export default function ConstruyendoBanner() {
           {/* palabra fija */}
           <div className="min-w-0">
             <h2 className="md:ml-32 font-heading text-[40px] font-black uppercase leading-[0.] tracking-[0.01em] text-[#ffffff] sm:text-[54px] md:text-[68px] lg:text-[70px] ">
-              Construyendo
+              {language === "es" ? "Construyendo" : "Building"}
             </h2>
           </div>
 
@@ -100,7 +107,7 @@ export default function ConstruyendoBanner() {
                     : "font-body font-medium text-[#ffffff]",
                 )}
               >
-                {current.text}
+                {language === "es" ? current.text : englishItems[index]}
               </p>
             </div>
           </div>
