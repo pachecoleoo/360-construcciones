@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 type GalleryImage = {
   src: string;
@@ -53,6 +54,7 @@ export default function ProjectGallery({
 }: ProjectGalleryProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const { ref, visible } = useInViewOnce<HTMLElement>();
+  const { t } = useLanguage();
 
   const safeImages = useMemo(() => images.slice(0, 4), [images]);
 
@@ -96,7 +98,7 @@ export default function ProjectGallery({
                   : "translate-y-4 opacity-0",
               )}
             >
-              {eyebrow}
+              {t(eyebrow)}
             </p>
 
             {/* TÍTULO */}
@@ -113,7 +115,7 @@ export default function ProjectGallery({
                     : "translate-y-[110%] opacity-0",
                 )}
               >
-                {title}
+                {t(title)}
               </h2>
             </div>
 
@@ -137,7 +139,7 @@ export default function ProjectGallery({
                   : "translate-y-5 opacity-0",
               )}
             >
-              {intro}
+              {t(intro)}
             </p>
           </div>
         </div>
@@ -170,7 +172,7 @@ export default function ProjectGallery({
 
               <div className="absolute bottom-0 left-0 z-10 p-4">
                 <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-white">
-                  {featured.label ?? featured.alt}
+                  {t(featured.label ?? featured.alt)}
                 </p>
               </div>
             </div>
@@ -185,7 +187,7 @@ export default function ProjectGallery({
                 >
                   <Image
                     src={image.src}
-                    alt={image.alt}
+                    alt={t(image.alt)}
                     fill
                     className="object-cover"
                   />
@@ -196,7 +198,7 @@ export default function ProjectGallery({
 
                   <div className="absolute bottom-0 left-0 z-10 p-2">
                     <p className="text-[9px] font-medium uppercase tracking-[0.14em] text-white/90">
-                      {image.label ?? image.alt}
+                      {t(image.label ?? image.alt)}
                     </p>
                   </div>
                 </button>
@@ -214,7 +216,7 @@ export default function ProjectGallery({
               >
                 <Image
                   src={featured.src}
-                  alt={featured.alt}
+                  alt={t(featured.alt)}
                   fill
                   priority
                   className="object-cover"
@@ -223,7 +225,7 @@ export default function ProjectGallery({
 
               <div className="absolute bottom-0 left-0 z-10 p-6">
                 <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-white">
-                  {featured.label ?? featured.alt}
+                  {t(featured.label ?? featured.alt)}
                 </p>
               </div>
             </article>
@@ -241,11 +243,11 @@ export default function ProjectGallery({
                     type="button"
                     onClick={() => setActiveIndex(realIndex)}
                     className="group relative min-h-[28vh] overflow-hidden text-left"
-                    aria-label={`Ver imagen ${image.label ?? image.alt}`}
+                    aria-label={`${t("Ver imagen")} ${t(image.label ?? image.alt)}`}
                   >
                     <Image
                       src={image.src}
-                      alt={image.alt}
+                      alt={t(image.alt)}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                     />
@@ -254,7 +256,7 @@ export default function ProjectGallery({
 
                     <div className="absolute bottom-0 left-0 z-10 p-4 md:p-5">
                       <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-white/90 md:text-[11px]">
-                        {image.label ?? image.alt}
+                        {t(image.label ?? image.alt)}
                       </p>
                     </div>
                   </button>

@@ -1,4 +1,7 @@
+"use client";
+
 import Counter from "./Contador";
+import { useLanguage } from "@/context/LanguageContext";
 
 const STATS = [
   {
@@ -25,6 +28,7 @@ const STATS = [
 ];
 
 export default function AboutStats() {
+  const { language, t } = useLanguage();
   return (
     <section className="relative overflow-hidden border-y border-[#d9dde2] bg-[#f4f5f6] py-20 md:py-24 lg:py-28">
       {/* blueprint grid muy sutil */}
@@ -44,17 +48,17 @@ export default function AboutStats() {
         {/* CABECERA */}
         <div className="">
           <p className="text-[11px] uppercase tracking-[0.28em] text-[#7a8a97] text-center">
-            Indicadores
+            {t("Indicadores")}
           </p>
 
           <h2 className="mt-3 w-full font-heading text-[42px] font-black uppercase leading-[0.9] tracking-[0.01em] text-[#062a47] sm:text-[56px] md:text-[74px] lg:text-[88px] xl:text-[98px] text-center">
-            Trayectoria que nos respalda en cada proyecto
+            {t("Trayectoria que nos respalda en cada proyecto")}
           </h2>
 
           <p className="mt-8 max-w-full text-[15px] leading-8 text-[#5f6f84] md:text-[17px] md:leading-9 text-center">
-            Una síntesis de escala, experiencia y capacidad de ejecución
-            expresada en cifras que reflejan continuidad, volumen de obra y
-            solidez técnica.
+            {language === "es"
+              ? "Una síntesis de escala, experiencia y capacidad de ejecución expresada en cifras que reflejan continuidad, volumen de obra y solidez técnica."
+              : "A snapshot of scale, experience and delivery capacity, expressed through figures that reflect continuity, project volume and technical strength."}
           </p>
         </div>
 
@@ -66,7 +70,7 @@ export default function AboutStats() {
               value={item.value}
               prefix={item.prefix}
               suffix={item.suffix}
-              label={item.label}
+              label={t(item.label)}
             />
           ))}
         </div>

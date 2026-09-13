@@ -2,10 +2,12 @@
 
 import Image from "next/image";
 import { useReveal } from "@/components/hooks/useReveal";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function NosotrosVisionSection() {
   const s2 = useReveal({ duration: 1100 });
   const IMG_FOCUS_MS = 2500;
+  const { language, t } = useLanguage();
 
   return (
     <section
@@ -58,7 +60,7 @@ export default function NosotrosVisionSection() {
           >
             <Image
               src="/images/original/obreros.JPG"
-              alt="Visión"
+              alt={t("Visión")}
               fill
               className="
                 object-cover object-[center_25%] md:object-center
@@ -83,18 +85,15 @@ export default function NosotrosVisionSection() {
           >
             <div className="max-w-3xl w-full mx-auto lg:mx-0 lg:ml-10">
               <h2 className="mt-4 font-heading font-black uppercase text-5xl md:text-6xl leading-[1.05]">
-                Visión
+                {t("Visión")}
               </h2>
 
               <p className="mt-8 font-body text-white/85 text-base md:text-xl leading-relaxed">
-                Queremos ser el faro de innovación en ingeniería y construcción
-                del sur de la región. Estamos construyendo nuestro liderazgo
-                sobre la base de la más{" "}
+                {language === "es" ? "Queremos ser el faro de innovación en ingeniería y construcción del sur de la región. Estamos construyendo nuestro liderazgo sobre la base de la más " : "We aim to be a beacon of innovation in engineering and construction across the southern region. We are building our leadership on "}
                 <strong className="font-semibold text-white">
-                  sólida confianza de nuestros clientes, el talento de nuestros
-                  equipos y de un resultado excepcional
+                  {language === "es" ? "sólida confianza de nuestros clientes, el talento de nuestros equipos y de un resultado excepcional" : "the strong trust of our clients, the talent of our teams and exceptional results"}
                 </strong>{" "}
-                en cada uno de nuestros proyectos y desarrollos.
+                {language === "es" ? "en cada uno de nuestros proyectos y desarrollos." : "in every project and development."}
               </p>
             </div>
           </div>

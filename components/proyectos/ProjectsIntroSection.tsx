@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 function cx(...classes: Array<string | false | null | undefined>) {
   return classes.filter(Boolean).join(" ");
@@ -33,6 +34,7 @@ function useInViewOnce<T extends HTMLElement>() {
 
 export default function ProjectsIntroSection() {
   const { ref, visible } = useInViewOnce<HTMLElement>();
+  const { language, t } = useLanguage();
 
   return (
     <section
@@ -61,7 +63,7 @@ export default function ProjectsIntroSection() {
             visible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0",
           )}
         >
-          Proyectos
+          {t("Proyectos")}
         </p>
 
         {/* TITULO FULL WIDTH */}
@@ -77,7 +79,7 @@ export default function ProjectsIntroSection() {
                 : "translate-y-[110%] opacity-0",
             )}
           >
-            Proyectamos espacios con identidad
+            {language === "es" ? "Proyectamos espacios con identidad" : "We design spaces with identity"}
           </h2>
         </div>
 
@@ -101,16 +103,15 @@ export default function ProjectsIntroSection() {
         >
           <div className="max-w-[820px]">
             <p className="text-[15px] leading-8 text-[#5f6f84] md:text-[16px] md:leading-9 lg:text-[17px]">
-              Cada obra expresa una manera de proyectar, coordinar y
-              materializar arquitectura. Reunimos técnica, identidad y ejecución
-              para desarrollar edificios y espacios con precisión, presencia y
-              consistencia constructiva.
+              {language === "es"
+                ? "Cada obra expresa una manera de proyectar, coordinar y materializar arquitectura. Reunimos técnica, identidad y ejecución para desarrollar edificios y espacios con precisión, presencia y consistencia constructiva."
+                : "Every project expresses a way of designing, coordinating and bringing architecture to life. We combine technical expertise, identity and execution to create buildings and spaces with precision, presence and construction consistency."}
             </p>
           </div>
 
           <div className="flex items-end md:justify-end">
             <p className="text-[11px] uppercase tracking-[0.24em] text-[#8a99a8]">
-              Selección de proyectos
+              {language === "es" ? "Selección de proyectos" : "Selected projects"}
             </p>
           </div>
         </div>

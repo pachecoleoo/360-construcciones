@@ -3,10 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Button from "../ui/Button";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function SectionTwo() {
   const ref = useRef<HTMLDivElement | null>(null);
   const [visible, setVisible] = useState(false);
+  const { language, t } = useLanguage();
 
   useEffect(() => {
     if (!ref.current) return;
@@ -65,7 +67,7 @@ export default function SectionTwo() {
         >
           <Image
             src="/images/gruaBlanca4.png"
-            alt="Infraestructura y movimiento de suelo"
+            alt={language === "es" ? "Infraestructura y movimiento de suelo" : "Infrastructure and earthworks"}
             width={280}
             height={460}
             className="h-auto w-[270px] opacity-90 sm:w-[300px] md:w-[420px]"
@@ -75,7 +77,7 @@ export default function SectionTwo() {
           {/* BOTÓN SOLO MOBILE */}
           <div className="mt-6 mb-12 md:hidden">
             <Button href="/infraestructura" variant="light" icon={buttonIcon}>
-              Nuestros servicios
+              {t("Nuestros servicios")}
             </Button>
           </div>
         </div>
@@ -83,15 +85,15 @@ export default function SectionTwo() {
         {/* DERECHA: TEXTO */}
         <div className="order-1 md:order-2 mt-2 text-center md:mt-0 md:text-left md:ml-auto">
           <h2 className="font-heading font-black uppercase tracking-[0.02em] text-[40px] leading-[0.80] text-white sm:text-5xl md:text-6xl md:leading-[0.95]">
-            <span className="block text-[#C9D8E2]">Infraestructura</span>
-            <span className="block mt-2">y movimiento</span>
-            <span className="block mt-2 ">de suelo</span>
+            <span className="block text-[#C9D8E2]">{t("Infraestructura")}</span>
+            <span className="block mt-2">{language === "es" ? "y movimiento" : "and earthworks"}</span>
+            <span className="block mt-2 ">{language === "es" ? "de suelo" : "services"}</span>
           </h2>
 
           {/* BOTÓN SOLO DESKTOP */}
           <div className="mt-10 hidden md:block">
             <Button href="/infraestructura" variant="light" icon={buttonIcon}>
-              Nuestros servicios
+              {t("Nuestros servicios")}
             </Button>
           </div>
         </div>

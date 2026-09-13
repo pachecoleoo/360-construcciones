@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 type ProjectLocationMapProps = {
   eyebrow?: string;
@@ -47,6 +48,7 @@ export default function ProjectLocationMap({
   mapQuery,
 }: ProjectLocationMapProps) {
   const { ref, visible } = useInViewOnce<HTMLDivElement>();
+  const { t } = useLanguage();
 
   const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(
     mapQuery,
@@ -92,7 +94,7 @@ export default function ProjectLocationMap({
                   : "translate-y-4 opacity-0",
               )}
             >
-              {eyebrow}
+              {t(eyebrow)}
             </p>
 
             {/* TÍTULO (REVEAL BLOQUE) */}
@@ -109,7 +111,7 @@ export default function ProjectLocationMap({
                     : "translate-y-[110%] opacity-0",
                 )}
               >
-                {title}
+                {t(title)}
               </h2>
             </div>
 
@@ -133,7 +135,7 @@ export default function ProjectLocationMap({
                   : "translate-y-5 opacity-0",
               )}
             >
-              {description}
+              {t(description)}
             </p>
           </div>
         </div>
@@ -148,7 +150,7 @@ export default function ProjectLocationMap({
         >
           <div className="grid gap-4 border-b border-[#d9dde2] py-5 md:grid-cols-[140px_1fr] md:gap-6">
             <span className="text-[11px] uppercase tracking-[0.24em] text-[#8a9aa8]">
-              Dirección
+              {t("Dirección")}
             </span>
 
             <p className="text-[15px] leading-8 text-[#22384f]">{address}</p>
@@ -184,7 +186,7 @@ export default function ProjectLocationMap({
             rel="noreferrer"
             className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.18em] text-[#062a47] transition hover:opacity-70"
           >
-            Ver en Google Maps →
+            {t("Ver en Google Maps →")}
           </a>
         </div>
       </div>

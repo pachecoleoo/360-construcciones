@@ -88,7 +88,7 @@ function WhatsAppIcon({ className = "" }: { className?: string }) {
 }
 
 export default function FloatingNavbar() {
-  const { language } = useLanguage();
+  const { language, t } = useLanguage();
   const NAV = NAVIGATION[language];
 
   const { activeIndex, navRef, itemRefs, pillStyle } = useNavPillTransform(NAV);
@@ -234,8 +234,8 @@ export default function FloatingNavbar() {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Contactar por WhatsApp"
-                title="Contactar por WhatsApp"
+                aria-label={language === "es" ? "Contactar por WhatsApp" : "Contact via WhatsApp"}
+                title={language === "es" ? "Contactar por WhatsApp" : "Contact via WhatsApp"}
                 className={cx(
                   "group flex h-10 w-10 shrink-0 items-center justify-center rounded-full",
                   "border border-white/10 bg-slate-950/55 text-white/85",
@@ -253,7 +253,7 @@ export default function FloatingNavbar() {
               {/* HAMBURGUESA */}
               <button
                 type="button"
-                aria-label={mobileOpen ? "Cerrar menú" : "Abrir menú"}
+                aria-label={mobileOpen ? t("Cerrar menú") : t("Abrir menú")}
                 aria-expanded={mobileOpen}
                 onClick={() => setMobileOpen((prev) => !prev)}
                 className={cx(
@@ -332,7 +332,7 @@ export default function FloatingNavbar() {
                 <div className="relative flex items-end justify-between px-5 pb-4 pt-5">
                   <div>
                     <span className="mb-2 block text-[9px] font-semibold uppercase tracking-[0.3em] text-[#9db8ce]/65">
-                      Navegación
+                      {language === "es" ? "Navegación" : "Navigation"}
                     </span>
                   </div>
 
@@ -406,7 +406,7 @@ export default function FloatingNavbar() {
                               </span>
 
                               <span className="mt-0.5 block text-[10px] tracking-[0.04em] text-white/40">
-                                Hablemos de tu próximo proyecto
+                                {language === "es" ? "Hablemos de tu próximo proyecto" : "Let’s discuss your next project"}
                               </span>
                             </div>
                           </div>
@@ -497,7 +497,7 @@ export default function FloatingNavbar() {
                         <div className="flex items-center gap-3">
                           {active && (
                             <span className="text-[8px] font-semibold uppercase tracking-[0.18em] text-[#aac4d8]/60">
-                              Actual
+                              {language === "es" ? "Actual" : "Current"}
                             </span>
                           )}
 
@@ -526,7 +526,7 @@ export default function FloatingNavbar() {
                 <div className="relative mx-5 flex items-center justify-between border-t border-white/[0.08] py-4">
                   <div>
                     <span className="block text-[9px] font-semibold uppercase tracking-[0.25em] text-[#9db8ce]/60">
-                      Idioma
+                      {language === "es" ? "Idioma" : "Language"}
                     </span>
 
                     <span className="mt-1 block text-[11px] text-white/35">
@@ -626,8 +626,8 @@ export default function FloatingNavbar() {
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Contactar por WhatsApp"
-                  title="Contactar por WhatsApp"
+                  aria-label={language === "es" ? "Contactar por WhatsApp" : "Contact via WhatsApp"}
+                  title={language === "es" ? "Contactar por WhatsApp" : "Contact via WhatsApp"}
                   className={cx(
                     "group relative inline-flex shrink-0 items-center justify-center rounded-full border",
                     "border-white/12 bg-white/[0.07] text-white/80 backdrop-blur-xl",

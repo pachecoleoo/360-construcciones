@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 function cx(...classes: Array<string | false | null | undefined>) {
   return classes.filter(Boolean).join(" ");
@@ -34,6 +35,7 @@ function useInViewOnce<T extends HTMLElement>() {
 export default function LocationSection() {
   const address = "Salta 256, Neuquén Capital, Argentina";
   const { ref, visible } = useInViewOnce<HTMLElement>();
+  const { language, t } = useLanguage();
 
   return (
     <section
@@ -82,7 +84,7 @@ export default function LocationSection() {
               visible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0",
             )}
           >
-            Ubicación
+            {t("Ubicación")}
           </p>
 
           <div className="overflow-hidden">
@@ -95,9 +97,9 @@ export default function LocationSection() {
                   : "translate-y-[110%] opacity-0",
               )}
             >
-              Nuestra
+              {language === "es" ? "Nuestra" : "Our"}
               <br />
-              oficina
+              {language === "es" ? "oficina" : "office"}
             </h2>
           </div>
 
@@ -117,8 +119,9 @@ export default function LocationSection() {
               visible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0",
             )}
           >
-            Coordinamos reuniones técnicas, planificación de obra y seguimiento
-            de proyectos desde nuestra sede en Neuquén Capital.
+            {language === "es"
+              ? "Coordinamos reuniones técnicas, planificación de obra y seguimiento de proyectos desde nuestra sede en Neuquén Capital."
+              : "We coordinate technical meetings, construction planning and project follow-up from our headquarters in Neuquén Capital."}
           </p>
 
           {/* bloque dirección */}
@@ -130,7 +133,7 @@ export default function LocationSection() {
             )}
           >
             <p className="text-[11px] uppercase tracking-[0.28em] text-[#7a8a97]">
-              Dirección
+              {t("Dirección")}
             </p>
 
             <p className="mt-3 max-w-[20ch] font-heading text-[26px] font-black uppercase leading-[1] text-[#062a47] md:text-[32px]">
@@ -146,14 +149,14 @@ export default function LocationSection() {
                 rel="noreferrer"
                 className="inline-flex items-center rounded-full bg-[#062a47] px-5 py-3 text-[11px] font-medium uppercase tracking-[0.16em] text-white transition hover:bg-[#0b3a63]"
               >
-                Cómo llegar
+                {language === "es" ? "Cómo llegar" : "Get directions"}
               </a>
 
               <a
                 href="/contacto"
                 className="inline-flex items-center rounded-full border border-[#062a47]/16 px-5 py-3 text-[11px] font-medium uppercase tracking-[0.16em] text-[#062a47] transition hover:border-[#062a47]/30 hover:bg-[#062a47]/[0.03]"
               >
-                Coordinar reunión
+                {language === "es" ? "Coordinar reunión" : "Schedule a meeting"}
               </a>
             </div>
           </div>

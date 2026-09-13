@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 type Amenity = {
   icon: string;
@@ -50,6 +51,7 @@ export default function ProjectAmenities({
   items,
 }: ProjectAmenitiesProps) {
   const { ref, visible } = useInViewOnce<HTMLDivElement>();
+  const { t } = useLanguage();
 
   if (!items?.length) return null;
 
@@ -85,7 +87,7 @@ export default function ProjectAmenities({
                   : "translate-y-4 opacity-0",
               )}
             >
-              {eyebrow}
+              {t(eyebrow)}
             </p>
 
             {/* TÍTULO (MISMO ESTILO QUE LAS OTRAS) */}
@@ -102,7 +104,7 @@ export default function ProjectAmenities({
                     : "translate-y-[110%] opacity-0",
                 )}
               >
-                {title}
+                {t(title)}
               </h2>
             </div>
           </div>
@@ -125,7 +127,7 @@ export default function ProjectAmenities({
               <div className="relative h-[42px] w-[42px] flex-shrink-0">
                 <Image
                   src={item.icon}
-                  alt={item.label}
+                  alt={t(item.label)}
                   fill
                   className="object-contain opacity-80 transition-all duration-300 group-hover:opacity-100 group-hover:scale-105"
                 />
@@ -134,12 +136,12 @@ export default function ProjectAmenities({
               {/* TEXTO */}
               <div>
                 <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-[#062a47]">
-                  {item.label}
+                  {t(item.label)}
                 </p>
 
                 {item.description && (
                   <p className="mt-2 text-[14px] leading-7 text-[#5f6f84]">
-                    {item.description}
+                    {t(item.description)}
                   </p>
                 )}
               </div>

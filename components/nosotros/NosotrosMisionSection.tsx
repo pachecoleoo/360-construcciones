@@ -2,10 +2,12 @@
 
 import Image from "next/image";
 import { useReveal } from "@/components/hooks/useReveal";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function NosotrosMisionSection() {
   const s3 = useReveal({ duration: 1000 });
   const IMG_FOCUS_MS = 2500;
+  const { language, t } = useLanguage();
 
   return (
     <section
@@ -48,16 +50,16 @@ export default function NosotrosMisionSection() {
           >
             <div className="max-w-3xl mx-5 md:ml-30">
               <h2 className="mt-4 font-heading font-black uppercase text-5xl leading-[1.05] text-[#002B49] md:text-6xl">
-                Misión
+                {t("Misión")}
               </h2>
 
               <p className="mt-8 font-body text-base leading-relaxed text-[#002B49]/85 md:text-xl">
                 <strong className="font-semibold text-[#002B49]">
-                  Crear, ejecutar y gestionar soluciones innovadoras
+                  {language === "es" ? "Crear, ejecutar y gestionar soluciones innovadoras" : "Create, execute and manage innovative solutions"}
                 </strong>{" "}
-                para resolver proyectos de ingeniería, construcción y montajes
-                industriales, honrando los compromisos asumidos y las relaciones
-                a largo plazo con nuestros clientes.
+                {language === "es"
+                  ? "para resolver proyectos de ingeniería, construcción y montajes industriales, honrando los compromisos asumidos y las relaciones a largo plazo con nuestros clientes."
+                  : "to deliver engineering, construction and industrial assembly projects while honoring our commitments and long-term client relationships."}
               </p>
             </div>
           </div>
@@ -73,7 +75,7 @@ export default function NosotrosMisionSection() {
           >
             <Image
               src="/images/original/equipo3.JPG"
-              alt="Misión"
+              alt={t("Misión")}
               fill
               className="
                 object-cover object-center

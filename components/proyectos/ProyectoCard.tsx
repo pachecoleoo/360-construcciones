@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import type { ProyectoUnified } from "./types";
+import { useLanguage } from "@/context/LanguageContext";
 
 function splitLeadingNumber(title: string) {
   const m = title.match(/^(\d+)\s+(.*)$/);
@@ -22,6 +25,7 @@ function getStatusLabel(status: ProyectoUnified["status"]) {
 
 function CardContent({ p }: { p: ProyectoUnified }) {
   const statusLabel = getStatusLabel(p.status);
+  const { t } = useLanguage();
 
   return (
     <article className="relative aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5]">
@@ -44,7 +48,7 @@ function CardContent({ p }: { p: ProyectoUnified }) {
       </div>
 
       <div className="absolute left-4 top-4 z-20 rounded-full bg-white/90 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[#062a47] backdrop-blur">
-        {statusLabel}
+        {t(statusLabel)}
       </div>
 
       <div
@@ -110,12 +114,12 @@ function CardContent({ p }: { p: ProyectoUnified }) {
           ) : null}
 
           <div className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-white backdrop-blur-sm">
-            {p.location ?? statusLabel}
+            {p.location ?? t(statusLabel)}
           </div>
 
           {p.slug ? (
             <span className="text-xs uppercase tracking-[0.18em] text-white/85">
-              Ver proyecto
+              {t("Ver proyecto")}
             </span>
           ) : null}
         </div>
