@@ -32,7 +32,7 @@ export default function HeroImage() {
             className="
             hero-title
               font-extra
-              text-6xl
+              text-4xl
               font-black
               uppercase
               leading-[1.05]

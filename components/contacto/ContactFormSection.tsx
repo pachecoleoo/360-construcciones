@@ -1,6 +1,5 @@
 "use client";
-
-import Image from "next/image";
+import { useLanguage } from "@/context/LanguageContext";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 type ContactFormValues = {
@@ -17,7 +16,117 @@ type Errors = {
   subject?: string;
   message?: string;
 };
+const CONTACT_CONTENT = {
+  es: {
+    eyebrow: "Contacto",
+    title: "Invertí en real estate",
+    description:
+      "Coordinamos asesoramiento inicial, evaluación técnica y seguimiento comercial para proyectos de arquitectura, infraestructura y desarrollo urbano.",
 
+    contactInformation: "Información de contacto",
+    openingHours: "Horarios de atención",
+    openingHoursValue: "Lun a Vie · 09:00 – 18:00",
+    responseTime: "Tiempo de respuesta",
+    responseTimeValue: "24–48 hs hábiles",
+    directContact: "Contacto directo",
+
+    formEyebrow: "Consulta técnica",
+    formTitle: "Te asesoramos",
+    formDescription:
+      "Completá el formulario y te contactaremos para avanzar con una propuesta acorde al alcance de tu proyecto.",
+
+    labels: {
+      name: "Nombre",
+      email: "Email",
+      phone: "Teléfono",
+      subject: "Asunto",
+      message: "Mensaje",
+    },
+
+    placeholders: {
+      name: "Tu nombre",
+      email: "tu@email.com",
+      phone: "Opcional",
+      subject: "Motivo de consulta",
+      message: "Contanos brevemente sobre tu proyecto, necesidad o consulta.",
+    },
+
+    errors: {
+      name: "Ingresá tu nombre.",
+      email: "Ingresá tu email.",
+      invalidEmail: "Ingresá un email válido.",
+      subject: "Indicá el asunto.",
+      message: "Escribí tu mensaje.",
+      shortMessage: "El mensaje debe tener al menos 10 caracteres.",
+    },
+
+    mail: {
+      name: "Nombre",
+      email: "Email",
+      phone: "Teléfono",
+    },
+
+    formNotice:
+      "Al enviar este formulario, la consulta se abrirá en tu cliente de correo con los datos completados.",
+    send: "Enviar consulta",
+    sending: "Enviando...",
+  },
+
+  en: {
+    eyebrow: "Contact",
+    title: "Invest in real estate",
+    description:
+      "We provide initial guidance, technical assessment and commercial support for architecture, infrastructure and urban development projects.",
+
+    contactInformation: "Contact information",
+    openingHours: "Opening hours",
+    openingHoursValue: "Mon to Fri · 09:00 – 18:00",
+    responseTime: "Response time",
+    responseTimeValue: "24–48 business hours",
+    directContact: "Direct contact",
+
+    formEyebrow: "Technical inquiry",
+    formTitle: "Let’s discuss your project",
+    formDescription:
+      "Complete the form and we will contact you with a proposal tailored to the scope of your project.",
+
+    labels: {
+      name: "Name",
+      email: "Email",
+      phone: "Phone",
+      subject: "Subject",
+      message: "Message",
+    },
+
+    placeholders: {
+      name: "Your name",
+      email: "your@email.com",
+      phone: "Optional",
+      subject: "Reason for your inquiry",
+      message: "Tell us briefly about your project, requirements or inquiry.",
+    },
+
+    errors: {
+      name: "Enter your name.",
+      email: "Enter your email address.",
+      invalidEmail: "Enter a valid email address.",
+      subject: "Enter a subject.",
+      message: "Write your message.",
+      shortMessage: "The message must contain at least 10 characters.",
+    },
+
+    mail: {
+      name: "Name",
+      email: "Email",
+      phone: "Phone",
+    },
+
+    formNotice:
+      "When you submit this form, your email application will open with the completed information.",
+    send: "Send inquiry",
+    sending: "Sending...",
+  },
+};
 function cx(...c: Array<string | false | null | undefined>) {
   return c.filter(Boolean).join(" ");
 }
@@ -52,6 +161,9 @@ function useInViewOnce<T extends HTMLElement>() {
 }
 
 export default function ContactFormSection() {
+  const { language } = useLanguage();
+  const text = CONTACT_CONTENT[language];
+
   const { ref, visible } = useInViewOnce<HTMLElement>();
 
   const [values, setValues] = useState<ContactFormValues>({
@@ -69,34 +181,44 @@ export default function ContactFormSection() {
   const validate = () => {
     const e: Errors = {};
 
-    if (!values.name.trim()) e.name = "Ingresá tu nombre.";
-    if (!values.email.trim()) e.email = "Ingresá tu email.";
-    else if (!validateEmail(values.email)) e.email = "Ingresá un email válido.";
-    if (!values.subject.trim()) e.subject = "Indicá el asunto.";
-    if (!values.message.trim()) e.message = "Escribí tu mensaje.";
-    else if (values.message.trim().length < 10) {
-      e.message = "El mensaje debe tener al menos 10 caracteres.";
+    if (!values.name.trim()) {
+      e.name = text.errors.name;
+    }
+
+    if (!values.email.trim()) {
+      e.email = text.errors.email;
+    } else if (!validateEmail(values.email)) {
+      e.email = text.errors.invalidEmail;
+    }
+
+    if (!values.subject.trim()) {
+      e.subject = text.errors.subject;
+    }
+
+    if (!values.message.trim()) {
+      e.message = text.errors.message;
+    } else if (values.message.trim().length < 10) {
+      e.message = text.errors.shortMessage;
     }
 
     return e;
   };
-
   const mailtoHref = useMemo(() => {
     const to = "contacto@360construcciones.com";
     const subject = encodeURIComponent(values.subject);
 
     const body = encodeURIComponent(
       [
-        `Nombre: ${values.name}`,
-        `Email: ${values.email}`,
-        `Teléfono: ${values.phone || "-"}`,
+        `${text.mail.name}: ${values.name}`,
+        `${text.mail.email}: ${values.email}`,
+        `${text.mail.phone}: ${values.phone || "-"}`,
         "",
         values.message,
       ].join("\n"),
     );
 
     return `mailto:${to}?subject=${subject}&body=${body}`;
-  }, [values]);
+  }, [values, text]);
 
   const onChange =
     (key: keyof ContactFormValues) =>
@@ -181,7 +303,7 @@ export default function ContactFormSection() {
                   : "translate-y-4 opacity-0",
               )}
             >
-              Contacto
+              {text.eyebrow}
             </p>
 
             <div className="overflow-hidden">
@@ -194,7 +316,7 @@ export default function ContactFormSection() {
                     : "translate-y-[110%] opacity-0",
                 )}
               >
-                Invertí en real estate
+                {text.title}{" "}
               </h2>
             </div>
 
@@ -216,9 +338,7 @@ export default function ContactFormSection() {
                   : "translate-y-5 opacity-0",
               )}
             >
-              Coordinamos asesoramiento inicial, evaluación técnica y
-              seguimiento comercial para proyectos de arquitectura,
-              infraestructura y desarrollo urbano.
+              {text.description}
             </p>
 
             {/* INFORMACIÓN DE CONTACTO */}
@@ -236,7 +356,7 @@ export default function ContactFormSection() {
               {/* Encabezado */}
               <div className="relative flex items-center justify-between py-5">
                 <p className="text-[10px] uppercase tracking-[0.28em] text-[#7a8a97]">
-                  Información de contacto
+                  {text.contactInformation}{" "}
                 </p>
               </div>
 
@@ -256,11 +376,11 @@ export default function ContactFormSection() {
 
                 <div className="transition-transform duration-300 group-hover:translate-x-1">
                   <p className="text-[9px] uppercase tracking-[0.25em] text-[#7a8a97]">
-                    Horarios de atención
+                    {text.openingHours}{" "}
                   </p>
 
                   <p className="mt-2 font-heading text-[19px] font-black uppercase leading-tight text-[#062a47] sm:text-[21px]">
-                    Lun a Vie · 09:00 – 18:00
+                    {text.openingHoursValue}{" "}
                   </p>
                 </div>
               </div>
@@ -281,11 +401,11 @@ export default function ContactFormSection() {
 
                 <div className="transition-transform duration-300 group-hover:translate-x-1">
                   <p className="text-[9px] uppercase tracking-[0.25em] text-[#7a8a97]">
-                    Tiempo de respuesta
+                    {text.responseTime}{" "}
                   </p>
 
                   <p className="mt-2 font-heading text-[19px] font-black uppercase leading-tight text-[#062a47] sm:text-[21px]">
-                    24–48 hs hábiles
+                    {text.responseTimeValue}{" "}
                   </p>
                 </div>
               </div>
@@ -323,7 +443,7 @@ export default function ContactFormSection() {
           group-hover:text-white/55
         "
                   >
-                    Contacto directo
+                    {text.directContact}{" "}
                   </p>
 
                   <p
@@ -385,23 +505,22 @@ export default function ContactFormSection() {
             <div className="p-6 md:p-8 lg:p-10">
               <div className="border-b border-[#d9dde2] pb-6">
                 <p className="text-[11px] uppercase tracking-[0.28em] text-[#7a8a97]">
-                  Consulta técnica
+                  {text.formEyebrow}
                 </p>
 
                 <h3 className="mt-3 font-heading text-[34px] font-black uppercase leading-[0.95] text-[#062a47] md:text-[44px]">
-                  Te asesoramos
+                  {text.formTitle}
                 </h3>
 
                 <p className="mt-3 max-w-[34rem] text-[14px] leading-7 text-[#5f6f84] md:text-[15px]">
-                  Completá el formulario y te contactaremos para avanzar con una
-                  propuesta acorde al alcance de tu proyecto.
+                  {text.formDescription}
                 </p>
               </div>
 
               <form onSubmit={onSubmit} noValidate className="mt-8 grid gap-6">
                 <div className="grid gap-5 md:grid-cols-2">
                   <Field
-                    label="Nombre"
+                    label={text.labels.name}
                     error={submitted ? errors.name : undefined}
                   >
                     <input
@@ -409,12 +528,12 @@ export default function ContactFormSection() {
                       value={values.name}
                       onChange={onChange("name")}
                       className={inputClass(!!errors.name)}
-                      placeholder="Tu nombre"
+                      placeholder={text.placeholders.name}
                     />
                   </Field>
 
                   <Field
-                    label="Email"
+                    label={text.labels.email}
                     error={submitted ? errors.email : undefined}
                   >
                     <input
@@ -422,24 +541,24 @@ export default function ContactFormSection() {
                       value={values.email}
                       onChange={onChange("email")}
                       className={inputClass(!!errors.email)}
-                      placeholder="tu@email.com"
+                      placeholder={text.placeholders.email}
                     />
                   </Field>
                 </div>
 
                 <div className="grid gap-5 md:grid-cols-2">
-                  <Field label="Teléfono">
+                  <Field label={text.labels.phone}>
                     <input
                       type="text"
                       value={values.phone}
                       onChange={onChange("phone")}
                       className={inputClass()}
-                      placeholder="Opcional"
+                      placeholder={text.placeholders.phone}
                     />
                   </Field>
 
                   <Field
-                    label="Asunto"
+                    label={text.labels.subject}
                     error={submitted ? errors.subject : undefined}
                   >
                     <input
@@ -447,13 +566,13 @@ export default function ContactFormSection() {
                       value={values.subject}
                       onChange={onChange("subject")}
                       className={inputClass(!!errors.subject)}
-                      placeholder="Motivo de consulta"
+                      placeholder={text.placeholders.subject}
                     />
                   </Field>
                 </div>
 
                 <Field
-                  label="Mensaje"
+                  label={text.labels.message}
                   error={submitted ? errors.message : undefined}
                 >
                   <textarea
@@ -461,30 +580,29 @@ export default function ContactFormSection() {
                     value={values.message}
                     onChange={onChange("message")}
                     className={cx(inputClass(!!errors.message), "resize-none")}
-                    placeholder="Contanos brevemente sobre tu proyecto, necesidad o consulta."
+                    placeholder={text.placeholders.message}
                   />
                 </Field>
 
                 <div className="flex flex-col gap-4 border-t border-[#d9dde2] pt-6 sm:flex-row sm:items-center sm:justify-between">
                   <p className="max-w-[28rem] text-[12px] leading-6 text-[#7a8a97]">
-                    Al enviar este formulario, la consulta se abrirá en tu
-                    cliente de correo con los datos completados.
+                    {text.formNotice}
                   </p>
 
                   <button
                     type="submit"
                     disabled={status === "loading"}
                     className="
-                      group relative inline-flex h-[52px] items-center justify-center overflow-hidden
-                      border border-[#062a47] bg-[#062a47] px-8
-                      text-[11px] font-black uppercase tracking-[0.18em] text-white
-                      transition-all duration-200
-                      hover:-translate-y-[1px] hover:bg-[#0b3a63]
-                      disabled:cursor-not-allowed disabled:opacity-50
-                    "
+        group relative inline-flex h-[52px] items-center justify-center overflow-hidden
+        border border-[#062a47] bg-[#062a47] px-8
+        text-[11px] font-black uppercase tracking-[0.18em] text-white
+        transition-all duration-200
+        hover:-translate-y-[1px] hover:bg-[#0b3a63]
+        disabled:cursor-not-allowed disabled:opacity-50
+      "
                   >
                     <span className="relative z-10">
-                      {status === "loading" ? "ENVIANDO..." : "Enviar consulta"}
+                      {status === "loading" ? text.sending : text.send}
                     </span>
                   </button>
                 </div>

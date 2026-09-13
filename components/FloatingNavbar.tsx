@@ -2,33 +2,61 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
 import { useEffect, useRef, useState } from "react";
 import { NavItem, useNavPillTransform } from "./navbar/useNavPillTransform";
+import LanguageButton from "@/components/LanguageButton";
+const NAVIGATION: Record<"es" | "en", NavItem[]> = {
+  es: [
+    { label: "Inicio", href: "/", match: (p) => p === "/" },
+    {
+      label: "Proyectos",
+      href: "/proyectos",
+      match: (p) => p === "/proyectos",
+    },
+    {
+      label: "Infraestructura",
+      href: "/infraestructura",
+      match: (p) => p === "/infraestructura",
+    },
+    {
+      label: "Nosotros",
+      href: "/nosotros",
+      match: (p) => p === "/nosotros",
+    },
+    {
+      label: "Contacto",
+      href: "/contacto",
+      variant: "cta",
+      match: (p) => p === "/contacto",
+    },
+  ],
 
-const NAV: NavItem[] = [
-  { label: "Inicio", href: "/", match: (p) => p === "/" },
-  {
-    label: "Proyectos",
-    href: "/proyectos",
-    match: (p) => p === "/proyectos",
-  },
-  {
-    label: "Infraestructura",
-    href: "/infraestructura",
-    match: (p) => p === "/infraestructura",
-  },
-  {
-    label: "Nosotros",
-    href: "/nosotros",
-    match: (p) => p === "/nosotros",
-  },
-  {
-    label: "Contacto",
-    href: "/contacto",
-    variant: "cta",
-    match: (p) => p === "/contacto",
-  },
-];
+  en: [
+    { label: "Home", href: "/", match: (p) => p === "/" },
+    {
+      label: "Projects",
+      href: "/proyectos",
+      match: (p) => p === "/proyectos",
+    },
+    {
+      label: "Infrastructure",
+      href: "/infraestructura",
+      match: (p) => p === "/infraestructura",
+    },
+    {
+      label: "About us",
+      href: "/nosotros",
+      match: (p) => p === "/nosotros",
+    },
+    {
+      label: "Contact",
+      href: "/contacto",
+      variant: "cta",
+      match: (p) => p === "/contacto",
+    },
+  ],
+};
 
 /*
   Reemplazá 5492990000000 por el número real.
@@ -60,6 +88,9 @@ function WhatsAppIcon({ className = "" }: { className?: string }) {
 }
 
 export default function FloatingNavbar() {
+  const { language } = useLanguage();
+  const NAV = NAVIGATION[language];
+
   const { activeIndex, navRef, itemRefs, pillStyle } = useNavPillTransform(NAV);
 
   const [scrolled, setScrolled] = useState(false);
@@ -259,6 +290,7 @@ export default function FloatingNavbar() {
           </div>
 
           {/* MENÚ MOBILE PERSONALIZADO */}
+
           <div
             className={cx(
               "overflow-hidden md:hidden",
@@ -302,11 +334,6 @@ export default function FloatingNavbar() {
                     <span className="mb-2 block text-[9px] font-semibold uppercase tracking-[0.3em] text-[#9db8ce]/65">
                       Navegación
                     </span>
-
-                    <p className="max-w-[210px] text-[13px] leading-relaxed text-white/45">
-                      Construimos espacios pensados para transformar la forma de
-                      vivir.
-                    </p>
                   </div>
 
                   <span className="pb-0.5 text-[10px] font-medium tracking-[0.2em] text-white/25">
@@ -495,6 +522,20 @@ export default function FloatingNavbar() {
                     );
                   })}
                 </nav>
+                {/* SELECTOR DE IDIOMA MOBILE */}
+                <div className="relative mx-5 flex items-center justify-between border-t border-white/[0.08] py-4">
+                  <div>
+                    <span className="block text-[9px] font-semibold uppercase tracking-[0.25em] text-[#9db8ce]/60">
+                      Idioma
+                    </span>
+
+                    <span className="mt-1 block text-[11px] text-white/35">
+                      Español / English
+                    </span>
+                  </div>
+
+                  <LanguageButton />
+                </div>
 
                 {/* PIE DEL MENÚ */}
               </div>
@@ -576,6 +617,9 @@ export default function FloatingNavbar() {
                     );
                   })}
                 </div>
+
+                {/* SELECTOR DE IDIOMA DESKTOP */}
+                <LanguageButton />
 
                 {/* SOLAPA DE WHATSAPP DESKTOP */}
                 <a

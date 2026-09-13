@@ -2,45 +2,117 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
-const ITEMS = [
-  {
-    n: "01",
-    title: "Servicios",
-    image: "/images/suelo/suelo1.jpeg",
-    text: "Soluciones integrales para obras de ingeniería, construcción y montajes industriales, con foco en planificación, ejecución y control técnico.",
-    details: [
-      "Ingeniería y planificación",
-      "Construcción y montajes",
-      "Supervisión integral",
+const CONTENT = {
+  es: {
+    eyebrow: "Servicios e infraestructura",
+    title: "Capacidad técnica para resolver obras complejas",
+    highlightedText: "Creamos, ejecutamos y gestionamos soluciones innovadoras",
+    description:
+      "para resolver proyectos de ingeniería, construcción y montajes industriales, honrando los compromisos asumidos y las relaciones a largo plazo con nuestros partners.",
+    serviceScope: "Alcance del servicio",
+
+    items: [
+      {
+        n: "01",
+        title: "Servicios",
+        image: "/images/suelo/suelo1.jpeg",
+        text: "Soluciones integrales para obras de ingeniería, construcción y montajes industriales, con foco en planificación, ejecución y control técnico.",
+        details: [
+          "Ingeniería y planificación",
+          "Construcción y montajes",
+          "Supervisión integral",
+        ],
+      },
+      {
+        n: "02",
+        title: "Infraestructura",
+        image: "/images/suelo/suelo2.jpg",
+        text: "Desarrollo de infraestructura civil, redes, accesos, bases y obras complementarias para proyectos urbanos e industriales.",
+        details: ["Obras civiles", "Redes y servicios", "Accesos y bases"],
+      },
+      {
+        n: "03",
+        title: "Edificios\nde viviendas",
+        image: "/images/suelo/infra3.JPG",
+        text: "Construcción de edificios de viviendas con coordinación de obra, calidad constructiva y seguimiento integral de cada etapa.",
+        details: [
+          "Dirección de obra",
+          "Calidad constructiva",
+          "Gestión de etapas",
+        ],
+      },
+      {
+        n: "04",
+        title: "Partners",
+        image: "/images/suelo/suelo4.JPG",
+        text: "Relaciones de largo plazo con proveedores, equipos técnicos y aliados estratégicos para sostener proyectos eficientes y confiables.",
+        details: [
+          "Alianzas estratégicas",
+          "Proveedores especializados",
+          "Trabajo colaborativo",
+        ],
+      },
     ],
   },
-  {
-    n: "02",
-    title: "Infraestructura",
-    image: "/images/suelo/suelo2.jpg",
-    text: "Desarrollo de infraestructura civil, redes, accesos, bases y obras complementarias para proyectos urbanos e industriales.",
-    details: ["Obras civiles", "Redes y servicios", "Accesos y bases"],
-  },
-  {
-    n: "03",
-    title: "Edificios\nde viviendas",
-    image: "/images/suelo/infra3.JPG",
-    text: "Construcción de edificios de viviendas con coordinación de obra, calidad constructiva y seguimiento integral de cada etapa.",
-    details: ["Dirección de obra", "Calidad constructiva", "Gestión de etapas"],
-  },
-  {
-    n: "04",
-    title: "Partners",
-    image: "/images/suelo/suelo4.JPG",
-    text: "Relaciones de largo plazo con proveedores, equipos técnicos y aliados estratégicos para sostener proyectos eficientes y confiables.",
-    details: [
-      "Alianzas estratégicas",
-      "Proveedores especializados",
-      "Trabajo colaborativo",
+
+  en: {
+    eyebrow: "Services and infrastructure",
+    title: "Technical capabilities for complex projects",
+    highlightedText: "We create, execute and manage innovative solutions",
+    description:
+      "for engineering, construction and industrial assembly projects, honoring our commitments and building long-term relationships with our partners.",
+    serviceScope: "Service scope",
+
+    items: [
+      {
+        n: "01",
+        title: "Services",
+        image: "/images/suelo/suelo1.jpeg",
+        text: "Comprehensive solutions for engineering, construction and industrial assembly projects, focused on planning, execution and technical control.",
+        details: [
+          "Engineering and planning",
+          "Construction and assembly",
+          "Comprehensive supervision",
+        ],
+      },
+      {
+        n: "02",
+        title: "Infrastructure",
+        image: "/images/suelo/suelo2.jpg",
+        text: "Development of civil infrastructure, utility networks, access roads, foundations and complementary works for urban and industrial projects.",
+        details: [
+          "Civil works",
+          "Networks and utilities",
+          "Access roads and foundations",
+        ],
+      },
+      {
+        n: "03",
+        title: "Residential\nbuildings",
+        image: "/images/suelo/infra3.JPG",
+        text: "Construction of residential buildings with project coordination, construction quality and comprehensive monitoring throughout every stage.",
+        details: [
+          "Construction management",
+          "Construction quality",
+          "Stage management",
+        ],
+      },
+      {
+        n: "04",
+        title: "Partners",
+        image: "/images/suelo/suelo4.JPG",
+        text: "Long-term relationships with suppliers, technical teams and strategic partners to deliver efficient and reliable projects.",
+        details: [
+          "Strategic partnerships",
+          "Specialized suppliers",
+          "Collaborative work",
+        ],
+      },
     ],
   },
-];
+};
 
 function cx(...classes: Array<string | false | null | undefined>) {
   return classes.filter(Boolean).join(" ");
@@ -76,7 +148,13 @@ function useInViewOnce<T extends HTMLElement>() {
 }
 
 export default function Infraestructuraysuelo() {
-  const [active, setActive] = useState(ITEMS[0]);
+  const { language } = useLanguage();
+  const content = CONTENT[language];
+  const items = content.items;
+
+  const [activeIndex, setActiveIndex] = useState(0);
+  const active = items[activeIndex];
+
   const { ref, visible } = useInViewOnce<HTMLElement>();
 
   return (
@@ -116,7 +194,7 @@ export default function Infraestructuraysuelo() {
               visible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0",
             )}
           >
-            Servicios e infraestructura
+            {content.eyebrow}
           </p>
 
           <div className="mt-4 overflow-visible ">
@@ -129,7 +207,7 @@ export default function Infraestructuraysuelo() {
                   : "translate-y-[110%] opacity-0",
               )}
             >
-              Capacidad técnica para resolver obras complejas
+              {content.title}{" "}
             </h2>
           </div>
 
@@ -150,11 +228,9 @@ export default function Infraestructuraysuelo() {
             )}
           >
             <strong className="font-semibold text-[#062a47]">
-              Creamos, ejecutamos y gestionamos soluciones innovadoras
+              {content.highlightedText}
             </strong>{" "}
-            para resolver proyectos de ingeniería, construcción y montajes
-            industriales, honrando los compromisos asumidos y las relaciones a
-            largo plazo con nuestros partners.
+            {content.description}
           </p>
         </div>
 
@@ -166,14 +242,13 @@ export default function Infraestructuraysuelo() {
             visible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0",
           )}
         >
-          {ITEMS.map((item) => {
-            const isActive = active.n === item.n;
-
+          {items.map((item, index) => {
+            const isActive = activeIndex === index;
             return (
               <button
                 key={item.n}
                 type="button"
-                onClick={() => setActive(item)}
+                onClick={() => setActiveIndex(index)}
                 aria-pressed={isActive}
                 className={cx(
                   "group relative min-h-[165px] min-w-0 overflow-hidden border p-4 text-left",
@@ -278,7 +353,7 @@ export default function Infraestructuraysuelo() {
               {/* Alcance específico */}
               <div className="min-w-0 border border-[#d9dde2] bg-white/90 p-5 sm:p-7 md:p-8">
                 <p className="text-[9px] uppercase tracking-[0.22em] text-[#7a8a97] sm:text-[10px] sm:tracking-[0.28em]">
-                  Alcance del servicio
+                  {content.serviceScope}{" "}
                 </p>
 
                 <div className="mt-6 space-y-4">
