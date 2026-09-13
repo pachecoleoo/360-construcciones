@@ -1,15 +1,9 @@
 "use client";
 
-import {
-  createContext,
-  ReactNode,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import { createContext, ReactNode, useContext, useState } from "react";
 import { translate } from "./translations";
 
-type Language = "es" | "en";
+export type Language = "es" | "en";
 
 interface LanguageContextType {
   language: Language;
@@ -22,23 +16,19 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
   undefined,
 );
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<Language>("es");
-
-  useEffect(() => {
-    const savedLanguage = localStorage.getItem("language");
-
-    if (savedLanguage === "es" || savedLanguage === "en") {
-      // Restore the persisted preference after hydration.
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      setLanguageState(savedLanguage);
-      document.documentElement.lang = savedLanguage;
-    }
-  }, []);
+export function LanguageProvider({
+  children,
+  initialLanguage = "es",
+}: {
+  children: ReactNode;
+  initialLanguage?: Language;
+}) {
+  const [language, setLanguageState] = useState<Language>(initialLanguage);
 
   const setLanguage = (newLanguage: Language) => {
     setLanguageState(newLanguage);
     localStorage.setItem("language", newLanguage);
+    document.cookie = `language=${newLanguage}; path=/; max-age=31536000; samesite=lax`;
     document.documentElement.lang = newLanguage;
   };
 
