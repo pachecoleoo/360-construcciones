@@ -29,7 +29,10 @@ export default function HeroVideo() {
     }
   }, []);
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section
+      id="home-hero"
+      className="relative h-screen w-full overflow-hidden"
+    >
       <video
         className="
           absolute inset-0 h-full w-full
