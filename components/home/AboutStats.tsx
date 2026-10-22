@@ -51,7 +51,7 @@ export default function AboutStats() {
             {t("Indicadores")}
           </p>
 
-          <h2 className="mt-3 w-full font-heading text-[42px] font-black uppercase leading-[0.9] tracking-[0.01em] text-[#062a47] sm:text-[56px] md:text-[74px] lg:text-[88px] xl:text-[98px] text-center">
+          <h2 className="ios-safe-title mt-3 w-full font-heading text-[42px] font-black uppercase leading-[0.9] tracking-[0.01em] text-[#062a47] sm:text-[56px] md:text-[74px] lg:text-[88px] xl:text-[98px] text-center">
             {t("Trayectoria que nos respalda en cada proyecto")}
           </h2>
 
