@@ -68,20 +68,20 @@ export default function ConstruyendoBanner() {
           Principios
         </p> */}
 
-        <div className="mt-3 grid items-center gap-0 md:mt-6 lg:grid-cols-[520px_minmax(0,1fr)] lg:gap-10 text-center">
+        <div className="mt-3 grid items-center gap-0 text-center md:mt-6 lg:mx-auto lg:max-w-[1160px] lg:grid-cols-[minmax(0,440px)_minmax(0,1fr)] lg:gap-8">
           {/* palabra fija */}
           <div className="min-w-0">
-            <h2 className="md:ml-32 font-heading text-[40px] font-black uppercase leading-[1.1] tracking-[0.01em] text-[#ffffff] sm:text-[54px] md:text-[68px] lg:text-[70px] ">
+            <h2 className="font-heading text-[40px] font-black uppercase leading-[1.1] lg:text-right tracking-[0.01em] text-[#ffffff] sm:text-[54px] md:text-[68px] lg:text-[70px] ">
               {language === "es" ? "Construyendo" : "Building"}
             </h2>
           </div>
 
           {/* frase rotativa */}
-          <div className="relative -mt-2 flex min-h-[60px] items-center overflow-hidden py-0 md:mt-0 md:min-h-[76px] md:py-2 lg:min-h-[108px]">
+          <div className="relative -mt-2 flex min-h-[60px] items-center justify-center overflow-hidden py-0 md:mt-0 md:min-h-[76px] md:py-2 lg:min-h-[108px] lg:justify-start">
             {" "}
             <div
               className={cx(
-                "absolute left-0 top-1/2 flex w-full -translate-y-1/2 items-center will-change-transform",
+                "absolute inset-y-0 left-0 flex w-full items-center will-change-transform",
                 "transition-all duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)]",
                 phase === "idle" && "translate-y-0 rotate-x-0 opacity-100",
                 phase === "out" &&
@@ -101,9 +101,9 @@ export default function ConstruyendoBanner() {
               <p
                 className={cx(
                   "w-full whitespace-normal leading-[1.12] py-1 ",
-                  "text-[20px] md:text-[26px] lg:text-[28px] ml-0 md:mr-17 md:ml-5 ",
+                  "text-[20px] md:text-[26px] lg:text-[28px] ml-0 lg:text-left ",
                   current.highlight
-                    ? "font-heading font-black lg:text-[32px] md:ml-10 -mb-2 uppercase tracking-[0.01em] text-[#ffffff]"
+                    ? "font-heading font-black lg:text-[32px] -mb-2 uppercase tracking-[0.01em] text-[#ffffff]"
                     : "font-body font-medium text-[#ffffff]",
                 )}
               >
