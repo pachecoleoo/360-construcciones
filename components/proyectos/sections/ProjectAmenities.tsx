@@ -63,7 +63,7 @@ export default function ProjectAmenities({
           {/* NÚMERO 01 */}
           <div
             className={cx(
-              "pointer-events-none absolute right-0 -top-6 md:-top-15 select-none",
+              "pointer-events-none absolute right-0 -top-10 md:-top-10 select-none",
               "ios-safe-decor-number font-heading font-black",
               "text-[120px] md:text-[180px]",
               "leading-none",
