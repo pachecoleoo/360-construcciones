@@ -248,7 +248,7 @@ export default function SocialSection({
       <div
         aria-hidden="true"
         className={cx(
-          "pointer-events-none absolute right-4 top-24 font-heading text-[88px] font-black leading-none tracking-[-0.04em] text-[#062a47]/[0.08] sm:right-8 sm:text-[120px] md:right-12 md:top-8 md:text-[180px]",
+          "pointer-events-none absolute right-4 top-24 ios-safe-decor-number font-heading text-[88px] font-black leading-none tracking-[-0.04em] text-[#062a47]/[0.08] sm:right-8 sm:text-[120px] md:right-12 md:top-8 md:text-[180px]",
           "transition-all duration-1000 ease-out",
           visible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0",
         )}
