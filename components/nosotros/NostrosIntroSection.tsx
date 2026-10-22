@@ -30,7 +30,7 @@ export default function NosotrosIntroSection() {
       <div
         className={`
           pointer-events-none absolute right-6 top-10
-          font-heading text-[92px] font-black leading-none
+          ios-safe-decor-number font-heading text-[92px] font-black leading-none
            text-[#002B49]/10
           md:left-[-20px]  lg:left-[-40px] md:right-auto md:top-16 md:text-[180px]
           transition-all duration-1000 ease-out
