@@ -16,24 +16,6 @@ export default function NosotrosVisionSection() {
       className="relative overflow-hidden bg-[#002B49] text-white"
     >
       <div
-        className={`
-    pointer-events-none
-    absolute
-    right-3 top-86 md:top-80 sm:top-90 lg:top-10
-    sm:right-[-10px] md:right-[-20px] lg:right-[-40px]
-    z-10
-    ios-safe-decor-number font-heading font-black
-    text-[88px] sm:text-[88px] md:text-[180px]
-    leading-none
-    text-white/10
-    select-none
-    transition-all duration-1000 ease-out
-    ${s2.visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-6"}
-  `}
-      >
-        02
-      </div>
-      <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 opacity-[0.10]"
         style={{
@@ -83,7 +65,8 @@ export default function NosotrosVisionSection() {
     ${s2.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}
   `}
           >
-            <div className="max-w-3xl w-full mx-auto lg:mx-0 lg:ml-10">
+            <div className="relative max-w-3xl w-full mx-auto lg:mx-0 lg:ml-10">
+              <div aria-hidden="true" className="pointer-events-none ios-safe-decor-number absolute right-0 -top-8 md:-top-12 z-0 select-none font-heading font-black text-[110px] md:text-[180px] text-white/10 transition-opacity duration-700">02</div>
               <h2 className="ios-safe-title mt-4 font-heading font-black uppercase text-5xl md:text-6xl leading-[1.05]">
                 {t("Visión")}
               </h2>
