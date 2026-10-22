@@ -71,13 +71,13 @@ export default function ConstruyendoBanner() {
         <div className="mt-6 grid items-center gap-2 lg:grid-cols-[520px_minmax(0,1fr)] lg:gap-10  text-center">
           {/* palabra fija */}
           <div className="min-w-0">
-            <h2 className="md:ml-32 font-heading text-[40px] font-black uppercase leading-[0.] tracking-[0.01em] text-[#ffffff] sm:text-[54px] md:text-[68px] lg:text-[70px] ">
+            <h2 className="md:ml-32 font-heading text-[40px] font-black uppercase leading-[1.1] tracking-[0.01em] text-[#ffffff] sm:text-[54px] md:text-[68px] lg:text-[70px] ">
               {language === "es" ? "Construyendo" : "Building"}
             </h2>
           </div>
 
           {/* frase rotativa */}
-          <div className="relative flex items-center overflow-hidden  -mt-3 min-h-[48px] md:min-h-[64px] lg:min-h-[92px]">
+          <div className="relative flex items-center overflow-hidden py-2 min-h-[60px] md:min-h-[76px] lg:min-h-[108px]">
             {" "}
             <div
               className={cx(
@@ -100,7 +100,7 @@ export default function ConstruyendoBanner() {
             >
               <p
                 className={cx(
-                  "w-full whitespace-nowrap leading-none ",
+                  "w-full whitespace-normal leading-[1.12] py-1 ",
                   "text-[20px] md:text-[26px] lg:text-[28px] ml-0 md:mr-17 md:ml-5 ",
                   current.highlight
                     ? "font-heading font-black lg:text-[32px] md:ml-10 -mb-2 uppercase tracking-[0.01em] text-[#ffffff]"
