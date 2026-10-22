@@ -15,6 +15,13 @@ export default function NosotrosMisionSection() {
       data-section="03"
       className="relative overflow-hidden bg-[#C9D8E2]"
     >
+      {/* Desktop: composición original en el extremo izquierdo. */}
+      <div
+        aria-hidden="true"
+        className={`pointer-events-none ios-safe-decor-number absolute hidden md:block md:left-[-20px] lg:left-[-40px] top-10 z-10 select-none font-heading font-black md:text-[150px] lg:text-[180px] leading-none text-[#002B49]/15 transition-opacity duration-700 ${s3.visible ? "opacity-100" : "opacity-0"}`}
+      >
+        03
+      </div>
 
       <div
         ref={s3.ref as any}
@@ -31,7 +38,7 @@ export default function NosotrosMisionSection() {
             `}
           >
             <div className="relative max-w-3xl mx-5 md:ml-30">
-              <div aria-hidden="true" className="pointer-events-none ios-safe-decor-number absolute right-0 -top-8 md:-top-12 z-0 select-none font-heading font-black text-[110px] md:text-[180px] text-[#002B49]/15 transition-opacity duration-700">03</div>
+              <div aria-hidden="true" className="pointer-events-none ios-safe-decor-number absolute -right-7 top-3 z-0 select-none font-heading font-black text-[110px] text-[#002B49]/15 transition-opacity duration-700 md:hidden">03</div>
               <h2 className="ios-safe-title mt-4 font-heading font-black uppercase text-5xl leading-[1.05] text-[#002B49] md:text-6xl">
                 {t("Misión")}
               </h2>
