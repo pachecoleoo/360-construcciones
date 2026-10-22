@@ -68,7 +68,7 @@ export default function ConstruyendoBanner() {
           Principios
         </p> */}
 
-        <div className="mt-6 grid items-center gap-2 lg:grid-cols-[520px_minmax(0,1fr)] lg:gap-10  text-center">
+        <div className="mt-3 grid items-center gap-0 md:mt-6 lg:grid-cols-[520px_minmax(0,1fr)] lg:gap-10 text-center">
           {/* palabra fija */}
           <div className="min-w-0">
             <h2 className="md:ml-32 font-heading text-[40px] font-black uppercase leading-[1.1] tracking-[0.01em] text-[#ffffff] sm:text-[54px] md:text-[68px] lg:text-[70px] ">
@@ -77,7 +77,7 @@ export default function ConstruyendoBanner() {
           </div>
 
           {/* frase rotativa */}
-          <div className="relative flex items-center overflow-hidden py-2 min-h-[60px] md:min-h-[76px] lg:min-h-[108px]">
+          <div className="relative -mt-2 flex min-h-[60px] items-center overflow-hidden py-0 md:mt-0 md:min-h-[76px] md:py-2 lg:min-h-[108px]">
             {" "}
             <div
               className={cx(
