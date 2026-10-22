@@ -22,7 +22,7 @@ export default function NosotrosMisionSection() {
     right-3 top-10
     md:left-[-20px] md:right-auto lg:left-[-40px]
     z-10
-    font-heading font-black
+    ios-safe-decor-number font-heading font-black
     text-[88px] md:text-[150px] lg:text-[180px]
     leading-none
     text-[#002B49]/15
