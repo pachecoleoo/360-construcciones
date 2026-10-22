@@ -80,7 +80,7 @@ export default function ProjectIntroWithData({
             {/* <div
               className={cx(
                 "pointer-events-none absolute right-0 top-10 select-none lg:right-[-120px] lg:top-0",
-                "font-heading font-black leading-none",
+                "ios-safe-decor-number font-heading font-black leading-none",
                 "text-[120px] md:text-[180px]",
                 "text-[#062a47]/10",
                 "transition-all duration-1000 ease-out",
@@ -193,7 +193,7 @@ export default function ProjectIntroWithData({
                 <div
                   className={cx(
                     "pointer-events-none absolute right-0 -top-35 md:-mt-34 select-none lg:top-0",
-                    "font-heading font-black leading-none",
+                    "ios-safe-decor-number font-heading font-black leading-none",
                     "text-[120px] md:text-[180px]",
                     "text-[#062a47]/10",
                     "transition-all duration-1000 ease-out",
