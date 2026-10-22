@@ -69,7 +69,7 @@ export default function ProjectGallerySlider2({
         <div className="relative mb-10 md:mb-12">
           <div
             className={cx(
-              "pointer-events-none absolute -top-10 md:top-8  right-0  select-none",
+              "pointer-events-none absolute -top-10 md:-top-10 right-0  select-none",
               "ios-safe-decor-number font-heading font-black",
               "text-[120px] md:text-[180px]",
               "leading-none",
