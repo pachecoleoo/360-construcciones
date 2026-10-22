@@ -26,10 +26,17 @@ export default function NosotrosIntroSection() {
         }}
       />
 
-      {/* número */}
+      {/* Desktop: posición original, independiente del título. */}
+      <div
+        aria-hidden="true"
+        className={`pointer-events-none ios-safe-decor-number absolute hidden md:block md:left-[-20px] lg:left-[-40px] md:top-16 z-10 select-none font-heading font-black text-[180px] leading-none text-[#002B49]/10 transition-opacity duration-700 ${s1.visible ? "opacity-100" : "opacity-0"}`}
+      >
+        01
+      </div>
+      {/* En mobile, el número queda al lado y a la altura del título. */}
 
       <div className="relative mx-auto max-w-7xl px-6 md:px-16 lg:px-24">
-              <div aria-hidden="true" className="pointer-events-none ios-safe-decor-number absolute right-0 -top-8 md:-top-12 z-0 select-none font-heading font-black text-[110px] md:text-[180px] text-[#002B49]/10 transition-opacity duration-700">01</div>
+              <div aria-hidden="true" className="pointer-events-none ios-safe-decor-number absolute right-6 top-3 z-0 select-none font-heading font-black text-[110px] text-[#002B49]/10 transition-opacity duration-700 md:hidden">01</div>
         <div
           ref={s1.ref as any}
           className={`transition-opacity ease-out ${s1.fadeClass}`}
