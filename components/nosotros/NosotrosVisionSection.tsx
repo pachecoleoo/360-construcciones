@@ -15,6 +15,13 @@ export default function NosotrosVisionSection() {
       data-section="02"
       className="relative overflow-hidden bg-[#002B49] text-white"
     >
+      {/* Desktop: composición original en el extremo derecho. */}
+      <div
+        aria-hidden="true"
+        className={`pointer-events-none ios-safe-decor-number absolute hidden md:block md:right-[-20px] lg:right-[-40px] md:top-80 lg:top-10 z-10 select-none font-heading font-black text-[180px] leading-none text-white/10 transition-opacity duration-700 ${s2.visible ? "opacity-100" : "opacity-0"}`}
+      >
+        02
+      </div>
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 opacity-[0.10]"
@@ -66,7 +73,7 @@ export default function NosotrosVisionSection() {
   `}
           >
             <div className="relative max-w-3xl w-full mx-auto lg:mx-0 lg:ml-10">
-              <div aria-hidden="true" className="pointer-events-none ios-safe-decor-number absolute right-0 -top-8 md:-top-12 z-0 select-none font-heading font-black text-[110px] md:text-[180px] text-white/10 transition-opacity duration-700">02</div>
+              <div aria-hidden="true" className="pointer-events-none ios-safe-decor-number absolute -right-6 top-3 z-0 select-none font-heading font-black text-[110px] text-white/10 transition-opacity duration-700 md:hidden">02</div>
               <h2 className="ios-safe-title mt-4 font-heading font-black uppercase text-5xl md:text-6xl leading-[1.05]">
                 {t("Visión")}
               </h2>
