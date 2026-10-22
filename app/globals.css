@@ -273,13 +273,23 @@ html {
     transition-duration: 450ms !important;
   }
 
+  /* Títulos: fade + un desplazamiento corto en lugar del salto grande
+     de desktop. No usamos blur ni máscaras que corten los acentos. */
   .ios-safe-title {
     transform: none !important;
-    transition-property: opacity !important;
-    transition-duration: 450ms !important;
-    transition-delay: 0ms !important;
-    transition-timing-function: ease-out !important;
+    transition-property: opacity, translate !important;
+    transition-duration: 650ms !important;
+    transition-delay: 80ms !important;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1) !important;
     -webkit-font-smoothing: antialiased;
+  }
+
+  .ios-safe-title.opacity-0 {
+    translate: 0 8px !important;
+  }
+
+  .ios-safe-title.opacity-100 {
+    translate: 0 0 !important;
   }
 
   .hero-title {
@@ -309,6 +319,7 @@ html {
     transition: none !important;
     opacity: 1 !important;
     transform: none !important;
+    translate: none !important;
     filter: none !important;
   }
 }
