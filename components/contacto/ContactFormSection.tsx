@@ -306,14 +306,14 @@ export default function ContactFormSection() {
               {text.eyebrow}
             </p>
 
-            <div className="overflow-hidden">
+            <div className="overflow-visible">
               <h2
                 className={cx(
-                  "mt-4 font-heading text-[42px] font-black uppercase leading-[0.92] tracking-[0.01em] text-[#062a47] sm:text-[56px] md:text-[74px] lg:text-[88px]",
+                  "ios-safe-title mt-4 font-heading text-[42px] font-black uppercase leading-[0.92] tracking-[0.01em] text-[#062a47] sm:text-[56px] md:text-[74px] lg:text-[88px]",
                   "transition-all duration-700 delay-100 ease-out",
                   visible
                     ? "translate-y-0 opacity-100"
-                    : "translate-y-[110%] opacity-0",
+                    : "translate-y-6 opacity-0",
                 )}
               >
                 {text.title}{" "}
