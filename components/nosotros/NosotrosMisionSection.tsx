@@ -15,24 +15,6 @@ export default function NosotrosMisionSection() {
       data-section="03"
       className="relative overflow-hidden bg-[#C9D8E2]"
     >
-      <div
-        className={`
-    pointer-events-none
-    absolute
-    right-3 top-10
-    md:left-[-20px] md:right-auto lg:left-[-40px]
-    z-10
-    ios-safe-decor-number font-heading font-black
-    text-[88px] md:text-[150px] lg:text-[180px]
-    leading-none
-    text-[#002B49]/15
-    select-none
-    transition-all duration-1000 ease-out
-    ${s3.visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-6 md:-translate-x-6"}
-  `}
-      >
-        03
-      </div>
 
       <div
         ref={s3.ref as any}
@@ -48,7 +30,8 @@ export default function NosotrosMisionSection() {
               ${s3.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}
             `}
           >
-            <div className="max-w-3xl mx-5 md:ml-30">
+            <div className="relative max-w-3xl mx-5 md:ml-30">
+              <div aria-hidden="true" className="pointer-events-none ios-safe-decor-number absolute right-0 -top-8 md:-top-12 z-0 select-none font-heading font-black text-[110px] md:text-[180px] text-[#002B49]/15 transition-opacity duration-700">03</div>
               <h2 className="ios-safe-title mt-4 font-heading font-black uppercase text-5xl leading-[1.05] text-[#002B49] md:text-6xl">
                 {t("Misión")}
               </h2>
