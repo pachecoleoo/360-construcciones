@@ -192,7 +192,7 @@ export default function ProjectIntroWithData({
               <div className="relative mb-6">
                 <div
                   className={cx(
-                    "pointer-events-none absolute right-0 -top-35 md:-mt-34 select-none lg:top-0",
+                    "pointer-events-none absolute right-0 -top-10 select-none md:-top-10",
                     "ios-safe-decor-number font-heading font-black leading-none",
                     "text-[120px] md:text-[180px]",
                     "text-[#062a47]/10",
