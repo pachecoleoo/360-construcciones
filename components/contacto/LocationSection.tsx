@@ -72,7 +72,7 @@ export default function LocationSection() {
         {/* TEXTO */}
         <div
           className={cx(
-            "max-w-xl",
+            "ios-heading-motion max-w-xl",
             "transition-all duration-1000 ease-out",
             visible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0",
           )}
@@ -87,14 +87,14 @@ export default function LocationSection() {
             {t("Ubicación")}
           </p>
 
-          <div className="overflow-hidden">
+          <div className="overflow-visible">
             <h2
               className={cx(
-                "mt-4 font-heading text-[42px] font-black uppercase leading-[0.92] tracking-[0.01em] text-[#062a47] sm:text-[56px] md:text-[74px] lg:text-[88px]",
+                "ios-safe-title mt-4 font-heading text-[42px] font-black uppercase leading-[1.14] tracking-[0.01em] text-[#062a47] sm:text-[56px] md:text-[74px] lg:text-[88px]",
                 "transition-all duration-700 delay-100 ease-out",
                 visible
                   ? "translate-y-0 opacity-100"
-                  : "translate-y-[110%] opacity-0",
+                  : "translate-y-6 opacity-0",
               )}
             >
               {language === "es" ? "Nuestra" : "Our"}
