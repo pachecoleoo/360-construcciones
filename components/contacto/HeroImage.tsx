@@ -34,7 +34,7 @@ export default function HeroImage() {
             className="
             hero-title
               font-extra
-              text-4xl
+              text-[52px]
               font-black
               uppercase
               leading-[1.05]
@@ -71,7 +71,9 @@ export default function HeroImage() {
             </BrandButtonC>
 
             <BrandButtonC href="#asesor" variant="ghost">
-              {language === "es" ? "Contactate con un asesor" : "Speak with an advisor"}
+              {language === "es"
+                ? "Contactate con un asesor"
+                : "Speak with an advisor"}
             </BrandButtonC>
           </div>
         </div>
