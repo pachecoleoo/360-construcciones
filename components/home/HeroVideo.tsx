@@ -52,17 +52,16 @@ export default function HeroVideo() {
 
       <div className="relative z-10 flex h-full items-center justify-center px-6">
         <div className="text-center">
-          {/* LOGO + BOTONES COMPARTEN ANCHO */}
-          <div className="mx-auto w-[320px] md:w-[320px]">
-            {/* LOGO */}
+          {/* Mismo logo que utiliza el botón flotante de volver arriba. */}
+          <div className="mx-auto flex items-center justify-center">
             <div className="logo-reveal">
               <Image
-                src="/brand/logoBlanco.png"
+                src="/brand/360blanco2.png"
                 alt="360 Construcciones"
-                width={900}
-                height={220}
+                width={360}
+                height={360}
                 priority
-                className="h-auto w-full"
+                className="h-auto w-[180px] sm:w-[220px] md:w-[260px]"
               />
             </div>
           </div>
