@@ -64,7 +64,7 @@ export default function ProjectAmenities({
           <div
             className={cx(
               "pointer-events-none absolute right-0 -top-6 md:-top-15 select-none",
-              "font-heading font-black",
+              "ios-safe-decor-number font-heading font-black",
               "text-[120px] md:text-[180px]",
               "leading-none",
               "text-[#062a47]/10",
