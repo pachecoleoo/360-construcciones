@@ -107,7 +107,7 @@ export default function ProjectIntroWithData({
               </p>
 
               {/* TÍTULO */}
-              <div className="ios-safe-title-reveal">
+              <div className="ios-safe-title-mask">
                 <h2
                   className={cx(
                     "ios-safe-title mt-2 max-w-[950px]",
