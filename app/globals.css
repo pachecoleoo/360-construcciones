@@ -244,8 +244,8 @@ html {
 /* Títulos animados: reserva espacio para los glifos de Helvetica condensada.
    Evita recortes durante el primer renderizado de Safari/iOS y al cargar la fuente. */
 .ios-safe-title {
-  line-height: 1.08;
-  padding-block: 0.09em;
+  line-height: 1.16;
+  padding-block: 0.16em;
   overflow-wrap: break-word;
 }
 
@@ -264,10 +264,20 @@ html {
    Las secciones conservan el fade, pero no desplazan los glifos durante
    el renderizado inicial. Otros navegadores mantienen el efecto original. */
 @supports (-webkit-touch-callout: none) {
+  /* Evitar la animación del contenedor completo que mueve y retrasa
+     el título mientras Safari calcula sus glifos acentuados. */
+  .ios-heading-motion {
+    transform: none !important;
+    transition-property: opacity !important;
+    transition-delay: 0ms !important;
+    transition-duration: 450ms !important;
+  }
+
   .ios-safe-title {
     transform: none !important;
     transition-property: opacity !important;
-    transition-duration: 500ms !important;
+    transition-duration: 450ms !important;
+    transition-delay: 0ms !important;
     transition-timing-function: ease-out !important;
     -webkit-font-smoothing: antialiased;
   }
@@ -291,6 +301,7 @@ html {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .ios-heading-motion,
   .ios-safe-title,
   .hero-title,
   .hero-highlight {
