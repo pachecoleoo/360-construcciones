@@ -99,8 +99,8 @@ ${values.mensaje}`,
           {/* NÚMERO 06 */}
           <div
             className={cx(
-              "pointer-events-none absolute right-0 top-10 md:top-16 select-none",
-              "font-heading font-black leading-none",
+              "pointer-events-none absolute right-0 -top-10 md:-top-10 select-none",
+              "ios-safe-decor-number font-heading font-black leading-none",
               "text-[120px] md:text-[180px]",
               "text-[#ffffff]",
               "transition-all duration-1000 ease-out ",
@@ -123,16 +123,16 @@ ${values.mensaje}`,
               {}
             </p>
 
-            <div className="overflow-hidden">
+            <div className="overflow-visible">
               <h2
                 className={cx(
-                  "mt-2 text-[34px] md:text-[54px]",
-                  "leading-[0.95] tracking-tight text-[#062a47]",
+                  "ios-safe-title mt-2 text-[34px] md:text-[54px]",
+                  "leading-[1.08] tracking-tight text-[#062a47]",
                   "font-heading font-black uppercase",
                   "transition-all duration-700 delay-100 ease-out",
                   visible
                     ? "translate-y-0 opacity-100"
-                    : "translate-y-[110%] opacity-0",
+                    : "translate-y-6 opacity-0",
                 )}
               >
                 {t(title)}

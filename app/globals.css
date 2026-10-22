@@ -244,8 +244,8 @@ html {
 /* Títulos animados: reserva espacio para los glifos de Helvetica condensada.
    Evita recortes durante el primer renderizado de Safari/iOS y al cargar la fuente. */
 .ios-safe-title {
-  line-height: 1.08;
-  padding-block: 0.09em;
+  line-height: 1.16;
+  padding-block: 0.16em;
   overflow-wrap: break-word;
 }
 
@@ -258,4 +258,84 @@ html {
 /* Otros títulos animados nunca necesitaron máscara de recorte. */
 .ios-safe-title-reveal {
   overflow: visible;
+}
+
+/* iOS Safari: evita repintar fuentes condensadas/accentos en cada frame.
+   Las secciones conservan el fade, pero no desplazan los glifos durante
+   el renderizado inicial. Otros navegadores mantienen el efecto original. */
+@supports (-webkit-touch-callout: none) {
+  /* Evitar la animación del contenedor completo que mueve y retrasa
+     el título mientras Safari calcula sus glifos acentuados. */
+  .ios-heading-motion {
+    transform: none !important;
+    transition-property: opacity !important;
+    transition-delay: 0ms !important;
+    transition-duration: 450ms !important;
+  }
+
+  .ios-safe-title {
+    transform: none !important;
+    transition-property: opacity !important;
+    transition-duration: 450ms !important;
+    transition-delay: 0ms !important;
+    transition-timing-function: ease-out !important;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero-title {
+    filter: none !important;
+    transform: none !important;
+    animation-name: iosTitleFade !important;
+    animation-duration: 650ms !important;
+  }
+
+  .hero-highlight {
+    animation-name: iosTitleFade !important;
+    animation-duration: 750ms !important;
+  }
+}
+
+@keyframes iosTitleFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ios-heading-motion,
+  .ios-safe-title,
+  .hero-title,
+  .hero-highlight {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
+
+/* Numeración decorativa (01, 02, 03, 360 y PB): la altura de
+   Helvetica Black Condensed no coincide siempre con leading-none en iOS.
+   Conservar posición absoluta y aspecto, dejando espacio a los glifos. */
+.ios-safe-decor-number {
+  line-height: 1.16;
+  padding-block: 0.08em;
+  overflow: visible;
+}
+
+@supports (-webkit-touch-callout: none) {
+  .ios-safe-decor-number {
+    transform: none !important;
+    transition-property: opacity !important;
+    transition-delay: 0ms !important;
+    transition-duration: 450ms !important;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ios-safe-decor-number {
+    transform: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+  }
 }

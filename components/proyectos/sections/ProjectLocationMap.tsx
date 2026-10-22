@@ -70,8 +70,8 @@ export default function ProjectLocationMap({
           {/* NÚMERO 04 */}
           <div
             className={cx(
-              "pointer-events-none absolute right-0 -top-5 md:top-16 select-none",
-              "font-heading font-black",
+              "pointer-events-none absolute right-0 -top-10 md:-top-10 select-none",
+              "ios-safe-decor-number font-heading font-black",
               "text-[120px] md:text-[180px]",
               "leading-none",
               "text-[#062a47]/10",
@@ -98,17 +98,17 @@ export default function ProjectLocationMap({
             </p>
 
             {/* TÍTULO (REVEAL BLOQUE) */}
-            <div className="overflow-hidden">
+            <div className="overflow-visible">
               <h2
                 className={cx(
-                  "mt-3 text-[34px] md:text-[54px]",
-                  "leading-[0.95] tracking-tight",
+                  "ios-safe-title mt-3 text-[34px] md:text-[54px]",
+                  "leading-[1.08] tracking-tight",
                   "text-[#062a47]",
                   "font-heading font-black uppercase",
                   "transition-all duration-700 delay-100",
                   visible
                     ? "translate-y-0 opacity-100"
-                    : "translate-y-[110%] opacity-0",
+                    : "translate-y-6 opacity-0",
                 )}
               >
                 {t(title)}

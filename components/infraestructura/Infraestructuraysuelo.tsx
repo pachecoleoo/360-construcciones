@@ -326,7 +326,7 @@ export default function Infraestructuraysuelo() {
 
               <div className="absolute inset-0 bg-gradient-to-t from-[#062a47]/60 via-[#062a47]/10 to-transparent" />
 
-              <span className="absolute right-4 top-4 font-heading text-[90px] font-black leading-none tracking-[-0.08em] text-white/10 sm:right-5 sm:text-[120px] md:text-[170px]">
+              <span className="absolute right-4 top-4 ios-safe-decor-number font-heading text-[90px] font-black leading-none tracking-[-0.08em] text-white/10 sm:right-5 sm:text-[120px] md:text-[170px]">
                 {active.n}
               </span>
             </div>

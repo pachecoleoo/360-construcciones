@@ -63,8 +63,8 @@ export default function ProjectAmenities({
           {/* NÚMERO 01 */}
           <div
             className={cx(
-              "pointer-events-none absolute right-0 -top-6 md:-top-15 select-none",
-              "font-heading font-black",
+              "pointer-events-none absolute right-0 -top-10 md:-top-10 select-none",
+              "ios-safe-decor-number font-heading font-black",
               "text-[120px] md:text-[180px]",
               "leading-none",
               "text-[#062a47]/10",
@@ -91,17 +91,17 @@ export default function ProjectAmenities({
             </p>
 
             {/* TÍTULO (MISMO ESTILO QUE LAS OTRAS) */}
-            <div className="overflow-hidden">
+            <div className="overflow-visible">
               <h2
                 className={cx(
-                  "mt-2 text-[34px] md:text-[54px]",
-                  "leading-[0.95] tracking-tight",
+                  "ios-safe-title mt-2 text-[34px] md:text-[54px]",
+                  "leading-[1.08] tracking-tight",
                   "text-[#062a47]",
                   "font-heading font-black uppercase",
                   "transition-all duration-700 delay-100",
                   visible
                     ? "translate-y-0 opacity-100"
-                    : "translate-y-[110%] opacity-0",
+                    : "translate-y-6 opacity-0",
                 )}
               >
                 {t(title)}

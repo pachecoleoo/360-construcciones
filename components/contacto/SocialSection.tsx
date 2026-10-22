@@ -248,7 +248,7 @@ export default function SocialSection({
       <div
         aria-hidden="true"
         className={cx(
-          "pointer-events-none absolute right-4 top-24 font-heading text-[88px] font-black leading-none tracking-[-0.04em] text-[#062a47]/[0.08] sm:right-8 sm:text-[120px] md:right-12 md:top-8 md:text-[180px]",
+          "pointer-events-none absolute right-4 top-24 ios-safe-decor-number font-heading text-[88px] font-black leading-none tracking-[-0.04em] text-[#062a47]/[0.08] sm:right-8 sm:text-[120px] md:right-12 md:top-8 md:text-[180px]",
           "transition-all duration-1000 ease-out",
           visible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0",
         )}
@@ -268,14 +268,14 @@ export default function SocialSection({
             {language === "es" ? "Comunicación" : "Communication"}
           </p>
 
-          <div className="overflow-hidden">
+          <div className="overflow-visible">
             <h2
               className={cx(
-                "mt-4 font-heading text-[42px] font-black uppercase leading-[0.92] tracking-[0.01em] text-[#062a47] sm:text-[56px] md:text-[74px] lg:text-[88px]",
+                "ios-safe-title mt-4 font-heading text-[42px] font-black uppercase leading-[1.14] tracking-[0.01em] text-[#062a47] sm:text-[56px] md:text-[74px] lg:text-[88px]",
                 "transition-all duration-700 delay-100 ease-out",
                 visible
                   ? "translate-y-0 opacity-100"
-                  : "translate-y-[110%] opacity-0",
+                  : "translate-y-6 opacity-0",
               )}
             >
               {language === "es" ? title : "Social media and\ndirect contact"}

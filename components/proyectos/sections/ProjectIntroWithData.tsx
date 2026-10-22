@@ -80,7 +80,7 @@ export default function ProjectIntroWithData({
             {/* <div
               className={cx(
                 "pointer-events-none absolute right-0 top-10 select-none lg:right-[-120px] lg:top-0",
-                "font-heading font-black leading-none",
+                "ios-safe-decor-number font-heading font-black leading-none",
                 "text-[120px] md:text-[180px]",
                 "text-[#062a47]/10",
                 "transition-all duration-1000 ease-out",
@@ -107,7 +107,7 @@ export default function ProjectIntroWithData({
               </p>
 
               {/* TÍTULO */}
-              <div className="ios-safe-title-mask">
+              <div className="overflow-visible">
                 <h2
                   className={cx(
                     "ios-safe-title mt-2 max-w-[950px]",
@@ -118,7 +118,7 @@ export default function ProjectIntroWithData({
                     "transition-all duration-700 delay-100 ease-out",
                     visible
                       ? "translate-y-0 opacity-100"
-                      : "translate-y-[110%] opacity-0",
+                      : "translate-y-6 opacity-0",
                   )}
                 >
                   {t(title)}
@@ -192,8 +192,8 @@ export default function ProjectIntroWithData({
               <div className="relative mb-6">
                 <div
                   className={cx(
-                    "pointer-events-none absolute right-0 -top-35 md:-mt-34 select-none lg:top-0",
-                    "font-heading font-black leading-none",
+                    "pointer-events-none absolute right-0 -top-10 select-none md:-top-10",
+                    "ios-safe-decor-number font-heading font-black leading-none",
                     "text-[120px] md:text-[180px]",
                     "text-[#062a47]/10",
                     "transition-all duration-1000 ease-out",
