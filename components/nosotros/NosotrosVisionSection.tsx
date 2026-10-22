@@ -76,7 +76,7 @@ export default function NosotrosVisionSection() {
           {/* TEXTO */}
           <div
             className={`
-    lg:col-span-9 flex items-center
+    ios-heading-motion lg:col-span-9 flex items-center
     px-12 sm:px-8 md:px-16 
     py-14 sm:py-14 md:py-16 
     transition-all ease-out delay-300 duration-700
@@ -84,7 +84,7 @@ export default function NosotrosVisionSection() {
   `}
           >
             <div className="max-w-3xl w-full mx-auto lg:mx-0 lg:ml-10">
-              <h2 className="mt-4 font-heading font-black uppercase text-5xl md:text-6xl leading-[1.05]">
+              <h2 className="ios-safe-title mt-4 font-heading font-black uppercase text-5xl md:text-6xl leading-[1.05]">
                 {t("Visión")}
               </h2>
 
