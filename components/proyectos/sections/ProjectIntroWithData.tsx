@@ -107,7 +107,7 @@ export default function ProjectIntroWithData({
               </p>
 
               {/* TÍTULO */}
-              <div className="ios-safe-title-mask">
+              <div className="overflow-visible">
                 <h2
                   className={cx(
                     "ios-safe-title mt-2 max-w-[950px]",
@@ -118,7 +118,7 @@ export default function ProjectIntroWithData({
                     "transition-all duration-700 delay-100 ease-out",
                     visible
                       ? "translate-y-0 opacity-100"
-                      : "translate-y-[110%] opacity-0",
+                      : "translate-y-6 opacity-0",
                   )}
                 >
                   {t(title)}
