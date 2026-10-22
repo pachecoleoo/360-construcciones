@@ -46,7 +46,7 @@ export default function SectionWhoWeAre() {
         className="relative mx-auto max-w-[1280px] px-6 md:px-10 -my-10"
       >
         {/* Título full width */}
-        <div className="mt-3 ios-safe-title-reveal">
+        <div className="mt-3 ios-safe-title-mask">
           <h2
             className={cx(
               "ios-safe-title max-w-[1180px] font-heading font-black uppercase text-[#062a47]",
