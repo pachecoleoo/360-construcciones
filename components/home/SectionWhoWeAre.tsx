@@ -46,7 +46,7 @@ export default function SectionWhoWeAre() {
         className="relative mx-auto max-w-[1280px] px-6 md:px-10 -my-10"
       >
         {/* Título full width */}
-        <div className="mt-3 ios-safe-title-mask">
+        <div className="mt-3 overflow-visible">
           <h2
             className={cx(
               "ios-safe-title max-w-[1180px] font-heading font-black uppercase text-[#062a47]",
@@ -55,7 +55,7 @@ export default function SectionWhoWeAre() {
               "transition-all duration-700 delay-100 ease-out ",
               visible
                 ? "translate-y-0 opacity-100"
-                : "translate-y-[110%] opacity-0",
+                : "translate-y-6 opacity-0",
             )}
           >
             {language === "es" ? "Construimos con método," : "We build with method,"}
