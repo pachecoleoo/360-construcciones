@@ -22,7 +22,7 @@ export default function NosotrosVisionSection() {
     right-3 top-86 md:top-80 sm:top-90 lg:top-10
     sm:right-[-10px] md:right-[-20px] lg:right-[-40px]
     z-10
-    font-heading font-black
+    ios-safe-decor-number font-heading font-black
     text-[88px] sm:text-[88px] md:text-[180px]
     leading-none
     text-white/10
