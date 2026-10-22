@@ -27,20 +27,9 @@ export default function NosotrosIntroSection() {
       />
 
       {/* número */}
-      <div
-        className={`
-          pointer-events-none absolute right-6 top-10
-          ios-safe-decor-number font-heading text-[92px] font-black leading-none
-           text-[#002B49]/10
-          md:left-[-20px]  lg:left-[-40px] md:right-auto md:top-16 md:text-[180px]
-          transition-all duration-1000 ease-out
-          ${s1.visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-6"}
-        `}
-      >
-        01
-      </div>
 
       <div className="relative mx-auto max-w-7xl px-6 md:px-16 lg:px-24">
+              <div aria-hidden="true" className="pointer-events-none ios-safe-decor-number absolute right-0 -top-8 md:-top-12 z-0 select-none font-heading font-black text-[110px] md:text-[180px] text-[#002B49]/10 transition-opacity duration-700">01</div>
         <div
           ref={s1.ref as any}
           className={`transition-opacity ease-out ${s1.fadeClass}`}
