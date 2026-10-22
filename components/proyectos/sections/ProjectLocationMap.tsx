@@ -71,7 +71,7 @@ export default function ProjectLocationMap({
           <div
             className={cx(
               "pointer-events-none absolute right-0 -top-5 md:top-16 select-none",
-              "font-heading font-black",
+              "ios-safe-decor-number font-heading font-black",
               "text-[120px] md:text-[180px]",
               "leading-none",
               "text-[#062a47]/10",
