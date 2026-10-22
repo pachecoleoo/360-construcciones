@@ -75,7 +75,7 @@ export default function ProjectGallery({
           {/* NÚMERO 02 */}
           <div
             className={cx(
-              "pointer-events-none absolute right-0 -top-10 md:-top-10  select-none",
+              "pointer-events-none absolute right-0 -top-10 md:-top-10 select-none",
               "ios-safe-decor-number font-heading font-black leading-none",
               "text-[120px] md:text-[180px]",
               "text-[#C9D8E2]/60",
