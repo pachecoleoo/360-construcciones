@@ -82,15 +82,15 @@ export default function NosotrosSlogansSection() {
               <div className="overflow-visible">
                 <h2
                   className={cx(
-                    "mt-2 max-w-[950px]",
+                    "ios-safe-title mt-2 max-w-[950px]",
                     "text-[36px] md:text-[54px] lg:text-[64px]",
-                    "leading-[0.95] tracking-tight",
+                    "leading-[1.14] tracking-tight",
                     "text-[#062a47]",
                     "font-heading font-black uppercase",
                     "transition-all duration-700 delay-100 ease-out",
                     visible
                       ? "translate-y-0 opacity-100"
-                      : "translate-y-[110%] opacity-0",
+                      : "translate-y-6 opacity-0",
                   )}
                 >
                   {language === "es" ? "Construimos" : "We build"}
