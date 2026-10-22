@@ -197,10 +197,10 @@ export default function Infraestructuraysuelo() {
             {content.eyebrow}
           </p>
 
-          <div className="mt-4 overflow-visible ">
+          <div className="mt-4 ios-safe-title-reveal ">
             <h2
               className={cx(
-                "font-heading text-[clamp(38px,11vw,88px)] font-black  uppercase leading-[0.9] tracking-[0.01em] text-[#062a47]",
+                "ios-safe-title font-heading text-[clamp(38px,11vw,88px)] font-black  uppercase leading-[0.9] tracking-[0.01em] text-[#062a47]",
                 "transition-all delay-100 duration-700 ease-out",
                 visible
                   ? "translate-y-0 opacity-100"
@@ -339,7 +339,7 @@ export default function Infraestructuraysuelo() {
                   {active.n} / {active.title.replace("\n", " ")}
                 </p>
 
-                <h3 className="mt-4 max-w-full break-words font-heading text-[clamp(29px,8.5vw,58px)] font-black uppercase leading-[0.9] tracking-[-0.025em]">
+                <h3 className="ios-safe-title mt-4 max-w-full break-words font-heading text-[clamp(29px,8.5vw,58px)] font-black uppercase leading-[0.9] tracking-[-0.025em]">
                   {active.title}
                 </h3>
 

@@ -122,6 +122,7 @@ export default function HeroBackground({
             <h1
               className="
                 hero-title
+                ios-safe-title
                 mt-4
                 whitespace-pre-line
                 text-6xl

@@ -58,7 +58,7 @@ export default function SectionOne() {
       >
         {/* IZQUIERDA: TEXTO */}
         <div className="order-1">
-          <h2 className="font-heading font-black uppercase tracking-[0.02em] text-[42px] -mb-10 leading-[0.95] text-[#002849] sm:text-5xl md:text-6xl md:leading-[1.05] md:mb-0">
+          <h2 className="ios-safe-title font-heading font-black uppercase tracking-[0.02em] text-[42px] -mb-10 leading-[1.08] text-[#002849] sm:text-5xl md:text-6xl md:leading-[1.05] md:mb-0">
             {language === "es" ? "Desarrollo" : "Real estate"}
             <br />
             {language === "es" ? "inmobiliario" : "development"}

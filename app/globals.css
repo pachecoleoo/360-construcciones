@@ -240,3 +240,22 @@ html {
 html {
   scroll-behavior: smooth;
 }
+
+/* Títulos animados: reserva espacio para los glifos de Helvetica condensada.
+   Evita recortes durante el primer renderizado de Safari/iOS y al cargar la fuente. */
+.ios-safe-title {
+  line-height: 1.08;
+  padding-block: 0.09em;
+  overflow-wrap: break-word;
+}
+
+/* El revelado conserva su máscara, ampliada para no cortar las letras. */
+.ios-safe-title-mask {
+  overflow: hidden;
+  padding-block: 0.15em;
+}
+
+/* Otros títulos animados nunca necesitaron máscara de recorte. */
+.ios-safe-title-reveal {
+  overflow: visible;
+}
