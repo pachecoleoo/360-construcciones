@@ -259,3 +259,45 @@ html {
 .ios-safe-title-reveal {
   overflow: visible;
 }
+
+/* iOS Safari: evita repintar fuentes condensadas/accentos en cada frame.
+   Las secciones conservan el fade, pero no desplazan los glifos durante
+   el renderizado inicial. Otros navegadores mantienen el efecto original. */
+@supports (-webkit-touch-callout: none) {
+  .ios-safe-title {
+    transform: none !important;
+    transition-property: opacity !important;
+    transition-duration: 500ms !important;
+    transition-timing-function: ease-out !important;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero-title {
+    filter: none !important;
+    transform: none !important;
+    animation-name: iosTitleFade !important;
+    animation-duration: 650ms !important;
+  }
+
+  .hero-highlight {
+    animation-name: iosTitleFade !important;
+    animation-duration: 750ms !important;
+  }
+}
+
+@keyframes iosTitleFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ios-safe-title,
+  .hero-title,
+  .hero-highlight {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
