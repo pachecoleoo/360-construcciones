@@ -312,3 +312,30 @@ html {
     filter: none !important;
   }
 }
+
+/* Numeración decorativa (01, 02, 03, 360 y PB): la altura de
+   Helvetica Black Condensed no coincide siempre con leading-none en iOS.
+   Conservar posición absoluta y aspecto, dejando espacio a los glifos. */
+.ios-safe-decor-number {
+  line-height: 1.16;
+  padding-block: 0.08em;
+  overflow: visible;
+}
+
+@supports (-webkit-touch-callout: none) {
+  .ios-safe-decor-number {
+    transform: none !important;
+    transition-property: opacity !important;
+    transition-delay: 0ms !important;
+    transition-duration: 450ms !important;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ios-safe-decor-number {
+    transform: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+  }
+}
