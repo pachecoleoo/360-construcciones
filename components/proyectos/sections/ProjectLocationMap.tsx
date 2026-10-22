@@ -70,7 +70,7 @@ export default function ProjectLocationMap({
           {/* NÚMERO 04 */}
           <div
             className={cx(
-              "pointer-events-none absolute right-0 -top-5 md:top-16 select-none",
+              "pointer-events-none absolute right-0 -top-10 md:-top-10 select-none",
               "ios-safe-decor-number font-heading font-black",
               "text-[120px] md:text-[180px]",
               "leading-none",
