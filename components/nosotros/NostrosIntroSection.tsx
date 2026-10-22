@@ -59,7 +59,7 @@ export default function NosotrosIntroSection() {
                 {t("Sobre nosotros")}
               </p>
 
-              <h2 className="mt-4 max-w-[720px] font-heading text-[48px] font-black uppercase leading-[0.9] tracking-[0.01em] text-[#002B49] md:text-6xl">
+              <h2 className="ios-safe-title mt-4 max-w-[720px] font-heading text-[48px] font-black uppercase leading-[0.9] tracking-[0.01em] text-[#002B49] md:text-6xl">
                 {t("Somos 360")}
               </h2>
 
