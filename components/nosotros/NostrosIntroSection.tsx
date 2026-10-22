@@ -50,7 +50,7 @@ export default function NosotrosIntroSection() {
             {/* TEXTO */}
             <div
               className={`
-                relative z-10 lg:col-span-8
+                ios-heading-motion relative z-10 lg:col-span-8
                 transition-all ease-out delay-200 duration-700
                 ${s1.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}
               `}
