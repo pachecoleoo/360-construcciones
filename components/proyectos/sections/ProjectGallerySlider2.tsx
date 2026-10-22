@@ -92,18 +92,18 @@ export default function ProjectGallerySlider2({
               {t(eyebrow)}
             </p>
 
-            <div className="overflow-hidden">
+            <div className="overflow-visible">
               <h2
                 className={cx(
-                  "mt-3 max-w-[950px]",
+                  "ios-safe-title mt-3 max-w-[950px]",
                   "text-[34px] md:text-[54px]",
-                  "leading-[0.95] tracking-tight",
+                  "leading-[1.08] tracking-tight",
                   "text-[#0b2f4a]",
                   "font-heading font-black uppercase",
                   "transform transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]",
                   visible
                     ? "translate-y-0 opacity-100"
-                    : "translate-y-[110%] opacity-0",
+                    : "translate-y-6 opacity-0",
                 )}
               >
                 {t(title)}
