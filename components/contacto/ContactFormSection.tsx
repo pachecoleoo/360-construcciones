@@ -309,7 +309,7 @@ export default function ContactFormSection() {
             <div className="overflow-visible">
               <h2
                 className={cx(
-                  "ios-safe-title mt-4 font-heading text-[42px] font-black uppercase leading-[0.92] tracking-[0.01em] text-[#062a47] sm:text-[56px] md:text-[74px] lg:text-[88px]",
+                  "ios-safe-title mt-4 font-heading text-[42px] font-black uppercase leading-[1.08] tracking-[0.01em] text-[#062a47] sm:text-[56px] md:text-[74px] lg:text-[88px]",
                   "transition-all duration-700 delay-100 ease-out",
                   visible
                     ? "translate-y-0 opacity-100"
