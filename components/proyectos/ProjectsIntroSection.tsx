@@ -67,10 +67,10 @@ export default function ProjectsIntroSection() {
         </p>
 
         {/* TITULO FULL WIDTH */}
-        <div className="mt-3 overflow-visible">
+        <div className="mt-3 ios-safe-title-reveal">
           <h2
             className={cx(
-              "max-w-[1200px] font-heading font-black uppercase text-[#062a47]",
+              "ios-safe-title max-w-[1200px] font-heading font-black uppercase text-[#062a47]",
               "leading-[0.9] tracking-[0.01em]",
               "text-[48px] sm:text-[62px] md:text-[82px] lg:text-[104px] xl:text-[108px]",
               "transition-all duration-700 delay-100 ease-out",
