@@ -249,8 +249,13 @@ html {
   overflow-wrap: break-word;
 }
 
-/* Los títulos revelados se ocultan por opacidad, no por clipping del texto.
-   Conservamos las transiciones translateY existentes. */
+/* El revelado conserva su máscara, ampliada para no cortar las letras. */
+.ios-safe-title-mask {
+  overflow: hidden;
+  padding-block: 0.15em;
+}
+
+/* Otros títulos animados nunca necesitaron máscara de recorte. */
 .ios-safe-title-reveal {
   overflow: visible;
 }
