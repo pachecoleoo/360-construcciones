@@ -88,10 +88,10 @@ export default function ProjectHero({
         <div className="mx-auto flex h-full w-full max-w-[1400px] items-end px-5 pb-[90px] sm:px-7 md:px-10 md:pb-[110px]">
           <div className="max-w-[900px]">
             {/* TÍTULO */}
-            <div className="mt-3 overflow-visible">
+            <div className="mt-3 ios-safe-title-reveal">
               <h1
                 className={cx(
-                  "text-[44px] leading-[0.9] tracking-tight text-white sm:text-[62px] md:text-[82px] lg:text-[96px]",
+                  "ios-safe-title text-[44px] leading-[1.08] tracking-tight text-white sm:text-[62px] md:text-[82px] lg:text-[96px]",
                   "font-heading font-black uppercase",
                   "transition-all duration-700 delay-100 ease-[cubic-bezier(0.22,1,0.36,1)]",
                   visible
