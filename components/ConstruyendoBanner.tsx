@@ -67,7 +67,7 @@ export default function ConstruyendoBanner() {
       {/* COBERTURA NEGRA */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-[-1] bg-black/75"
+        className="pointer-events-none absolute inset-0 z-[-1] bg-black/65"
       />
       <div
         aria-hidden="true"

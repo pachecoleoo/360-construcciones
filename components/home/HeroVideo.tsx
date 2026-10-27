@@ -34,18 +34,25 @@ export default function HeroVideo() {
       className="relative h-screen w-full overflow-hidden"
     >
       <video
-        className="
-          absolute inset-0 h-full w-full
-          object-cover
-          object-[center_25%]
-          md:object-center
-        "
         ref={videoRef}
-        src="/images/home3.mp4"
+        src="/images/home3web.mp4"
+        className="
+      absolute inset-0 h-full w-full
+      object-cover
+      object-[center_25%]
+      md:object-center
+    "
         autoPlay
         muted
         loop
         playsInline
+        preload="metadata"
+        onLoadedMetadata={(e) => {
+          e.currentTarget.playbackRate = 1.5;
+        }}
+        onPlay={(e) => {
+          e.currentTarget.playbackRate = 1.5;
+        }}
       />
 
       <div className="absolute inset-0 bg-black/40" />
