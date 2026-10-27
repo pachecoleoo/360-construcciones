@@ -17,7 +17,7 @@ const CONTENT = {
       {
         n: "01",
         title: "Servicios",
-        image: "/images/suelo/suelo1.jpeg",
+        image: "/images/suelo/suelo1.webp",
         text: "Soluciones integrales para obras de ingeniería, construcción y montajes industriales, con foco en planificación, ejecución y control técnico.",
         details: [
           "Ingeniería y planificación",
@@ -28,14 +28,14 @@ const CONTENT = {
       {
         n: "02",
         title: "Infraestructura",
-        image: "/images/suelo/suelo2.jpg",
+        image: "/images/suelo/suelo2.webp",
         text: "Desarrollo de infraestructura civil, redes, accesos, bases y obras complementarias para proyectos urbanos e industriales.",
         details: ["Obras civiles", "Redes y servicios", "Accesos y bases"],
       },
       {
         n: "03",
         title: "Edificios\nde viviendas",
-        image: "/images/suelo/infra3.JPG",
+        image: "/images/suelo/infra3.webp",
         text: "Construcción de edificios de viviendas con coordinación de obra, calidad constructiva y seguimiento integral de cada etapa.",
         details: [
           "Dirección de obra",
@@ -46,7 +46,7 @@ const CONTENT = {
       {
         n: "04",
         title: "Partners",
-        image: "/images/suelo/suelo4.JPG",
+        image: "/images/suelo/suelo4.webp",
         text: "Relaciones de largo plazo con proveedores, equipos técnicos y aliados estratégicos para sostener proyectos eficientes y confiables.",
         details: [
           "Alianzas estratégicas",
@@ -80,7 +80,7 @@ const CONTENT = {
       {
         n: "02",
         title: "Infrastructure",
-        image: "/images/suelo/suelo2.jpg",
+        image: "/images/suelo/suelo2.jpeg",
         text: "Development of civil infrastructure, utility networks, access roads, foundations and complementary works for urban and industrial projects.",
         details: [
           "Civil works",

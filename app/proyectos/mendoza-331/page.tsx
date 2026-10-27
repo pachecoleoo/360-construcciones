@@ -12,7 +12,7 @@ export default function Belgrano531Page() {
       <ProjectHero
         title="Mendoza 331"
         location="Neuquén, Argentina"
-        heroImageSrc="/images/mendoza/renders/portada.jpg"
+        heroImageSrc="/images/mendoza/renders/portada.webp"
       />
 
       <ProjectIntroWithData
@@ -84,7 +84,7 @@ export default function Belgrano531Page() {
           },
         ]}
       />
-      <ProjectGallery
+      {/* <ProjectGallery
         eyebrow=""
         title="GALERIA DE LA OBRA"
         intro="Una lectura visual de los espacios, materiales y atmósfera general del desarrollo."
@@ -110,7 +110,7 @@ export default function Belgrano531Page() {
             label: "Living principal",
           },
         ]}
-      />
+      /> */}
       <ProjectLocationMap
         title="Ubicación"
         description="Mendoza 331 se emplaza en una ubicación estratégica dentro del centro de Neuquén, frente al área de Plaza Ministro González y con acceso inmediato a los principales corredores urbanos, servicios, comercios y equipamientos de la ciudad."
@@ -128,24 +128,24 @@ export default function Belgrano531Page() {
         metaValue="Mendoza 331, Neuquén Capital, Argentina"
         images={[
           {
-            src: "/images/mendoza/renders/living2.jpg",
+            src: "/images/mendoza/renders/living.webp",
             alt: "Living",
             label: "Living",
           },
           {
-            src: "/images/mendoza/renders/exterior.jpg",
-            alt: "Terraza",
-            label: "Terraza",
-          },
-          {
-            src: "/images/mendoza/renders/portada.tif",
+            src: "/images/mendoza/renders/exterior.webp",
             alt: "Exterior",
             label: "Exterior",
           },
           {
-            src: "/images/mendoza/renders/living.jpg",
-            alt: "Living",
-            label: "Living",
+            src: "/images/mendoza/renders/portada.webp",
+            alt: "Exterior",
+            label: "Exterior",
+          },
+          {
+            src: "/images/mendoza/renders/pileta.webp",
+            alt: "Terraza",
+            label: "Terraza",
           },
         ]}
       />

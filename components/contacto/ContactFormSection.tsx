@@ -412,7 +412,7 @@ export default function ContactFormSection() {
 
               {/* WhatsApp */}
               <a
-                href="https://wa.me/5490000000000"
+                href="https://api.whatsapp.com/send/?phone=5492996211266&text=Hola%2C+me+gustar%C3%ADa+recibir+informaci%C3%B3n+sobre+los+desarrollos+de+360+Construcciones.&type=phone_number&app_absent=0"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="

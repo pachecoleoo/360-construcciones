@@ -68,7 +68,7 @@ const NAVIGATION: Record<"es" | "en", NavItem[]> = {
   5492991234567
 */
 const WHATSAPP_URL =
-  "https://wa.me/5492990000000?text=Hola%20360%20Construcciones,%20quisiera%20hacer%20una%20consulta.";
+  "https://wa.me/5492996211266?text=Hola%2C%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20los%20desarrollos%20de%20360%20Construcciones.";
 
 function cx(...classes: Array<string | false | null | undefined>) {
   return classes.filter(Boolean).join(" ");
@@ -231,11 +231,19 @@ export default function FloatingNavbar() {
             <div className="flex items-center gap-1">
               {/* WHATSAPP MOBILE */}
               <a
-                href={WHATSAPP_URL}
+                href="https://wa.me/5492996211266?text=Hola%2C%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20los%20desarrollos%20de%20360%20Construcciones."
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={language === "es" ? "Contactar por WhatsApp" : "Contact via WhatsApp"}
-                title={language === "es" ? "Contactar por WhatsApp" : "Contact via WhatsApp"}
+                aria-label={
+                  language === "es"
+                    ? "Contactar por WhatsApp"
+                    : "Contact via WhatsApp"
+                }
+                title={
+                  language === "es"
+                    ? "Contactar por WhatsApp"
+                    : "Contact via WhatsApp"
+                }
                 className={cx(
                   "group flex h-10 w-10 shrink-0 items-center justify-center rounded-full",
                   "border border-white/10 bg-slate-950/55 text-white/85",
@@ -406,7 +414,9 @@ export default function FloatingNavbar() {
                               </span>
 
                               <span className="mt-0.5 block text-[10px] tracking-[0.04em] text-white/40">
-                                {language === "es" ? "Hablemos de tu próximo proyecto" : "Let’s discuss your next project"}
+                                {language === "es"
+                                  ? "Hablemos de tu próximo proyecto"
+                                  : "Let’s discuss your next project"}
                               </span>
                             </div>
                           </div>
@@ -626,8 +636,16 @@ export default function FloatingNavbar() {
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={language === "es" ? "Contactar por WhatsApp" : "Contact via WhatsApp"}
-                  title={language === "es" ? "Contactar por WhatsApp" : "Contact via WhatsApp"}
+                  aria-label={
+                    language === "es"
+                      ? "Contactar por WhatsApp"
+                      : "Contact via WhatsApp"
+                  }
+                  title={
+                    language === "es"
+                      ? "Contactar por WhatsApp"
+                      : "Contact via WhatsApp"
+                  }
                   className={cx(
                     "group relative inline-flex shrink-0 items-center justify-center rounded-full border",
                     "border-white/12 bg-white/[0.07] text-white/80 backdrop-blur-xl",

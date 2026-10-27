@@ -70,7 +70,10 @@ export default function HeroImage() {
               {language === "es" ? "Envíanos un email" : "Send us an email"}
             </BrandButtonC>
 
-            <BrandButtonC href="#asesor" variant="ghost">
+            <BrandButtonC
+              href="https://api.whatsapp.com/send/?phone=5492996211266&text=Hola%2C+me+gustar%C3%ADa+recibir+informaci%C3%B3n+sobre+los+desarrollos+de+360+Construcciones.&type=phone_number&app_absent=0"
+              variant="ghost"
+            >
               {language === "es"
                 ? "Contactate con un asesor"
                 : "Speak with an advisor"}

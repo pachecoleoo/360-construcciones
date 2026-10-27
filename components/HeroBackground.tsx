@@ -89,13 +89,13 @@ export default function HeroBackground({
       <Image src={imageSrc} alt="" fill priority className="object-cover" />
 
       {/* Oscurecimiento general más equilibrado */}
-      <div className="absolute inset-0 bg-black/20" />
+      <div className="absolute inset-0 bg-black/10" />
 
       {/* Sombra lateral suave detrás del contenido */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/20 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-black/20 to-transparent" />
 
       {/* Sombra superior para el navbar */}
-      <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/55 to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/0 to-transparent" />
 
       {/* Contenido */}
       <div className="relative z-10 min-h-screen">
@@ -143,7 +143,7 @@ export default function HeroBackground({
               <p
                 className="
                   hero-subtitle
-                  mt-6
+                  mt-1
                   max-w-3xl
                   text-sm
                   text-white/100

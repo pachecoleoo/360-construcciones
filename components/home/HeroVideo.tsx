@@ -41,7 +41,7 @@ export default function HeroVideo() {
           md:object-center
         "
         ref={videoRef}
-        src="/images/home.mp4"
+        src="/images/home3.mp4"
         autoPlay
         muted
         loop

@@ -18,7 +18,7 @@ const NAV = [
 export default function Footer() {
   const { language, t } = useLanguage();
   return (
-    <footer className="bg-black text-white">
+    <footer className="bg-[#081835] text-white">
       <div className="relative">
         {/* blueprint sutil */}
         <div
@@ -90,8 +90,8 @@ export default function Footer() {
                   label={t("Dirección")}
                   value={
                     <>
-                      Salta 256, Neuquén Capital - Piso 2 <br />
-                      Neuquén, Argentina
+                      Salta 256 - Piso 2 <br />
+                      Neuquén Capital, Argentina
                     </>
                   }
                 />
@@ -123,9 +123,15 @@ export default function Footer() {
                 <Row
                   label={t("Teléfono")}
                   value={
-                    <>
-                      +54 299 536-0404 <br />
-                    </>
+                    <a
+                      href="https://wa.me/5492996211266?text=Hola%2C%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20los%20desarrollos%20de%20360%20Construcciones."
+                      target="_blank"
+                      className="w-fit text-white/85 hover:text-white focus-visible:text-white outline-none
+                                   underline decoration-white/0 hover:decoration-white/40 focus-visible:decoration-white/40
+                                   underline-offset-4 transition"
+                    >
+                      +54 299 621 1266
+                    </a>
                   }
                 />
 
@@ -139,15 +145,7 @@ export default function Footer() {
                                    underline decoration-white/0 hover:decoration-white/40 focus-visible:decoration-white/40
                                    underline-offset-4 transition"
                       >
-                        info@360construcciones.com.ar
-                      </a>
-                      <a
-                        href="mailto:ventas@360construcciones.com.ar"
-                        className="w-fit text-white/85 hover:text-white focus-visible:text-white outline-none
-                                   underline decoration-white/0 hover:decoration-white/40 focus-visible:decoration-white/40
-                                   underline-offset-4 transition"
-                      >
-                        ventas@360construcciones.com.ar
+                        info.comercial@360construcciones.com.ar{" "}
                       </a>
                     </div>
                   }
@@ -159,11 +157,14 @@ export default function Footer() {
           {/* bottom */}
           <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
             <p className="font-body text-xs text-white/60">
-              © {new Date().getFullYear()} 360 Construcciones. {language === "es" ? "Todos los derechos reservados." : "All rights reserved."}
+              © {new Date().getFullYear()} 360 Construcciones.{" "}
+              {language === "es"
+                ? "Todos los derechos reservados."
+                : "All rights reserved."}
             </p>
 
             <p className="font-body text-xs text-white/60">
-              Dev by <span className="text-white/80">Leo Pacheco</span>
+              Dev by <span className="text-white/80">Leonardo</span>
             </p>
           </div>
         </div>

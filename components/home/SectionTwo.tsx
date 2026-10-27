@@ -67,7 +67,11 @@ export default function SectionTwo() {
         >
           <Image
             src="/images/gruaBlanca4.png"
-            alt={language === "es" ? "Infraestructura y movimiento de suelo" : "Infrastructure and earthworks"}
+            alt={
+              language === "es"
+                ? "Infraestructura y movimiento de suelo"
+                : "Infrastructure and earthworks"
+            }
             width={280}
             height={460}
             className="h-auto w-[270px] opacity-90 sm:w-[300px] md:w-[420px]"
@@ -83,11 +87,15 @@ export default function SectionTwo() {
         </div>
 
         {/* DERECHA: TEXTO */}
-        <div className="order-1 md:order-2 mt-2 text-center md:mt-0 md:text-left md:ml-auto">
-          <h2 className="ios-safe-title font-heading font-black uppercase tracking-[0.02em] text-[40px] leading-[1.08] text-white sm:text-5xl md:text-6xl md:leading-[1.08]">
+        <div className="order-1 md:order-2 mt-0 text-center md:mt-0 md:text-left md:ml-auto">
+          <h2 className="ios-safe-title font-heading font-black uppercase tracking-[0.02em] text-[40px] leading-[1] text-white sm:text-5xl md:text-6xl md:leading-none">
             <span className="block text-[#C9D8E2]">{t("Infraestructura")}</span>
-            <span className="block mt-2">{language === "es" ? "y movimiento" : "and earthworks"}</span>
-            <span className="block mt-2 ">{language === "es" ? "de suelo" : "services"}</span>
+            <span className="block mt-0">
+              {language === "es" ? "y movimiento" : "and earthworks"}
+            </span>
+            <span className="block mt-0 ">
+              {language === "es" ? "de suelo" : "services"}
+            </span>
           </h2>
 
           {/* BOTÓN SOLO DESKTOP */}

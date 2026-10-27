@@ -43,14 +43,32 @@ export default function ConstruyendoBanner() {
   }, []);
 
   const englishItems = [
-    "solutions that meet our clients’ needs.", "relationships with our suppliers.",
-    "an increasingly comprehensive company.", "an image founded on efficiency.",
-    "trust through our experience.", "a flexible and transparent organization.", "a new way to build.",
+    "solutions that meet our clients’ needs.",
+    "relationships with our suppliers.",
+    "an increasingly comprehensive company.",
+    "an image founded on efficiency.",
+    "trust through our experience.",
+    "a flexible and transparent organization.",
+    "a new way to build.",
   ];
   const current = ITEMS[index];
 
   return (
-    <section className="relative overflow-hidden  bg-[#000000] py-6  md:py-8">
+    <section className="relative isolate overflow-hidden bg-black py-6 md:py-3">
+      {/* IMAGEN DE FONDO */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-[-2] bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/images/exterior.jpg')",
+        }}
+      />
+
+      {/* COBERTURA NEGRA */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-[-1] bg-black/75"
+      />
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 opacity-[0.05]"
@@ -68,16 +86,16 @@ export default function ConstruyendoBanner() {
           Principios
         </p> */}
 
-        <div className="mt-6 grid items-center gap-2 lg:grid-cols-[520px_minmax(0,1fr)] lg:gap-10  text-center">
+        <div className="mt-2 grid items-center gap-2 lg:grid-cols-[520px_minmax(0,1fr)] lg:gap-10  text-center">
           {/* palabra fija */}
-          <div className="min-w-0">
-            <h2 className="md:ml-32 font-heading text-[40px] font-black uppercase leading-[1.1] tracking-[0.01em] text-[#ffffff] sm:text-[54px] md:text-[68px] lg:text-[70px] ">
+          <div className="min-w-0 mt-3">
+            <h2 className="md:ml-32 font-heading text-[40px] font-black uppercase leading-[0.3] tracking-[0.01em] text-[#ffffff] sm:text-[54px] md:text-[68px] lg:text-[70px] ">
               {language === "es" ? "Construyendo" : "Building"}
             </h2>
           </div>
 
           {/* frase rotativa */}
-          <div className="relative flex items-center overflow-hidden py-2 min-h-[60px] md:min-h-[76px] lg:min-h-[108px]">
+          <div className="relative flex items-center overflow-hidden md:mb-5 py-2 min-h-[60px] md:min-h-[76px] lg:min-h-[108px]">
             {" "}
             <div
               className={cx(

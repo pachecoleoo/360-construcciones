@@ -223,9 +223,8 @@ export default function SocialSection({
   const { ref, visible } = useInViewOnce<HTMLElement>();
   const { language, t } = useLanguage();
 
-  const waUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-    language === "es" ? "Hola! Quisiera consultar por un proyecto." : "Hello! I would like to inquire about a project.",
-  )}`;
+  const waUrl =
+    "https://api.whatsapp.com/send/?phone=5492996211266&text=Hola%2C+me+gustar%C3%ADa+recibir+informaci%C3%B3n+sobre+los+desarrollos+de+360+Construcciones.&type=phone_number&app_absent=0";
 
   return (
     <section
@@ -296,14 +295,20 @@ export default function SocialSection({
               visible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0",
             )}
           >
-            {language === "es" ? subtitle : "Reach us through whichever channel is most convenient for inquiries, coordination or commercial follow-up."}
+            {language === "es"
+              ? subtitle
+              : "Reach us through whichever channel is most convenient for inquiries, coordination or commercial follow-up."}
           </p>
         </div>
 
         <div className="mt-12 grid gap-5 md:grid-cols-3">
           <Card
             title="WhatsApp"
-            desc={language === "es" ? "Respuesta ágil para coordinar una visita, solicitar presupuesto o iniciar una consulta técnica." : "A quick response to schedule a visit, request a quote or start a technical inquiry."}
+            desc={
+              language === "es"
+                ? "Respuesta ágil para coordinar una visita, solicitar presupuesto o iniciar una consulta técnica."
+                : "A quick response to schedule a visit, request a quote or start a technical inquiry."
+            }
             href={waUrl}
             label={t("Abrir chat")}
             accentClass="bg-[#062a47]"
@@ -315,7 +320,11 @@ export default function SocialSection({
 
           <Card
             title="Instagram"
-            desc={language === "es" ? "Seguinos para conocer avances de obra, novedades y contenido vinculado a nuestros desarrollos." : "Follow us for construction updates, news and content related to our developments."}
+            desc={
+              language === "es"
+                ? "Seguinos para conocer avances de obra, novedades y contenido vinculado a nuestros desarrollos."
+                : "Follow us for construction updates, news and content related to our developments."
+            }
             href={instagramUrl}
             label={t("Ver perfil")}
             accentClass="bg-[#062a47]"
@@ -327,7 +336,11 @@ export default function SocialSection({
 
           <Card
             title="LinkedIn"
-            desc={language === "es" ? "Conocé el perfil institucional de la empresa, su enfoque profesional y su trayectoria." : "Learn about the company’s institutional profile, professional approach and track record."}
+            desc={
+              language === "es"
+                ? "Conocé el perfil institucional de la empresa, su enfoque profesional y su trayectoria."
+                : "Learn about the company’s institutional profile, professional approach and track record."
+            }
             href={linkedinUrl}
             label={t("Ver LinkedIn")}
             accentClass="bg-[#062a47]"
