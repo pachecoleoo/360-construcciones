@@ -11,7 +11,7 @@ export default function InfraestructuraPage() {
         title={"Infraestructura &\n movimiento de suelo"}
         highlight={["Infraestructura"]}
         subtitle="Ejecución técnica con precisión y control de obra."
-        imageSrc="/images/suelo/infra2.webp"
+        imageSrc="/images/suelo/infra2.JPG"
         align="left"
       />
 
