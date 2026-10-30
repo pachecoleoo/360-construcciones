@@ -55,7 +55,7 @@ export default function HeroVideo() {
         }}
       >
         <source
-          src="/images/home3-mobile.mp4"
+          src="/images/video_hero_mobile_equilibrada.mp4"
           media="(max-width: 767px)"
           type="video/mp4"
         />
