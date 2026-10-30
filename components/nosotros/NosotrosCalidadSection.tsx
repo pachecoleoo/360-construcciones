@@ -3,37 +3,31 @@
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 
-const DOCUMENTS_AVAILABLE = false;
-// Set to true only after both verified original PDFs are added to public/documentos/.
-
 export default function NosotrosCalidadSection() {
   const { language } = useLanguage();
   const es = language === "es";
   const steps = [
     {
-      number: "01",
       title: es ? "Planificamos y controlamos" : "We plan and monitor",
       description: es
-        ? "Planificamos cada proyecto, supervisamos su ejecución y medimos resultados con procedimientos definidos."
-        : "We plan every project, oversee execution and measure results through defined procedures.",
+        ? "Planificamos cada proyecto y cada obra, e inspeccionamos y controlamos la ejecución con procedimientos y registros definidos. Medimos nuestros objetivos para decidir con datos."
+        : "We plan every project and construction site, inspecting and monitoring execution through defined procedures and records. We measure our objectives to make data-driven decisions.",
       image: "/images/original/grua2.jpg",
       alt: es ? "Obra en construcción" : "Construction site",
     },
     {
-      number: "02",
       title: es ? "Escuchamos" : "We listen",
       description: es
-        ? "Escuchamos a quienes confían en nosotros y buscamos mejorar su experiencia en cada etapa."
-        : "We listen to those who trust us and seek to improve their experience at every stage.",
+        ? "Escuchamos a quienes eligen nuestros edificios, con encuestas de satisfacción y atención de postventa."
+        : "We listen to those who choose our buildings through satisfaction surveys and after-sales support.",
       image: "/images/original/equipo3.JPG",
       alt: es ? "Equipo de trabajo" : "Construction team",
     },
     {
-      number: "03",
       title: es ? "Mejoramos" : "We improve",
       description: es
-        ? "Revisamos nuestros procesos y analizamos los resultados para impulsar la mejora continua."
-        : "We review our processes and analyze outcomes to drive continuous improvement.",
+        ? "Auditamos nuestros procesos y, junto con los responsables de cada área, la Dirección revisa periódicamente los resultados para trabajar sobre lo que encontramos y mejorar."
+        : "We audit our processes, and management regularly reviews results with each department lead to identify opportunities for improvement.",
       image: "/images/original/obreros.JPG",
       alt: es ? "Personal en obra" : "Workers on site",
     },
@@ -41,13 +35,16 @@ export default function NosotrosCalidadSection() {
 
   return (
     <section id="calidad" data-section="04" className="relative overflow-hidden bg-[#f4f6f8] py-16 text-[#062a47] md:py-24">
-      <div className="mx-auto max-w-7xl px-6 md:px-12 lg:px-20">
-        <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.45fr)] lg:gap-14">
+      {/* Sigue la numeración decorativa 01/02/03 de Nosotros. */}
+      <div aria-hidden="true" className="pointer-events-none ios-safe-decor-number absolute left-[-20px] top-16 z-0 hidden select-none font-heading text-[180px] font-black leading-none text-[#002B49]/10 md:block lg:left-[-40px]">04</div>
+      <div className="relative mx-auto max-w-7xl px-6 md:px-16 lg:px-24">
+        <div aria-hidden="true" className="pointer-events-none ios-safe-decor-number absolute right-6 top-3 z-0 select-none font-heading text-[110px] font-black leading-none text-[#002B49]/10 md:hidden">04</div>
+        <div className="relative z-10 grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.45fr)] lg:gap-14">
           <div>
-            <p className="font-body text-xs font-bold uppercase tracking-[0.24em] text-[#062a47]/60">
-              04 / {es ? "Sistema de gestión de la calidad" : "Quality management system"}
+            <p className="text-[11px] uppercase tracking-[0.28em] text-[#7a8a97]">
+              {es ? "Sistema de gestión de la calidad" : "Quality management system"}
             </p>
-            <h2 className="ios-safe-title mt-5 max-w-lg font-heading text-3xl font-black uppercase leading-[1.08] tracking-tight sm:text-4xl lg:text-5xl">
+            <h2 className="ios-safe-title mt-4 max-w-[720px] font-heading text-[48px] font-black uppercase leading-[0.98] tracking-[0.01em] text-[#002B49] md:text-6xl">
               {es ? "Seguimos construyendo calidad" : "Continuing to build quality"}
             </h2>
           </div>
@@ -71,7 +68,7 @@ export default function NosotrosCalidadSection() {
           </h3>
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             {steps.map((step) => (
-              <article key={step.number} className="group overflow-hidden border border-[#062a47]/10 bg-white">
+              <article key={step.title} className="group overflow-hidden border border-[#062a47]/10 bg-white">
                 <div className="relative h-36 overflow-hidden sm:h-44 md:h-40">
                   <Image
                     src={step.image}
@@ -83,8 +80,7 @@ export default function NosotrosCalidadSection() {
                   <div className="absolute inset-0 bg-[#062a47]/20" />
                 </div>
                 <div className="p-5 md:p-6">
-                  <span className="font-body text-xs font-bold tracking-widest text-[#062a47]/45">{step.number}</span>
-                  <h4 className="mt-3 font-heading text-lg font-bold">{step.title}</h4>
+                  <h4 className="mt-1 font-heading text-lg font-bold">{step.title}</h4>
                   <p className="mt-2 font-body text-sm leading-6 text-[#062a47]/75">{step.description}</p>
                 </div>
               </article>
@@ -100,15 +96,9 @@ export default function NosotrosCalidadSection() {
                 {es ? "Consultá el certificado del Sistema de Gestión de la Calidad." : "View our Quality Management System certificate."}
               </p>
             </div>
-            {DOCUMENTS_AVAILABLE ? (
-              <a href="/documentos/certificado-iso-9001.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center bg-[#062a47] px-5 py-3 font-body text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-[#174a70]">
-                {es ? "Ver certificado ↗" : "View certificate ↗"}
-              </a>
-            ) : (
-              <span className="inline-flex min-h-11 items-center border border-[#062a47]/20 px-5 py-3 font-body text-xs font-semibold uppercase tracking-wide text-[#062a47]/60">
-                {es ? "Documento próximamente" : "Document coming soon"}
-              </span>
-            )}
+            <a href="/documentos/certificado-iso-9001.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center bg-[#062a47] px-5 py-3 font-body text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-[#174a70]">
+              {es ? "Ver certificado ↗" : "View certificate ↗"}
+            </a>
           </div>
           <div className="flex flex-col items-start justify-between gap-5 border-l-2 border-[#062a47] pl-5">
             <div>
@@ -117,15 +107,9 @@ export default function NosotrosCalidadSection() {
                 {es ? "Conocé los principios que orientan nuestro compromiso con la calidad." : "Learn about the principles behind our commitment to quality."}
               </p>
             </div>
-            {DOCUMENTS_AVAILABLE ? (
-              <a href="/documentos/politica-de-gestion.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center bg-[#062a47] px-5 py-3 font-body text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-[#174a70]">
-                {es ? "Ver política de gestión ↗" : "View management policy ↗"}
-              </a>
-            ) : (
-              <span className="inline-flex min-h-11 items-center border border-[#062a47]/20 px-5 py-3 font-body text-xs font-semibold uppercase tracking-wide text-[#062a47]/60">
-                {es ? "Documento próximamente" : "Document coming soon"}
-              </span>
-            )}
+            <a href="/documentos/politica-de-gestion.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center bg-[#062a47] px-5 py-3 font-body text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-[#174a70]">
+              {es ? "Ver política de gestión ↗" : "View management policy ↗"}
+            </a>
           </div>
         </div>
       </div>
