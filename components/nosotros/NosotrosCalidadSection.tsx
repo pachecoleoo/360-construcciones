@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Button from "@/components/ui/Button";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function NosotrosCalidadSection() {
@@ -10,24 +11,24 @@ export default function NosotrosCalidadSection() {
     {
       title: es ? "Planificamos y controlamos" : "We plan and monitor",
       description: es
-        ? "Planificamos cada proyecto y cada obra, e inspeccionamos y controlamos la ejecución con procedimientos y registros definidos. Medimos nuestros objetivos para decidir con datos."
-        : "We plan every project and construction site, inspecting and monitoring execution through defined procedures and records. We measure our objectives to make data-driven decisions.",
+        ? "Planificamos cada proyecto, supervisamos su ejecución y medimos resultados con procedimientos definidos."
+        : "We plan every project, oversee execution and measure results through defined procedures.",
       image: "/images/original/grua2.jpg",
       alt: es ? "Obra en construcción" : "Construction site",
     },
     {
       title: es ? "Escuchamos" : "We listen",
       description: es
-        ? "Escuchamos a quienes eligen nuestros edificios, con encuestas de satisfacción y atención de postventa."
-        : "We listen to those who choose our buildings through satisfaction surveys and after-sales support.",
+        ? "Escuchamos a quienes confían en nosotros y buscamos mejorar su experiencia en cada etapa."
+        : "We listen to those who trust us and seek to improve their experience at every stage.",
       image: "/images/original/equipo3.JPG",
       alt: es ? "Equipo de trabajo" : "Construction team",
     },
     {
       title: es ? "Mejoramos" : "We improve",
       description: es
-        ? "Auditamos nuestros procesos y, junto con los responsables de cada área, la Dirección revisa periódicamente los resultados para trabajar sobre lo que encontramos y mejorar."
-        : "We audit our processes, and management regularly reviews results with each department lead to identify opportunities for improvement.",
+        ? "Revisamos nuestros procesos y analizamos los resultados para impulsar la mejora continua."
+        : "We review our processes and analyze outcomes to drive continuous improvement.",
       image: "/images/original/obreros.JPG",
       alt: es ? "Personal en obra" : "Workers on site",
     },
@@ -96,9 +97,9 @@ export default function NosotrosCalidadSection() {
                 {es ? "Consultá el certificado del Sistema de Gestión de la Calidad." : "View our Quality Management System certificate."}
               </p>
             </div>
-            <a href="/documentos/certificado-iso-9001.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center bg-[#062a47] px-5 py-3 font-body text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-[#174a70]">
+            <Button href="/documentos/certificado-iso-9001.pdf" variant="dark" target="_blank" rel="noopener noreferrer" icon={<span aria-hidden="true">↗</span>} className="min-h-11">
               {es ? "Ver certificado ↗" : "View certificate ↗"}
-            </a>
+            </Button>
           </div>
           <div className="flex flex-col items-start justify-between gap-5 border-l-2 border-[#062a47] pl-5">
             <div>
@@ -107,9 +108,9 @@ export default function NosotrosCalidadSection() {
                 {es ? "Conocé los principios que orientan nuestro compromiso con la calidad." : "Learn about the principles behind our commitment to quality."}
               </p>
             </div>
-            <a href="/documentos/politica-de-gestion.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center bg-[#062a47] px-5 py-3 font-body text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-[#174a70]">
+            <Button href="/documentos/politica-de-gestion.pdf" variant="dark" target="_blank" rel="noopener noreferrer" icon={<span aria-hidden="true">↗</span>} className="min-h-11">
               {es ? "Ver política de gestión ↗" : "View management policy ↗"}
-            </a>
+            </Button>
           </div>
         </div>
       </div>
