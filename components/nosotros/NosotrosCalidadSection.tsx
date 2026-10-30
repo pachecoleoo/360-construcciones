@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Button from "@/components/ui/Button";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function NosotrosCalidadSection() {
@@ -97,9 +96,9 @@ export default function NosotrosCalidadSection() {
                 {es ? "Consultá el certificado del Sistema de Gestión de la Calidad." : "View our Quality Management System certificate."}
               </p>
             </div>
-            <Button href="/documentos/certificado-iso-9001.pdf" variant="dark" target="_blank" rel="noopener noreferrer" icon={<span aria-hidden="true">↗</span>} className="min-h-11">
+            <a href="/documentos/certificado-iso-9001.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center bg-[#062a47] px-5 py-3 font-body text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-[#174a70]">
               {es ? "Ver certificado ↗" : "View certificate ↗"}
-            </Button>
+            </a>
           </div>
           <div className="flex flex-col items-start justify-between gap-5 border-l-2 border-[#062a47] pl-5">
             <div>
@@ -108,9 +107,9 @@ export default function NosotrosCalidadSection() {
                 {es ? "Conocé los principios que orientan nuestro compromiso con la calidad." : "Learn about the principles behind our commitment to quality."}
               </p>
             </div>
-            <Button href="/documentos/politica-de-gestion.pdf" variant="dark" target="_blank" rel="noopener noreferrer" icon={<span aria-hidden="true">↗</span>} className="min-h-11">
+            <a href="/documentos/politica-de-gestion.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center bg-[#062a47] px-5 py-3 font-body text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-[#174a70]">
               {es ? "Ver política de gestión ↗" : "View management policy ↗"}
-            </Button>
+            </a>
           </div>
         </div>
       </div>
