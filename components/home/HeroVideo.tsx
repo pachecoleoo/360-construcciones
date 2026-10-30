@@ -35,25 +35,33 @@ export default function HeroVideo() {
     >
       <video
         ref={videoRef}
-        src="/images/home3web.mp4"
         className="
-      absolute inset-0 h-full w-full
-      object-cover
-      object-[center_25%]
-      md:object-center
-    "
+    absolute inset-0
+    h-full w-full
+    object-cover
+    object-center
+  "
         autoPlay
         muted
         loop
         playsInline
         preload="metadata"
+        poster="/images/home3-poster.webp"
         onLoadedMetadata={(e) => {
           e.currentTarget.playbackRate = 1.5;
         }}
         onPlay={(e) => {
           e.currentTarget.playbackRate = 1.5;
         }}
-      />
+      >
+        <source
+          src="/images/home3-mobile.mp4"
+          media="(max-width: 767px)"
+          type="video/mp4"
+        />
+
+        <source src="/images/home3-desktop.mp4" type="video/mp4" />
+      </video>
 
       <div className="absolute inset-0 bg-black/40" />
 
