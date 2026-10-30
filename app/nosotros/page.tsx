@@ -7,6 +7,7 @@ import NosotrosIntroSection from "@/components/nosotros/NostrosIntroSection";
 import NosotrosVisionSection from "@/components/nosotros/NosotrosVisionSection";
 import NosotrosMisionSection from "@/components/nosotros/NosotrosMisionSection";
 import ConstruyendoBanner from "@/components/ConstruyendoBanner";
+import NosotrosCalidadSection from "@/components/nosotros/NosotrosCalidadSection";
 
 export default function NosotrosPage() {
   return (
@@ -29,6 +30,7 @@ export default function NosotrosPage() {
         <NosotrosIntroSection />
         <NosotrosVisionSection />
         <NosotrosMisionSection />
+        <NosotrosCalidadSection />
         <ConstruyendoBanner />
       </main>
 
