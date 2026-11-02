@@ -38,14 +38,21 @@ export default function NosotrosMisionSection() {
             `}
           >
             <div className="relative max-w-3xl mx-5 md:ml-30">
-              <div aria-hidden="true" className="pointer-events-none ios-safe-decor-number absolute -right-7 top-3 z-0 select-none font-heading font-black text-[110px] text-[#002B49]/15 transition-opacity duration-700 md:hidden">03</div>
+              <div
+                aria-hidden="true"
+                className="pointer-events-none ios-safe-decor-number absolute -right-7 top-3 z-0 select-none font-heading font-black text-[110px] text-[#002B49]/15 transition-opacity duration-700 md:hidden"
+              >
+                03
+              </div>
               <h2 className="ios-safe-title mt-4 font-heading font-black uppercase text-5xl leading-[1.05] text-[#002B49] md:text-6xl">
                 {t("Misión")}
               </h2>
 
               <p className="mt-8 font-body text-base leading-relaxed text-[#002B49]/85 md:text-xl">
                 <strong className="font-semibold text-[#002B49]">
-                  {language === "es" ? "Crear, ejecutar y gestionar soluciones innovadoras" : "Create, execute and manage innovative solutions"}
+                  {language === "es"
+                    ? "Crear, ejecutar y gestionar soluciones innovadoras"
+                    : "Create, execute and manage innovative solutions"}
                 </strong>{" "}
                 {language === "es"
                   ? "para resolver proyectos de ingeniería, construcción y montajes industriales, honrando los compromisos asumidos y las relaciones a largo plazo con nuestros clientes."
@@ -64,7 +71,7 @@ export default function NosotrosMisionSection() {
             style={{ transitionDuration: `${IMG_FOCUS_MS}ms` }}
           >
             <Image
-              src="/images/original/equipo3.JPG"
+              src="/images/gestion/calidad6.JPG"
               alt={t("Misión")}
               fill
               className="
@@ -73,9 +80,6 @@ export default function NosotrosMisionSection() {
                 lg:group-hover:scale-105
               "
             />
-
-            <div className="absolute inset-0 bg-black/45 mix-blend-multiply" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
           </div>
         </div>
       </div>
