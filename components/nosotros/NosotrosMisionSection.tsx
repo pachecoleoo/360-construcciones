@@ -71,7 +71,7 @@ export default function NosotrosMisionSection() {
             style={{ transitionDuration: `${IMG_FOCUS_MS}ms` }}
           >
             <Image
-              src="/images/gestion/calidad6.JPG"
+              src="/images/gestion/calidad6.jpg"
               alt={t("Misión")}
               fill
               className="
