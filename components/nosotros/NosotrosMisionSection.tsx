@@ -15,10 +15,12 @@ export default function NosotrosMisionSection() {
       data-section="03"
       className="relative overflow-hidden bg-[#C9D8E2]"
     >
-      {/* Desktop: composición original en el extremo izquierdo. */}
+      {/* Número decorativo desktop */}
       <div
         aria-hidden="true"
-        className={`pointer-events-none ios-safe-decor-number absolute hidden md:block md:left-[-20px] lg:left-[-40px] top-10 z-10 select-none font-heading font-black md:text-[150px] lg:text-[180px] leading-none text-[#002B49]/15 transition-opacity duration-700 ${s3.visible ? "opacity-100" : "opacity-0"}`}
+        className={`pointer-events-none ios-safe-decor-number absolute hidden md:block md:left-[-20px] lg:left-[-40px] top-10 z-10 select-none font-heading font-black md:text-[150px] lg:text-[180px] leading-none text-[#002B49]/15 transition-opacity duration-700 ${
+          s3.visible ? "opacity-100" : "opacity-0"
+        }`}
       >
         03
       </div>
@@ -32,32 +34,53 @@ export default function NosotrosMisionSection() {
           {/* TEXTO */}
           <div
             className={`
-              ios-heading-motion lg:col-span-9 flex items-center px-8 py-14 transition-all ease-out delay-300 duration-700
-              md:px-16 md:py-16
-              ${s3.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}
+              ios-heading-motion
+              lg:col-span-9 flex items-center
+              py-14 md:py-16
+              transition-all ease-out delay-300 duration-700
+              ${
+                s3.visible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-2"
+              }
             `}
           >
-            <div className="relative max-w-3xl mx-5 md:ml-30">
+            {/* Mismos márgenes que SOMOS 360 */}
+            <div className="relative w-full">
               <div
-                aria-hidden="true"
-                className="pointer-events-none ios-safe-decor-number absolute -right-7 top-3 z-0 select-none font-heading font-black text-[110px] text-[#002B49]/15 transition-opacity duration-700 md:hidden"
+                className="
+    w-full
+    px-6
+    md:px-16
+    lg:pl-[max(6rem,calc((100vw-80rem)/2+6rem))]
+    lg:pr-6
+  "
               >
-                03
-              </div>
-              <h2 className="ios-safe-title mt-4 font-heading font-black uppercase text-5xl leading-[1.05] text-[#002B49] md:text-6xl">
-                {t("Misión")}
-              </h2>
+                {" "}
+                {/* Número decorativo mobile */}
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none ios-safe-decor-number absolute right-6 top-0 z-0 select-none font-heading font-black text-[110px] text-[#002B49]/15 md:hidden"
+                >
+                  03
+                </div>
+                <div className="relative z-10 max-w-3xl">
+                  <h2 className="ios-safe-title mt-4 font-heading font-black uppercase text-5xl leading-[1.05] text-[#002B49] md:text-6xl">
+                    {t("Misión")}
+                  </h2>
 
-              <p className="mt-8 font-body text-base leading-relaxed text-[#002B49]/85 md:text-xl">
-                <strong className="font-semibold text-[#002B49]">
-                  {language === "es"
-                    ? "Crear, ejecutar y gestionar soluciones innovadoras"
-                    : "Create, execute and manage innovative solutions"}
-                </strong>{" "}
-                {language === "es"
-                  ? "para resolver proyectos de ingeniería, construcción y montajes industriales, honrando los compromisos asumidos y las relaciones a largo plazo con nuestros clientes."
-                  : "to deliver engineering, construction and industrial assembly projects while honoring our commitments and long-term client relationships."}
-              </p>
+                  <p className="mt-8 font-body text-base leading-relaxed text-[#002B49]/85 md:text-xl">
+                    <strong className="font-semibold text-[#002B49]">
+                      {language === "es"
+                        ? "Crear, ejecutar y gestionar soluciones innovadoras"
+                        : "Create, execute and manage innovative solutions"}
+                    </strong>{" "}
+                    {language === "es"
+                      ? "para resolver proyectos de ingeniería, construcción y montajes industriales, honrando los compromisos asumidos y las relaciones a largo plazo con nuestros clientes."
+                      : "to deliver engineering, construction and industrial assembly projects while honoring our commitments and long-term client relationships."}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 

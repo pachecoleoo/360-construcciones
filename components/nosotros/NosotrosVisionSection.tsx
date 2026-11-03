@@ -66,24 +66,37 @@ export default function NosotrosVisionSection() {
           <div
             className={`
     ios-heading-motion lg:col-span-9 flex items-center
-    px-12 sm:px-8 md:px-16 
-    py-14 sm:py-14 md:py-16 
+    px-6 md:px-16
+    py-14 sm:py-14 md:py-16
     transition-all ease-out delay-300 duration-700
     ${s2.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}
   `}
           >
-            <div className="relative max-w-3xl w-full mx-auto lg:mx-0 lg:ml-10">
-              <div aria-hidden="true" className="pointer-events-none ios-safe-decor-number absolute -right-6 top-3 z-0 select-none font-heading font-black text-[110px] text-white/10 transition-opacity duration-700 md:hidden">02</div>
-              <h2 className="ios-safe-title mt-4 font-heading font-black uppercase text-5xl md:text-6xl leading-[1.05]">
+            <div className="relative max-w-3xl w-full mx-0 md:mx-auto lg:mx-0 lg:ml-10">
+              {/* Número decorativo mobile */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none ios-safe-decor-number absolute -right-0 top-0 z-0 select-none font-heading font-black text-[110px] text-white/10 transition-opacity duration-700 md:hidden"
+              >
+                02
+              </div>
+
+              <h2 className="ios-safe-title relative z-10 mt-4 font-heading font-black uppercase text-5xl md:text-6xl leading-[1.05]">
                 {t("Visión")}
               </h2>
 
-              <p className="mt-8 font-body text-white/85 text-base md:text-xl leading-relaxed">
-                {language === "es" ? "Queremos ser el faro de innovación en ingeniería y construcción del sur de la región. Estamos construyendo nuestro liderazgo sobre la base de la más " : "We aim to be a beacon of innovation in engineering and construction across the southern region. We are building our leadership on "}
+              <p className="relative z-10 mt-8 font-body text-white/85 text-base md:text-xl leading-relaxed">
+                {language === "es"
+                  ? "Queremos ser el faro de innovación en ingeniería y construcción del sur de la región. Estamos construyendo nuestro liderazgo sobre la base de la más "
+                  : "We aim to be a beacon of innovation in engineering and construction across the southern region. We are building our leadership on "}
                 <strong className="font-semibold text-white">
-                  {language === "es" ? "sólida confianza de nuestros clientes, el talento de nuestros equipos y de un resultado excepcional" : "the strong trust of our clients, the talent of our teams and exceptional results"}
+                  {language === "es"
+                    ? "sólida confianza de nuestros clientes, el talento de nuestros equipos y de un resultado excepcional"
+                    : "the strong trust of our clients, the talent of our teams and exceptional results"}
                 </strong>{" "}
-                {language === "es" ? "en cada uno de nuestros proyectos y desarrollos." : "in every project and development."}
+                {language === "es"
+                  ? "en cada uno de nuestros proyectos y desarrollos."
+                  : "in every project and development."}
               </p>
             </div>
           </div>
