@@ -14,7 +14,7 @@ export default function NosotrosPage() {
     <>
       <HeroBackground
         eyebrow=""
-        title="Seguimos construyendo"
+        title={"Seguimos\nconstruyendo"}
         // highlight={[" construyendo"]}
         subtitle="Arquitectura e ingeniería con planificación."
         // imageSrc="/images/original/frameGatica4.jpg"
