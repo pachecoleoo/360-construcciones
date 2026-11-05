@@ -13,7 +13,7 @@ export default function EdificioPage() {
       <ProjectHero
         title="Córdoba 434"
         location="Neuquén Capital, Argentina"
-        heroImageSrc="/images/cordoba/afuera.JPG"
+        heroImageSrc="/images/cba434/edificio.png"
       />
 
       <ProjectIntroWithData
@@ -123,24 +123,24 @@ export default function EdificioPage() {
         intro="Una mirada a la arquitectura, los espacios comunes y las distintas tipologías que conforman Córdoba 434."
         images={[
           {
-            src: "/images/cordoba/afuera.JPG",
+            src: "/images/cba434/frente.png",
             alt: "Fachada de Córdoba 434",
             label: "Fachada",
           },
           {
-            src: "/images/cordoba/renders/piscina.jpg",
+            src: "/images/cba434/pileta.png",
             alt: "Piscina en la terraza",
             label: "Piscina",
           },
           {
-            src: "/images/cordoba/renders/sum.jpg",
-            alt: "SUM con parrilla",
-            label: "SUM con parrilla",
+            src: "/images/cba434/hall.png",
+            alt: "Hall de entrada",
+            label: "Hall de entrada",
           },
           {
-            src: "/images/cordoba/renders/departamento.jpg",
-            alt: "Interior de una unidad",
-            label: "Interiores",
+            src: "/images/cba434/amanecer.png",
+            alt: "Exterior",
+            label: "Exterior",
           },
         ]}
       />
@@ -160,24 +160,24 @@ export default function EdificioPage() {
         metaValue="Córdoba 434, Neuquén Capital, Argentina"
         images={[
           {
-            src: "/images/cordoba/renders/monoambiente.jpg",
-            alt: "Monoambiente",
-            label: "Monoambiente",
+            src: "/images/cba434/comedor.png",
+            alt: "Comedor",
+            label: "Comedor",
           },
           {
-            src: "/images/cordoba/renders/living.jpg",
+            src: "/images/cba434/living.png",
             alt: "Living comedor",
             label: "Living comedor",
           },
           {
-            src: "/images/cordoba/renders/dormitorio.jpg",
-            alt: "Departamento de un dormitorio",
-            label: "Dormitorio",
+            src: "/images/cba434/primeraplanta.png",
+            alt: "Planta Baja",
+            label: "Planta Baja",
           },
           {
-            src: "/images/cordoba/renders/balcon.jpg",
-            alt: "Balcón",
-            label: "Balcón",
+            src: "/images/cba434/entrada.jpg",
+            alt: "Entrada",
+            label: "Entrada",
           },
         ]}
       />
