@@ -3,7 +3,7 @@
 import Counter from "./Contador";
 import { useLanguage } from "@/context/LanguageContext";
 
-const STATS = [
+const STATS: Array<{ value: number; prefix?: string; suffix?: string; label: string }> = [
   {
     value: 250,
     prefix: "+",
@@ -67,7 +67,7 @@ export default function AboutStats() {
               key={item.label}
               value={item.value}
               prefix={item.prefix}
-              suffix={"suffix" in item ? item.suffix : undefined}
+              suffix={item.suffix}
               label={t(item.label)}
             />
           ))}
