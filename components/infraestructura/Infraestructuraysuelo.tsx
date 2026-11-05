@@ -35,7 +35,7 @@ const CONTENT = {
       {
         n: "03",
         title: "Edificios\nde viviendas",
-        image: "/images/belgrano/belgrano6.jpg",
+        image: "/images/belgrano/comprimido/belgrano6.jpg",
         text: "Construcción de edificios de viviendas con coordinación de obra, calidad constructiva y seguimiento integral de cada etapa.",
         details: [
           "Dirección de obra",
