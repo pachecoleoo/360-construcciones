@@ -72,7 +72,7 @@ export const translations: Record<string, string> = {
   "Ver imagen": "View image", "Ir a imagen": "Go to image", "Miniatura": "Thumbnail",
   "Ver perfil": "View profile", "Ver LinkedIn": "View LinkedIn", "Abrir chat": "Open chat",
   "Ver proyecto": "View project", "Próximamente": "Coming soon", "Ir a la primera sección": "Go to the first section",
-  "Seguimos construyendo": "We keep building", "Arquitectura e ingeniería con planificación.": "Architecture and engineering with careful planning.",
+  "Seguimos construyendo": "We keep building", "Seguimos\nconstruyendo": "We keep\nbuilding", "Arquitectura e ingeniería con planificación.": "Architecture and engineering with careful planning.",
   "Infraestructura &\n movimiento de suelo": "Infrastructure &\n earthworks", "Ejecución técnica con precisión y control de obra.": "Technical execution with precision and project control.",
   "Obras desarrolladas y desarrollos en ejecución": "Completed projects and developments under construction",
   "Belgrano 531 es un desarrollo concebido para integrarse al tejido urbano de Neuquén con una imagen contemporánea, sólida y sobria.": "Belgrano 531 was conceived to integrate into Neuquén’s urban fabric with a contemporary, solid and understated identity.",

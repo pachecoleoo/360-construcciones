@@ -5,10 +5,10 @@ import Link from "next/link";
 import type { ProyectoUnified } from "./types";
 import { useLanguage } from "@/context/LanguageContext";
 
-function splitLeadingNumber(title: string) {
-  const m = title.match(/^(\d+)\s+(.*)$/);
-  if (!m) return { num: "", rest: title };
-  return { num: m[1], rest: m[2] };
+function splitProjectTitle(title: string) {
+  const match = title.trim().match(/^(.*?)\s*(\d+)$/);
+  if (!match) return { street: title.trim(), number: "" };
+  return { street: match[1].trim(), number: match[2] };
 }
 
 function getStatusLabel(status: ProyectoUnified["status"]) {
@@ -62,7 +62,7 @@ function CardContent({ p }: { p: ProyectoUnified }) {
         "
       >
         {(() => {
-          const { num, rest } = splitLeadingNumber(p.title);
+          const { street, number } = splitProjectTitle(p.title);
 
           return (
             <h2
@@ -71,19 +71,10 @@ function CardContent({ p }: { p: ProyectoUnified }) {
                 text-4xl sm:text-5xl md:text-6xl
                 tracking-normal
                 leading-[0.95]
-                drop-shadow-[0_0_26px_rgba(6,42,71,0.95)]
               "
             >
-              {num ? (
-                <>
-                  <span className="font-ultra text-6xl tracking-[-0.01em]">
-                    {num}
-                  </span>{" "}
-                  <span className="font-extra text-6xl">{rest}</span>
-                </>
-              ) : (
-                <span className="font-extra font-black">{rest}</span>
-              )}
+              <span className="font-heading font-black tracking-[-0.04em]">{street}</span>
+              {number && <span className="font-body font-normal tracking-[-0.065em]">{number}</span>}
             </h2>
           );
         })()}

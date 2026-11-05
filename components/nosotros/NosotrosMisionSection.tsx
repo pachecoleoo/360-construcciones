@@ -72,8 +72,8 @@ export default function NosotrosMisionSection() {
                   <p className="mt-8 font-body text-base leading-relaxed text-[#002B49]/85 md:text-xl">
                     <strong className="font-semibold text-[#002B49]">
                       {language === "es"
-                        ? "Crear, ejecutar y gestionar soluciones innovadoras"
-                        : "Create, execute and manage innovative solutions"}
+                        ? "Crear, ejecutar y gestionar soluciones"
+                        : "Create, execute and manage solutions"}
                     </strong>{" "}
                     {language === "es"
                       ? "para resolver proyectos de ingeniería, construcción y montajes industriales, honrando los compromisos asumidos y las relaciones a largo plazo con nuestros clientes."

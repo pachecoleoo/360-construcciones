@@ -3,27 +3,25 @@
 import Counter from "./Contador";
 import { useLanguage } from "@/context/LanguageContext";
 
-const STATS = [
+const STATS: Array<{ value: number; prefix?: string; suffix?: string; label: string }> = [
   {
-    value: 50,
+    value: 250,
     prefix: "+",
     label: "Empleados",
   },
   {
-    value: 500,
+    value: 204000,
     prefix: "+",
     label: "M² Proyectados ",
   },
   {
-    value: 250,
+    value: 90534,
     prefix: "+",
-    suffix: "k",
-    label: "M² en construcción",
+    label: "M² en proceso",
   },
   {
-    value: 9,
-    prefix: "+",
-    label: "Obras activas",
+    value: 18,
+    label: "Obras terminadas",
   },
 ];
 
@@ -51,7 +49,7 @@ export default function AboutStats() {
             {t("Indicadores")}
           </p>
 
-          <h2 className="ios-safe-title mt-3 w-full font-heading text-[42px] font-black uppercase leading-[0.9] tracking-[0.01em] text-[#062a47] sm:text-[56px] md:text-[74px] lg:text-[88px] xl:text-[98px] text-center">
+          <h2 className="ios-safe-title mx-auto mt-3 max-w-[1200px] font-heading text-[34px] font-black uppercase tracking-[0.01em] text-[#062a47] sm:text-[48px] md:text-[64px] lg:text-[72px] xl:text-[80px] text-center">
             {t("Trayectoria que nos respalda en cada proyecto")}
           </h2>
 
@@ -63,7 +61,7 @@ export default function AboutStats() {
         </div>
 
         {/* STATS */}
-        <div className="mt-16 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-10 lg:mt-20 lg:grid-cols-4 lg:gap-x-12 ">
+        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 sm:gap-x-8 lg:mt-20 lg:grid-cols-4 lg:gap-x-6 ">
           {STATS.map((item) => (
             <StatBlock
               key={item.label}
@@ -93,43 +91,30 @@ function StatBlock({
   return (
     <div
       className="
-        group
-        grid grid-cols-[110px_1fr] items-center
-        py-6
-        border-b border-[#d9dde2]
+        flex min-w-0 items-center gap-5 border-b border-[#d9dde2] py-7
         last:border-none
-
-        sm:grid-cols-[140px_1fr]
-
-        md:block md:border-none md:py-0 md:px-20
+        sm:flex-col sm:justify-center sm:gap-3 sm:border-none sm:py-6
+        lg:py-0
       "
     >
-      {/* NUMERO */}
+      {/* El número toma solo su ancho: la etiqueta nunca se superpone. */}
       <div
         className="
-          font-heading text-[44px] font-black leading-[0.9] tracking-[-0.03em]
-          text-[#062a47]
-          sm:text-[72px]
-          md:text-[88px]
-          lg:text-[96px]
-          xl:text-[108px]
+          shrink-0 whitespace-nowrap font-heading font-black leading-none
+          tracking-[-0.035em] text-[#062a47]
+          text-[37px] min-[400px]:text-[42px]
+          sm:text-[52px] md:text-[58px] lg:text-[49px] xl:text-[58px]
         "
       >
         <Counter to={value} prefix={prefix} suffix={suffix} />
       </div>
 
-      {/* TEXTO */}
       <p
         className="
-          -mb-2
-          text-left
-          text-[26px]
-          font-body uppercase leading-[1.25] tracking-[0.02em]
-          text-[#062a47]
-
-          sm:text-[30px]
-
-          md:mt-4 md:max-w-[14ch] md:text-[17px] md:text-center
+          min-w-0 flex-1 text-left font-body uppercase leading-[1.2]
+          text-[18px] min-[400px]:text-[21px] text-[#062a47]
+          sm:flex-none sm:text-center sm:text-[19px]
+          lg:text-[17px] xl:text-[18px]
         "
       >
         {label}

@@ -48,10 +48,11 @@ export default function SectionWhoWeAre() {
         {/* Título full width */}
         <div className="mt-3 overflow-visible">
           <h2
+            style={{ lineHeight: 0.94 }}
             className={cx(
               "ios-safe-title max-w-[1180px] font-heading font-black uppercase text-[#062a47]",
-              "leading-[1.0] tracking-[0.01em]",
-              "text-[42px] sm:text-[58px] md:text-[76px] lg:text-[92px] xl:text-[97px]",
+              "leading-[0.94] tracking-[0.01em]",
+              "text-[40px] sm:text-[55px] md:text-[70px] lg:text-[84px] xl:text-[89px]",
               "transition-all duration-700 delay-100 ease-out ",
               visible
                 ? "translate-y-0 opacity-100"

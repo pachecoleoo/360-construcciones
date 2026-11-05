@@ -12,7 +12,7 @@ const ITEMS = [
   { text: "una empresa cada vez más completa.", highlight: false },
   { text: "una imagen basada en nuestra eficiencia.", highlight: false },
   { text: "confianza a través de nuestra experiencia.", highlight: false },
-  { text: "una organización flexible y transparente.", highlight: false },
+  { text: "una organización flexible.", highlight: false },
   { text: "una nueva manera de construir.", highlight: true },
 ];
 
@@ -48,7 +48,7 @@ export default function ConstruyendoBanner() {
     "an increasingly comprehensive company.",
     "an image founded on efficiency.",
     "trust through our experience.",
-    "a flexible and transparent organization.",
+    "a flexible organization.",
     "a new way to build.",
   ];
   const current = ITEMS[index];

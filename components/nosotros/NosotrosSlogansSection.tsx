@@ -9,7 +9,7 @@ const SLOGANS = [
   "Construyendo una empresa cada vez más completa.",
   "Construyendo una imagen basada en nuestra eficiencia.",
   "Construyendo confianza a través de nuestra experiencia.",
-  "Construyendo una organización flexible y transparente.",
+  "Construyendo una organización flexible.",
   "Construyendo una nueva manera de construir.",
 ];
 
@@ -51,7 +51,7 @@ export default function NosotrosSlogansSection() {
     "Building an increasingly comprehensive company.",
     "Building an image founded on efficiency.",
     "Building trust through our experience.",
-    "Building a flexible and transparent organization.",
+    "Building a flexible organization.",
     "Building a new way to build.",
   ];
 
