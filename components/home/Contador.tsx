@@ -54,7 +54,7 @@ tabular-nums
       "
     >
       {prefix}
-      {value}
+      {new Intl.NumberFormat("es-AR").format(value)}
       {suffix}
     </span>
   );
