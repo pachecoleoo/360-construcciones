@@ -91,7 +91,7 @@ const CONTENT = {
       {
         n: "03",
         title: "Residential\nbuildings",
-        image: "/images/belgrano/belgrano6.jpg",
+        image: "/images/belgrano/comprimido/belgrano6.jpg",
         text: "Construction of residential buildings with project coordination, construction quality and comprehensive monitoring throughout every stage.",
         details: [
           "Construction management",
