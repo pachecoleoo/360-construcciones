@@ -69,13 +69,18 @@ export default function NosotrosCalidadSection() {
           <div className="max-w-2xl self-end font-body text-base leading-8 text-[#062a47]/80 md:text-lg">
             <p>
               {es
-                ? "En 2025 certificamos nuestro Sistema de Gestión de la Calidad bajo la norma ISO 9001:2015, con TÜV Rheinland como organismo certificador."
-                : "In 2025, our Quality Management System was certified to ISO 9001:2015 by TÜV Rheinland."}
+                ? "En 2025, 360 Construcciones obtuvo la certificación de su Sistema de Gestión de la Calidad bajo la norma ISO 9001:2015, otorgada por TÜV Rheinland."
+                : "In 2025, 360 Construcciones obtained certification of its Quality Management System under ISO 9001:2015, awarded by TÜV Rheinland."}
             </p>
             <p className="mt-3">
               {es
-                ? "Una forma de trabajar que integra planificación, seguimiento y mejora continua en nuestros proyectos."
-                : "An approach that brings planning, monitoring and continuous improvement into our projects."}
+                ? "Este reconocimiento refleja el compromiso de todas las áreas de la empresa con la satisfacción de nuestros clientes, la mejora continua y la optimización de nuestros procesos."
+                : "This recognition reflects the commitment of every area of the company to customer satisfaction, continuous improvement and the optimization of our processes."}
+            </p>
+            <p className="mt-3">
+              {es
+                ? "En 2026 realizamos nuestra primera auditoría anual de seguimiento, reafirmando nuestro compromiso con la calidad."
+                : "In 2026, we completed our first annual surveillance audit, reaffirming our commitment to quality."}
             </p>
           </div>
         </div>
@@ -143,8 +148,8 @@ export default function NosotrosCalidadSection() {
               </h3>
               <p className="mt-2 max-w-md font-body text-sm leading-6 text-[#062a47]/70">
                 {es
-                  ? "Conocé los principios que orientan nuestro compromiso con la calidad."
-                  : "Learn about the principles behind our commitment to quality."}
+                  ? "Conocé los principios que orientan nuestro compromiso con la calidad, el ambiente y la seguridad y salud ocupacional"
+                  : "Learn about the principles guiding our commitment to quality, the environment, and occupational health and safety."}
               </p>
             </div>
             <a
