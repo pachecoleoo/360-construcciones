@@ -339,3 +339,9 @@ html {
     opacity: 1 !important;
   }
 }
+
+/* Estilo tipográfico solicitado: sin sombras en los textos del sitio.
+   No afecta sombras de tarjetas, botones ni imágenes. */
+body * {
+  text-shadow: none !important;
+}
