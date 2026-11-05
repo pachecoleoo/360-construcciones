@@ -28,14 +28,14 @@ const CONTENT = {
       {
         n: "02",
         title: "Infraestructura",
-        image: "/images/suelo/suelo2.webp",
+        image: "/images/suelo/infra3.webp",
         text: "Desarrollo de infraestructura civil, redes, accesos, bases y obras complementarias para proyectos urbanos e industriales.",
         details: ["Obras civiles", "Redes y servicios", "Accesos y bases"],
       },
       {
         n: "03",
         title: "Edificios\nde viviendas",
-        image: "/images/suelo/infra3.webp",
+        image: "/images/renders/belgrano531.jpg",
         text: "Construcción de edificios de viviendas con coordinación de obra, calidad constructiva y seguimiento integral de cada etapa.",
         details: [
           "Dirección de obra",
@@ -80,7 +80,7 @@ const CONTENT = {
       {
         n: "02",
         title: "Infrastructure",
-        image: "/images/suelo/suelo2.jpeg",
+        image: "/images/suelo/infra3.webp",
         text: "Development of civil infrastructure, utility networks, access roads, foundations and complementary works for urban and industrial projects.",
         details: [
           "Civil works",
@@ -91,7 +91,7 @@ const CONTENT = {
       {
         n: "03",
         title: "Residential\nbuildings",
-        image: "/images/suelo/infra3.JPG",
+        image: "/images/renders/belgrano531.jpg",
         text: "Construction of residential buildings with project coordination, construction quality and comprehensive monitoring throughout every stage.",
         details: [
           "Construction management",
