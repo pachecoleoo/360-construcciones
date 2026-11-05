@@ -49,7 +49,7 @@ export default function AboutStats() {
             {t("Indicadores")}
           </p>
 
-          <h2 className="ios-safe-title mx-auto mt-3 max-w-[1180px] font-heading text-[36px] font-black uppercase tracking-[0.01em] text-[#062a47] sm:text-[48px] md:text-[62px] lg:text-[76px] xl:text-[82px] text-center">
+          <h2 className="ios-safe-title mx-auto mt-3 max-w-[1200px] font-heading text-[34px] font-black uppercase tracking-[0.01em] text-[#062a47] sm:text-[48px] md:text-[64px] lg:text-[72px] xl:text-[80px] text-center">
             {t("Trayectoria que nos respalda en cada proyecto")}
           </h2>
 
@@ -61,7 +61,7 @@ export default function AboutStats() {
         </div>
 
         {/* STATS */}
-        <div className="mt-14 grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-8 lg:mt-16 lg:grid-cols-4 lg:gap-x-5 ">
+        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 sm:gap-x-8 lg:mt-20 lg:grid-cols-4 lg:gap-x-6 ">
           {STATS.map((item) => (
             <StatBlock
               key={item.label}
@@ -91,35 +91,30 @@ function StatBlock({
   return (
     <div
       className="
-        group
-        grid grid-cols-[110px_1fr] items-center
-        py-6
-        border-b border-[#d9dde2]
+        flex min-w-0 items-center gap-5 border-b border-[#d9dde2] py-7
         last:border-none
-
-        sm:grid-cols-[140px_1fr]
-
-        md:block md:border-none md:py-0 md:px-2
+        sm:flex-col sm:justify-center sm:gap-3 sm:border-none sm:py-6
+        lg:py-0
       "
     >
-      {/* NUMERO */}
+      {/* El número toma solo su ancho: la etiqueta nunca se superpone. */}
       <div
         className="
-          min-w-0 whitespace-nowrap font-heading font-black leading-none tracking-[-0.04em]
-          text-[35px] min-[400px]:text-[40px] sm:text-[50px] md:text-[58px]
-          lg:text-[48px] xl:text-[56px] 2xl:text-[62px]
-          text-[#062a47]
+          shrink-0 whitespace-nowrap font-heading font-black leading-none
+          tracking-[-0.035em] text-[#062a47]
+          text-[37px] min-[400px]:text-[42px]
+          sm:text-[52px] md:text-[58px] lg:text-[49px] xl:text-[58px]
         "
       >
         <Counter to={value} prefix={prefix} suffix={suffix} />
       </div>
 
-      {/* TEXTO */}
       <p
         className="
-          min-w-0 text-left font-body uppercase leading-[1.15] tracking-[0.01em]
-          text-[19px] min-[400px]:text-[21px] text-[#062a47]
-          sm:text-center sm:text-[19px] lg:text-[16px] xl:text-[18px]
+          min-w-0 flex-1 text-left font-body uppercase leading-[1.2]
+          text-[18px] min-[400px]:text-[21px] text-[#062a47]
+          sm:flex-none sm:text-center sm:text-[19px]
+          lg:text-[17px] xl:text-[18px]
         "
       >
         {label}
