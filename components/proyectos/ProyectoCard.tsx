@@ -66,12 +66,13 @@ function CardContent({ p }: { p: ProyectoUnified }) {
 
           return (
             <h2
+              style={{ lineHeight: 1.16, paddingBlock: "0.16em" }}
               className="
+                ios-safe-title relative overflow-visible
                 flex max-w-full flex-wrap items-baseline
                 text-white
                 text-[clamp(26px,7.3vw,34px)] sm:text-5xl md:text-6xl
                 tracking-normal
-                leading-[1.02]
               "
             >
               <span className="min-w-0 font-heading font-black tracking-[-0.045em]">{street}</span>
