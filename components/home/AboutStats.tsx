@@ -67,7 +67,7 @@ export default function AboutStats() {
               key={item.label}
               value={item.value}
               prefix={item.prefix}
-              suffix={item.suffix}
+              suffix={"suffix" in item ? item.suffix : undefined}
               label={t(item.label)}
             />
           ))}
