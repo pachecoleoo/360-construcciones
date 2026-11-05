@@ -144,9 +144,10 @@ export default function HeroBackground({
               <p
                 className="
                   hero-subtitle
-                  mt-0
+                  mt-1
                   max-w-3xl
                   text-sm
+                  leading-[1.35]
                   text-white/100
                   md:text-base
                 "
