@@ -12,6 +12,7 @@ type HeroBackgroundProps = {
   subtitle?: string;
   imageSrc: string;
   align?: "left" | "center";
+  compactTitle?: boolean;
 };
 
 function renderHighlightedText(
@@ -69,6 +70,7 @@ export default function HeroBackground({
   subtitle,
   imageSrc,
   align = "left",
+  compactTitle = false,
 }: HeroBackgroundProps) {
   const { t } = useLanguage();
   const titleNodes = renderHighlightedText(
@@ -119,6 +121,7 @@ export default function HeroBackground({
             ) : null}
 
             <h1
+              style={compactTitle ? { lineHeight: 0.92 } : undefined}
               className="
                 hero-title
                 ios-safe-title
