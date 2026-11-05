@@ -5,25 +5,23 @@ import { useLanguage } from "@/context/LanguageContext";
 
 const STATS = [
   {
-    value: 50,
+    value: 250,
     prefix: "+",
     label: "Empleados",
   },
   {
-    value: 500,
+    value: 204000,
     prefix: "+",
     label: "M² Proyectados ",
   },
   {
-    value: 250,
+    value: 90534,
     prefix: "+",
-    suffix: "k",
-    label: "M² en construcción",
+    label: "M² en proceso",
   },
   {
-    value: 9,
-    prefix: "+",
-    label: "Obras activas",
+    value: 18,
+    label: "Obras terminadas",
   },
 ];
 
@@ -101,7 +99,7 @@ function StatBlock({
 
         sm:grid-cols-[140px_1fr]
 
-        md:block md:border-none md:py-0 md:px-20
+        md:block md:border-none md:py-0 md:px-2
       "
     >
       {/* NUMERO */}
@@ -110,9 +108,9 @@ function StatBlock({
           font-heading text-[44px] font-black leading-[0.9] tracking-[-0.03em]
           text-[#062a47]
           sm:text-[72px]
-          md:text-[88px]
-          lg:text-[96px]
-          xl:text-[108px]
+          md:text-[54px]
+          lg:text-[56px]
+          xl:text-[64px]
         "
       >
         <Counter to={value} prefix={prefix} suffix={suffix} />
