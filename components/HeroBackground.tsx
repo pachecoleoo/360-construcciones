@@ -112,7 +112,6 @@ export default function HeroBackground({
                   uppercase
                   tracking-[0.35em]
                   text-white/75
-                  [text-shadow:0_2px_6px_rgba(0,0,0,0.95)]
                 "
               >
                 {t(eyebrow)}
@@ -132,7 +131,6 @@ export default function HeroBackground({
                 leading-[1.02]
                 tracking-[0.01em]
                 text-white
-                [text-shadow:0_3px_8px_rgba(0,0,0,0.95),0_10px_35px_rgba(0,0,0,0.75)]
                 md:text-7xl
               "
             >
@@ -143,11 +141,10 @@ export default function HeroBackground({
               <p
                 className="
                   hero-subtitle
-                  mt-1
+                  mt-0
                   max-w-3xl
                   text-sm
                   text-white/100
-                  [text-shadow:0_2px_5px_rgba(0,0,0,0.95),0_6px_20px_rgba(0,0,0,0.8)]
                   md:text-base
                 "
               >
