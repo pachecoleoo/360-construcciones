@@ -74,7 +74,7 @@ function CardContent({ p }: { p: ProyectoUnified }) {
               "
             >
               <span className="font-heading font-black">{street}</span>
-              {number && <span className="font-extra font-normal">{number}</span>}
+              {number && <span className="font-body font-normal">{number}</span>}
             </h2>
           );
         })()}
