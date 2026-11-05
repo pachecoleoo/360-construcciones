@@ -10,6 +10,7 @@ export default function ProyectosPage() {
     <>
       <HeroBackground
         title="Proyectos"
+        compactTitle
         subtitle="Obras desarrolladas y desarrollos en ejecución"
         imageSrc="/images/original/frameGatica3.jpg"
       />
