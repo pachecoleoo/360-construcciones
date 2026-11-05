@@ -49,7 +49,7 @@ export default function AboutStats() {
             {t("Indicadores")}
           </p>
 
-          <h2 className="ios-safe-title mt-3 w-full font-heading text-[42px] font-black uppercase leading-[0.9] tracking-[0.01em] text-[#062a47] sm:text-[56px] md:text-[74px] lg:text-[88px] xl:text-[98px] text-center">
+          <h2 className="ios-safe-title mx-auto mt-3 max-w-[1180px] font-heading text-[36px] font-black uppercase tracking-[0.01em] text-[#062a47] sm:text-[48px] md:text-[62px] lg:text-[76px] xl:text-[82px] text-center">
             {t("Trayectoria que nos respalda en cada proyecto")}
           </h2>
 
@@ -61,7 +61,7 @@ export default function AboutStats() {
         </div>
 
         {/* STATS */}
-        <div className="mt-16 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-10 lg:mt-20 lg:grid-cols-4 lg:gap-x-12 ">
+        <div className="mt-14 grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-8 lg:mt-16 lg:grid-cols-4 lg:gap-x-5 ">
           {STATS.map((item) => (
             <StatBlock
               key={item.label}
@@ -105,12 +105,10 @@ function StatBlock({
       {/* NUMERO */}
       <div
         className="
-          font-heading text-[44px] font-black leading-[0.9] tracking-[-0.03em]
+          min-w-0 whitespace-nowrap font-heading font-black leading-none tracking-[-0.04em]
+          text-[35px] min-[400px]:text-[40px] sm:text-[50px] md:text-[58px]
+          lg:text-[48px] xl:text-[56px] 2xl:text-[62px]
           text-[#062a47]
-          sm:text-[72px]
-          md:text-[54px]
-          lg:text-[56px]
-          xl:text-[64px]
         "
       >
         <Counter to={value} prefix={prefix} suffix={suffix} />
@@ -119,15 +117,9 @@ function StatBlock({
       {/* TEXTO */}
       <p
         className="
-          -mb-2
-          text-left
-          text-[26px]
-          font-body uppercase leading-[1.25] tracking-[0.02em]
-          text-[#062a47]
-
-          sm:text-[30px]
-
-          md:mt-4 md:max-w-[14ch] md:text-[17px] md:text-center
+          min-w-0 text-left font-body uppercase leading-[1.15] tracking-[0.01em]
+          text-[19px] min-[400px]:text-[21px] text-[#062a47]
+          sm:text-center sm:text-[19px] lg:text-[16px] xl:text-[18px]
         "
       >
         {label}
