@@ -9,7 +9,8 @@ export default function InfraestructuraPage() {
       <HeroBackground
         eyebrow=""
         title={"Infraestructura &\n movimiento de suelo"}
-        highlight={["Infraestructura"]}
+        highlight={[]}
+        compactTitle
         subtitle="Ejecución técnica con precisión y control de obra."
         imageSrc="/images/suelo/infra2.JPG"
         align="left"
