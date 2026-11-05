@@ -27,8 +27,8 @@ export default function Counter({
           const start = performance.now();
 
           const animate = (now: number) => {
-            const progress = Math.min((now - start) / duration, 3);
-            setValue(Math.floor(progress * to));
+            const progress = Math.min((now - start) / duration, 1);
+            setValue(progress >= 1 ? to : Math.floor(progress * to));
             if (progress < 1) requestAnimationFrame(animate);
           };
 
@@ -46,11 +46,7 @@ export default function Counter({
     <span
       ref={ref}
       className="
-        text-4xl md:text-6xl
-        font-black
-        tracking-tight
-text-brand-blue        
-tabular-nums
+        font-black tabular-nums text-brand-blue
       "
     >
       {prefix}
