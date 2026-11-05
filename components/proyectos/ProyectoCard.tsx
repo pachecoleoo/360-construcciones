@@ -73,8 +73,8 @@ function CardContent({ p }: { p: ProyectoUnified }) {
                 leading-[0.95]
               "
             >
-              <span className="font-heading font-black">{street}</span>
-              {number && <span className="font-body font-normal">{number}</span>}
+              <span className="font-heading font-black tracking-[-0.04em]">{street}</span>
+              {number && <span className="font-body font-normal tracking-[-0.065em]">{number}</span>}
             </h2>
           );
         })()}
